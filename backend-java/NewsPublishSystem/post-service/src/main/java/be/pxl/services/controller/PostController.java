@@ -18,7 +18,7 @@ public class PostController {
     private final IPostService postService;
 
     @PostMapping
-    public ResponseEntity<PostResponse> createPost(@RequestBody PostRequest postRequest) {
+    public ResponseEntity<Void> createPost(@RequestBody PostRequest postRequest) {
         postService.createPost(postRequest);
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
