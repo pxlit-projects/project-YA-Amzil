@@ -8,6 +8,8 @@ import be.pxl.services.exceptions.PostNotFoundException;
 import be.pxl.services.exceptions.PostPublishException;
 import be.pxl.services.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -18,6 +20,8 @@ import java.util.List;
 public class PostService implements IPostService {
 
     private final PostRepository postRepository;
+    private static final Logger log = LoggerFactory.getLogger(PostService.class);
+
 
     // US1: Als redacteur wil ik nieuwe artikelen kunnen aanmaken, zodat ik nieuws en updates kan delen met de organisatie.
     // This method allows a user (editor) to create a new post. The post is initially set as a draft.
