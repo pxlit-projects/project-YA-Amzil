@@ -44,6 +44,9 @@ public class Post {
 
     private String category; // Category of the post
 
+    // private List<Review> reviews; @Transient
+    // private List<Comment> comments; @Transient
+
     @PrePersist
     @PreUpdate
     protected void onPersistOrUpdate() {
