@@ -1,0 +1,60 @@
+#server:
+#  port: 8086
+#
+##logging:
+##  pattern:
+##    console: "%d{HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+#
+#spring:
+#  cloud:
+#    gateway:
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins:
+#              - "localhost"
+#            allowedMethods:
+#              - "*"
+#            allowedHeaders:
+#              - "*"
+#            allowCredentials: true
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        # Employee Service Route
+#        - id: employee-service
+#          uri: lb://employee-service
+#          predicates:
+#            - Path=/employee/**
+#          filters:
+#            - RewritePath=/employee/(?<path>.*), /$\{path}
+#
+#        # Department Service Route
+#        - id: department-service
+#          uri: lb://department-service
+#          predicates:
+#            - Path=/department/**
+#          filters:
+#            - RewritePath=/department/(?<path>.*), /$\{path}
+#
+#        # Organization Service Route
+#        - id: organization-service
+#          uri: lb://organization-service
+#          predicates:
+#            - Path=/organization/**
+#          filters:
+#            - RewritePath=/organization/(?<path>.*), /$\{path}
+#
+#        # Notification Service Route
+##        - id: notification-service
+##          uri: lb://notification-service
+##          predicates:
+##            - Path=/notification/**
+##          filters:
+##            - RewritePath=/notification/(?<path>.*), /$\{path}
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8061/eureka/
