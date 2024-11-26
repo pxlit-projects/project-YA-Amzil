@@ -1,60 +1,60 @@
-#server:
-#  port: 8086
-#
-##logging:
-##  pattern:
-##    console: "%d{HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
-#
-#spring:
-#  cloud:
-#    gateway:
-#      globalcors:
-#        corsConfigurations:
-#          '[/**]':
-#            allowedOrigins:
-#              - "localhost"
-#            allowedMethods:
-#              - "*"
-#            allowedHeaders:
-#              - "*"
-#            allowCredentials: true
-#      discovery:
-#        locator:
-#          enabled: true
-#      routes:
-#        # Employee Service Route
-#        - id: employee-service
-#          uri: lb://employee-service
+server:
+  port: 8086
+
+#logging:
+#  pattern:
+#    console: "%d{HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} %m%n"
+
+spring:
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "localhost"
+            allowedMethods:
+              - "*"
+            allowedHeaders:
+              - "*"
+            allowCredentials: true
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # Post Service Route
+        - id: post-service
+          uri: lb://post-service
+          predicates:
+            - Path=/post/**
+          filters:
+            - RewritePath=/post/(?<path>.*), /$\{path}
+
+        # Comment Service Route
+        - id: comment-service
+          uri: lb://comment-service
+          predicates:
+            - Path=/comment/**
+          filters:
+            - RewritePath=/comment/(?<path>.*), /$\{path}
+
+        # Review Service Route
+        - id: review-service
+          uri: lb://review-service
+          predicates:
+            - Path=/review/**
+          filters:
+            - RewritePath=/review/(?<path>.*), /$\{path}
+
+        # Notification Service Route
+#        - id: notification-service
+#          uri: lb://notification-service
 #          predicates:
-#            - Path=/employee/**
+#            - Path=/notification/**
 #          filters:
-#            - RewritePath=/employee/(?<path>.*), /$\{path}
-#
-#        # Department Service Route
-#        - id: department-service
-#          uri: lb://department-service
-#          predicates:
-#            - Path=/department/**
-#          filters:
-#            - RewritePath=/department/(?<path>.*), /$\{path}
-#
-#        # Organization Service Route
-#        - id: organization-service
-#          uri: lb://organization-service
-#          predicates:
-#            - Path=/organization/**
-#          filters:
-#            - RewritePath=/organization/(?<path>.*), /$\{path}
-#
-#        # Notification Service Route
-##        - id: notification-service
-##          uri: lb://notification-service
-##          predicates:
-##            - Path=/notification/**
-##          filters:
-##            - RewritePath=/notification/(?<path>.*), /$\{path}
-#
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8061/eureka/
+#            - RewritePath=/notification/(?<path>.*), /$\{path}
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8061/eureka/
