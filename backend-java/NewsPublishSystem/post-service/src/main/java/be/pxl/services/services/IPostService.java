@@ -19,5 +19,5 @@ public interface IPostService {
     List<PostResponse> getAllPublishedPosts();
 
     // Method to get relevant posts
-    List<PostResponse> getRelevantPosts(String filter);
+    List<PostResponse> getRelevantPosts(String content, String category, String author);
 }

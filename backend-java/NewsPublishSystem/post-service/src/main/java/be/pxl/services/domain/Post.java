@@ -22,37 +22,31 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull(message = "Title cannot be null")
-    @Size(min = 5, max = 255, message = "Title must be between 5 and 255 characters")
-    private String title; // Title of the post
+    // @NotNull(message = "Title cannot be null")
+    // @Size(min = 5, max = 255, message = "Title must be between 5 and 255 characters")
+    private String title;
 
-    @NotNull(message = "Content cannot be null")
-    @Size(min = 10, message = "Content must be at least 10 characters long")
-    private String content; // Content of the post
+    // @NotNull(message = "Content cannot be null")
+    // @Size(min = 10, message = "Content must be at least 10 characters long")
+    private String content;
 
-    @NotNull(message = "Author cannot be null")
-    private String author; // Author of the post
+    // @NotNull(message = "Category cannot be null")
+    // @Size(min = 3, message = "Category must be at least 3 characters long")
+    private String category;
 
-    @Column(nullable = false)
-    private LocalDateTime creationDate; // Timestamp of when the post was created
+    //@NotNull(message = "Author cannot be null")
+    private String author;
 
-    private LocalDateTime lastUpdateDate; // Timestamp of the last update to the post
+    // @Column(nullable = false)
+    @Column(name = "create_at")
+    private LocalDateTime createAt;
+    @Column(name = "update_at")
+    private LocalDateTime updateAt;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private PostStatus status; // Status of the post (e.g., DRAFT, PUBLISHED)
-
-    private String category; // Category of the post
+    // @Column(nullable = false)
+    private PostStatus status;
 
     // private List<Review> reviews; @Transient
     // private List<Comment> comments; @Transient
-
-    @PrePersist
-    @PreUpdate
-    protected void onPersistOrUpdate() {
-        if (this.creationDate == null) {
-            this.creationDate = LocalDateTime.now(); // Set creationDate only if it's null (during persist)
-        }
-        this.lastUpdateDate = LocalDateTime.now(); // Set or update lastUpdateDate every time the post is persisted or updated
-    }
 }
