@@ -1,24 +1,79 @@
 <div>
   <h2>Create Post</h2>
-  <form (ngSubmit)="addPost()">
-    <label for="title">Title</label>
-    <input id="title" [(ngModel)]="post.title" name="title" required>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="mb-4">
+      <label for="title" class="block text-gray-700 text-sm font-bold mb-2">Title:</label>
+      <input
+        type="text"
+        id="title"
+        formControlName="title"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      />
+      @if (postForm.get('title')?.touched && postForm.get('title')?.hasError('required')) {
+				<div class="text-error">Title is required</div>
+			}
+    </div>
 
-    <label for="content">Content</label>
-    <textarea id="content" [(ngModel)]="post.content" name="content" required></textarea>
+    <div class="mb-4">
+      <label for="content" class="block text-gray-700 text-sm font-bold mb-2">Content:</label>
+      <textarea
+        id="content"
+        formControlName="content"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      ></textarea>
+      @if (postForm.get('content')?.touched && postForm.get('content')?.hasError('required')) {
+				<div class="text-error">Content is required</div>
+			}
+    </div>
 
-    <label for="author">Author</label>
-    <input id="author" [(ngModel)]="post.author" name="author" required>
+    <div class="mb-4">
+      <label for="category" class="block text-gray-700 text-sm font-bold mb-2">Category:</label>
+      <input
+        type="text"
+        id="category"
+        formControlName="category"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      />
+      @if (postForm.get('category')?.touched && postForm.get('category')?.hasError('required')) {
+				<div class="text-error">Category is required</div>
+			}
+    </div>
 
-    <label for="category">Category</label>
-    <input id="category" [(ngModel)]="post.category" name="category" required>
+    <div class="mb-4">
+      <label for="author" class="block text-gray-700 text-sm font-bold mb-2">Author:</label>
+      <input
+        type="text"
+        id="author"
+        formControlName="author"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      />
+       @if (postForm.get('author')?.touched && postForm.get('author')?.hasError('required')) {
+				<div class="text-error">Author is required</div>
+			}
+    </div>
 
-    <label for="status">Status</label>
-    <select id="status" [(ngModel)]="post.status" name="status">
-      <option value="draft">Draft</option>
-      <option value="published">Published</option>
-    </select>
+    <!-- <div class="mb-4">
+      <label for="status" class="block text-gray-700 text-sm font-bold mb-2">Status:</label>
+      <select
+        formControlName="status"
+        id="status"
+        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+      >
+        <option value="DRAFT">Draft</option>
+        <option value="PUBLISHED">Published</option>
+      </select>
+    </div> -->
 
-    <button type="submit">Save</button>
+    <button
+      type="submit"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+      [disabled]="!postForm.valid"
+    >
+      Submit
+    </button>
+
+     <!-- <button type="button" (click)="cancel()" [ngClass]="{'bg-button-primary hover:bg-secondary': postForm.valid, 'bg-neutral-light': !postForm.valid}"
+				class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-primary mr-4" [disabled]="!postForm.valid">Cancel
+		</button> -->
   </form>
 </div>

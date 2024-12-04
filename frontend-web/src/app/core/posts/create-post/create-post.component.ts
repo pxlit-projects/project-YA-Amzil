@@ -1,29 +1,41 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { PostService } from '../../../shared/services/post.service';
 import { Post } from '../../../shared/models/post.model';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-create-post',
   standalone: true,
-  imports: [FormsModule],
+  imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './create-post.component.html',
   styleUrl: './create-post.component.css',
 })
 export class CreatePostComponent {
-  post: Post = {
-    id: 0,
-    title: '',
-    content: '',
-    author: '',
-    category: '',
-    status: 'draft',
-    createdDate: new Date(),
-  };
+  postService: PostService = inject(PostService);
+  // router: Router = inject(Router);
+  fb: FormBuilder = inject(FormBuilder);
 
-  constructor(private postService: PostService) {}
+  postForm: FormGroup = this.fb.group({
+    title: ['', [Validators.required]],
+    content: ['', [Validators.required]],
+    category: ['', [Validators.required]],
+    author: ['', [Validators.required]],
+    createAt: [new Date().toISOString()],
+    updateAt: [new Date().toISOString()],
+    status: 'DRAFT',
+  });
 
-  addPost(): void {
-    this.postService.addPost(this.post).subscribe();
+  onSubmit(): void {
+    if (this.postForm.valid) {
+      const post: Post = this.postForm.value as Post;
+      this.postService.createPost(post).subscribe(() => {
+        // this.postForm.reset();
+        // this.postForm.patchValue({ status: 'DRAFT' });
+        // this.router.navigate(['/posts']);
+      });
+    }
   }
 }
