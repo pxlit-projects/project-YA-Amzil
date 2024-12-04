@@ -1,35 +1,36 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Post } from '../models/post.model';
+import { environment } from '../../../environments/environment.development';
+import { Filter } from '../models/filter.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  private apiUrl = 'api/posts';
+  private api: string = environment.apiUrl + 'post/api/post';
+  private http: HttpClient = inject(HttpClient);
 
-  constructor(private http: HttpClient) {}
-
-  getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>(this.apiUrl);
+  createPost(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.api, post);
   }
 
-  getPost(id: number): Observable<Post> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.get<Post>(url);
-  }
+  // updatePost(post: Post): Observable<Post> {
+  //   return this.http.put<Post>(`${this.api}/${post.id}`, post);
+  // }
 
-  addPost(post: Post): Observable<Post> {
-    return this.http.post<Post>(this.apiUrl, post);
-  }
-
-  updatePost(post: Post): Observable<any> {
-    return this.http.put(this.apiUrl, post);
-  }
-
-  deletePost(id: number): Observable<Post> {
-    const url = `${this.apiUrl}/${id}`;
-    return this.http.delete<Post>(url);
-  }
+  // getRelevantPosts(filter: Filter): Observable<Post[]> {
+  //   let params = new HttpParams();
+  //   if (filter.content) {
+  //     params = params.append('content', filter.content.toLowerCase());
+  //   }
+  //   if (filter.category) {
+  //     params = params.append('category', filter.category.toLowerCase());
+  //   }
+  //   if (filter.author) {
+  //     params = params.append('author', filter.author.toLowerCase());
+  //   }
+  //   return this.http.get<Post[]>(`${this.api}/filter`, { params });
+  // }
 }
