@@ -49,12 +49,12 @@ public class PostController {
     }
 
     // Get relevant posts based on a filter criteria (content, category, author)
-    @GetMapping("/filter")
-    public ResponseEntity<List<PostResponse>> getRelevantPosts(
-            @RequestParam("content") String content,
-            @RequestParam("category") String category,
-            @RequestParam("author") String author) {
-        List<PostResponse> relevantPosts = postService.getRelevantPosts(content, category, author);
-        return ResponseEntity.status(HttpStatus.OK).body(relevantPosts);
-    }
+//    @GetMapping("/filter")
+//    public ResponseEntity<List<PostResponse>> getRelevantPosts(
+//            @RequestParam("content") String content,
+//            @RequestParam("category") String category,
+//            @RequestParam("author") String author) {
+//        List<PostResponse> relevantPosts = postService.getRelevantPosts(content, category, author);
+//        return ResponseEntity.status(HttpStatus.OK).body(relevantPosts);
+//    }
 }

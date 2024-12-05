@@ -33,10 +33,9 @@ public class PostService implements IPostService {
                 .title(postRequest.getTitle())
                 .content(postRequest.getContent())
                 .author(postRequest.getAuthor())
-                .category(postRequest.getCategory())
-                .status(PostStatus.DRAFT)
+                .status((postRequest.getStatus() != null ? postRequest.getStatus() : PostStatus.DRAFT))
                 .createAt(postRequest.getCreateAt())
-                .updateAt(postRequest.getUpdateAt())
+                .updateAt(null)
                 .build();
         postRepository.save(post);
         log.info("Post added successfully: {}", post.getTitle());
@@ -57,7 +56,6 @@ public class PostService implements IPostService {
         post.setTitle(postRequest.getTitle());
         post.setContent(postRequest.getContent());
         post.setAuthor(postRequest.getAuthor());
-        post.setCategory(postRequest.getCategory());
         post.setUpdateAt(LocalDateTime.now());
         postRepository.save(post);
 
@@ -96,9 +94,9 @@ public class PostService implements IPostService {
     @Override
     public List<PostResponse> getAllPublishedPosts() {
         // Fetch all posts that have a status of PUBLISHED
-//        return postRepository.findByStatus(PostStatus.PUBLISHED).stream()
-//                .map(this::mapToResponse) // Map each post to a PostResponse DTO
-//                .toList();
+        // return postRepository.findByStatus(PostStatus.PUBLISHED).stream()
+        // .map(this::mapToResponse) // Map each post to a PostResponse DTO
+        // .toList();
 
         return postRepository.findAll().stream().map(this::mapToResponse).toList();
     }
@@ -110,23 +108,25 @@ public class PostService implements IPostService {
     // categorie
     // This method is used to filter posts based on content, category, or author. It
     // can be used by both editors and users.
-    @Override
-    public List<PostResponse> getRelevantPosts(String content, String category, String author) {
-        // Fetch posts where the content, category, or author matches the filter string
-
-        List<Post> posts;
-        if (content != null && !content.isEmpty()) {
-            posts = postRepository.findByContent(content);
-        } else if (category != null && !category.isEmpty()) {
-            posts = postRepository.findByCategory(category);
-        } else if (author != null && !author.isEmpty()) {
-            posts = postRepository.findByAuthor(author);
-        } else {
-            posts = postRepository.findAll();
-        }
-
-        return posts.stream().map(this::mapToResponse).toList();
-    }
+    // @Override
+    // public List<PostResponse> getRelevantPosts(String content, String category,
+    // String author) {
+    // // Fetch posts where the content, category, or author matches the filter
+    // string
+    //
+    // List<Post> posts;
+    // if (content != null && !content.isEmpty()) {
+    // posts = postRepository.findByContent(content);
+    // } else if (category != null && !category.isEmpty()) {
+    // posts = postRepository.findByCategory(category);
+    // } else if (author != null && !author.isEmpty()) {
+    // posts = postRepository.findByAuthor(author);
+    // } else {
+    // posts = postRepository.findAll();
+    // }
+    //
+    // return posts.stream().map(this::mapToResponse).toList();
+    // }
 
     private PostResponse mapToResponse(Post post) {
         // Helper method to convert a Post entity to a PostResponse DTO
@@ -135,10 +135,9 @@ public class PostService implements IPostService {
                 .title(post.getTitle())
                 .content(post.getContent())
                 .author(post.getAuthor())
-                .status(String.valueOf(post.getStatus()))
-                .category(post.getCategory())
-                .creationDate(post.getUpdateAt())
-                .lastUpdateDate(post.getCreateAt())
+                .status(post.getStatus())
+                .creationDate(post.getCreateAt())
+                .lastUpdateDate(post.getUpdateAt())
                 .build();
     }
 }

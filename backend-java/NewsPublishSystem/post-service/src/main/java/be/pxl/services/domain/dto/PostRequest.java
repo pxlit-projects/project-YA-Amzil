@@ -6,6 +6,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import be.pxl.services.domain.PostStatus;
+
 import java.time.LocalDateTime;
 
 @Data
@@ -16,10 +18,9 @@ public class PostRequest {
     private String title;
     private String content;
     private String author;
-    private String category;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime createAt;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime updateAt;
-    private String status;
+    private PostStatus status;
 }

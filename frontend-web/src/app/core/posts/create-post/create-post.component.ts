@@ -21,10 +21,9 @@ export class CreatePostComponent {
   postForm: FormGroup = this.fb.group({
     title: ['', [Validators.required]],
     content: ['', [Validators.required]],
-    category: ['', [Validators.required]],
     author: ['', [Validators.required]],
     createAt: [new Date().toISOString()],
-    updateAt: [new Date().toISOString()],
+    // updateAt: [new Date().toISOString()],
     status: 'DRAFT',
   });
 
@@ -32,8 +31,7 @@ export class CreatePostComponent {
     if (this.postForm.valid) {
       const post: Post = this.postForm.value as Post;
       this.postService.createPost(post).subscribe(() => {
-        // this.postForm.reset();
-        // this.postForm.patchValue({ status: 'DRAFT' });
+      this.postForm.reset();
         // this.router.navigate(['/posts']);
       });
     }

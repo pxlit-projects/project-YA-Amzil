@@ -30,10 +30,6 @@ public class Post {
     // @Size(min = 10, message = "Content must be at least 10 characters long")
     private String content;
 
-    // @NotNull(message = "Category cannot be null")
-    // @Size(min = 3, message = "Category must be at least 3 characters long")
-    private String category;
-
     //@NotNull(message = "Author cannot be null")
     private String author;
 
