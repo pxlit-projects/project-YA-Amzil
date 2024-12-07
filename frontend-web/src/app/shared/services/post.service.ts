@@ -11,13 +11,19 @@ import { Filter } from '../models/filter.model';
 export class PostService {
   private api: string = environment.apiUrl + 'post/api/post';
   private http: HttpClient = inject(HttpClient);
+  postUpdated$: any;
 
   createPost(post: Post): Observable<Post> {
     return this.http.post<Post>(this.api, post);
   }
 
-  // updatePost(post: Post): Observable<Post> {
-  //   return this.http.put<Post>(`${this.api}/${post.id}`, post);
+  getAllPublishedPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.api}/published`);
+  }
+
+
+  // updatePost(updatePost: Post): Observable<Post> {
+  //   return this.http.put<Post>(`${this.api}/${updatePost.id}`, updatePost);
   // }
 
   // getRelevantPosts(filter: Filter): Observable<Post[]> {

@@ -16,6 +16,7 @@ import { CommonModule } from '@angular/common';
 export class CreatePostComponent {
   postService: PostService = inject(PostService);
   router: Router = inject(Router);
+  route: ActivatedRoute = inject(ActivatedRoute);
   fb: FormBuilder = inject(FormBuilder);
 
   postForm: FormGroup = this.fb.group({
@@ -31,9 +32,13 @@ export class CreatePostComponent {
     if (this.postForm.valid) {
       const post: Post = this.postForm.value as Post;
       this.postService.createPost(post).subscribe(() => {
-      this.postForm.reset();
-      this.router.navigate(['/home']);
+        this.postForm.reset();
+        this.router.navigate(['/home']);
       });
     }
   }
+
+  // OnCancel() {
+  //   this.router.navigate(['/posts']);
+  // }
 }

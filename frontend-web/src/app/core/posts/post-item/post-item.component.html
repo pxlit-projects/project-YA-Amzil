@@ -1,0 +1,21 @@
+<div class="bg-gray-800 p-6 rounded-lg shadow-md">
+  <h4 class="text-xl font-bold mb-2">{{ post.title }}</h4>
+  <p class="text-gray-400 text-sm mb-4">
+    By <span class="font-semibold text-gray-300">{{ post.author }}</span> on
+    {{ post.createAt | date: 'dd/MM/yyyy' }}
+  </p>
+  <p class="post-details">
+      <strong>Updated at:</strong> {{ post.updateAt | date: 'dd/MM/yyyy' }}
+  </p>
+  <p class="text-gray-300">
+    {{ post.content | slice:0:100 }}
+  </p>
+  <div class="mt-4 flex justify-between">
+    <a href="#" class="text-sm text-gray-400 hover:text-gray-200 font-medium">Read More</a>
+    <button class="bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-bold py-1 px-4 rounded">
+      Comment
+    </button>
+    <!--Details-->
+    <!--Edit-->
+  </div>
+</div>

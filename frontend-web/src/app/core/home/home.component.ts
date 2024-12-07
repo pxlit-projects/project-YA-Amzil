@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { NavbarComponent } from "../navbar/navbar.component";
+import { PostListComponent } from "../posts/post-list/post-list.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [PostListComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

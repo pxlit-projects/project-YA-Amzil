@@ -61,7 +61,7 @@ public class PostService implements IPostService {
         post.setTitle(postRequest.getTitle());
         post.setContent(postRequest.getContent());
         post.setAuthor(postRequest.getAuthor());
-        post.setUpdateAt(LocalDateTime.now());
+        post.setUpdateAt(postRequest.getUpdateAt());
         postRepository.save(post);
 
         // Return the updated post as a response DTO
