@@ -55,6 +55,12 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.OK).body(publishedPosts);
     }
 
+    @GetMapping("/draft-pending")
+    public ResponseEntity<List<PostResponse>> getAllDraftAndPendingPosts() {
+        List<PostResponse>  draftAndPendingPosts = postService.getAllDraftAndPendingPosts();
+        return ResponseEntity.status(HttpStatus.OK).body(draftAndPendingPosts);
+    }
+
     // Get relevant posts based on a filter criteria (content, category, author)
 //    @GetMapping("/filter")
 //    public ResponseEntity<List<PostResponse>> getRelevantPosts(

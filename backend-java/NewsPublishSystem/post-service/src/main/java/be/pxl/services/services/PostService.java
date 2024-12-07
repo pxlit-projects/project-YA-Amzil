@@ -104,6 +104,14 @@ public class PostService implements IPostService {
         .toList();
     }
 
+    @Override
+    public List<PostResponse> getAllDraftAndPendingPosts() {
+        // Fetch all posts that have a status of DRAFT or PENDING
+        return postRepository.findByStatusIn(List.of(PostStatus.DRAFT, PostStatus.PENDING)).stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
     // US5: Als gebruiker wil ik een overzicht kunnen zien van alle relevante posts
     // This method retrieves posts that match a specific filter in the content,
     // category, or author fields.
