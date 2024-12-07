@@ -35,10 +35,15 @@ public class PostService implements IPostService {
                 .author(postRequest.getAuthor())
                 .status((postRequest.getStatus() != null ? postRequest.getStatus() : PostStatus.DRAFT))
                 .createAt(postRequest.getCreateAt())
-                .updateAt(null)
+                .updateAt(postRequest.getUpdateAt())
                 .build();
         postRepository.save(post);
         log.info("Post added successfully: {}", post.getTitle());
+    }
+
+    @Override
+    public List<PostResponse> getAllPosts() {
+        return postRepository.findAll().stream().map(this::mapToResponse).toList();
     }
 
     // US2: Als redacteur wil ik artikelen kunnen opslaan als concept, zodat ik er
@@ -94,11 +99,9 @@ public class PostService implements IPostService {
     @Override
     public List<PostResponse> getAllPublishedPosts() {
         // Fetch all posts that have a status of PUBLISHED
-        // return postRepository.findByStatus(PostStatus.PUBLISHED).stream()
-        // .map(this::mapToResponse) // Map each post to a PostResponse DTO
-        // .toList();
-
-        return postRepository.findAll().stream().map(this::mapToResponse).toList();
+        return postRepository.findByStatus(PostStatus.PUBLISHED).stream()
+        .map(this::mapToResponse) // Map each post to a PostResponse DTO
+        .toList();
     }
 
     // US5: Als gebruiker wil ik een overzicht kunnen zien van alle relevante posts
@@ -136,8 +139,8 @@ public class PostService implements IPostService {
                 .content(post.getContent())
                 .author(post.getAuthor())
                 .status(post.getStatus())
-                .creationDate(post.getCreateAt())
-                .lastUpdateDate(post.getUpdateAt())
+                .createAt(post.getCreateAt())
+                .updateAt(post.getUpdateAt())
                 .build();
     }
 }

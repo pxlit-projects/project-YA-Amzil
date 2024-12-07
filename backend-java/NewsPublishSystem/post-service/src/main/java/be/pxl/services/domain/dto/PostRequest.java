@@ -18,9 +18,7 @@ public class PostRequest {
     private String title;
     private String content;
     private String author;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime createAt;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private LocalDateTime updateAt;
     private PostStatus status;
 }

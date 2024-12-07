@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class CreatePostComponent {
   postService: PostService = inject(PostService);
-  // router: Router = inject(Router);
+  router: Router = inject(Router);
   fb: FormBuilder = inject(FormBuilder);
 
   postForm: FormGroup = this.fb.group({
@@ -23,8 +23,8 @@ export class CreatePostComponent {
     content: ['', [Validators.required]],
     author: ['', [Validators.required]],
     createAt: [new Date().toISOString()],
-    // updateAt: [new Date().toISOString()],
-    status: 'DRAFT',
+    updateAt: [new Date().toISOString()],
+    status: [''],
   });
 
   onSubmit(): void {
@@ -32,7 +32,7 @@ export class CreatePostComponent {
       const post: Post = this.postForm.value as Post;
       this.postService.createPost(post).subscribe(() => {
       this.postForm.reset();
-        // this.router.navigate(['/posts']);
+      this.router.navigate(['/home']);
       });
     }
   }

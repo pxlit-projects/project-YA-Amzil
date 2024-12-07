@@ -18,7 +18,7 @@ public class PostResponse {
     private String title;
     private String content;
     private String author;
-    private LocalDateTime creationDate;
-    private LocalDateTime lastUpdateDate;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
     private PostStatus status;
 }

@@ -9,6 +9,9 @@ public interface IPostService {
     // Method to create a post
     void createPost(PostRequest postRequest);
 
+    // Method to get all posts
+    List<PostResponse> getAllPosts();
+
     // Method to update a post
     PostResponse updatePost(Long postId, PostRequest postRequest);
 

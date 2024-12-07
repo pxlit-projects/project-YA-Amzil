@@ -5,23 +5,23 @@ export class Post {
   author: string;
   createAt: Date;
   updateAt: Date;
-  status: string;
+  status: 'DRAFT' | 'PUBLISHED' | 'PENDING';
 
   constructor(
     // id: number,
     title: string,
     content: string,
     author: string,
-    createAt: Date,
-    updateAt: Date,
-    status: string
+    createAt: string,
+    updateAt: string,
+    status: 'DRAFT' | 'PUBLISHED' | 'PENDING'
   ) {
     // this.id = id;
     this.title = title;
     this.content = content;
     this.author = author;
-    this.createAt = createAt;
-    this.updateAt = updateAt;
+    this.createAt = new Date(createAt);
+    this.updateAt = new Date(updateAt);
     this.status = status;
   }
 }

@@ -27,6 +27,13 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    // Get all posts
+    @GetMapping
+    public ResponseEntity<List<PostResponse>> getAllPosts() {
+        List<PostResponse> getAllPosts = postService.getAllPosts();
+        return ResponseEntity.status(HttpStatus.OK).body(getAllPosts);
+    }
+
     // Update an existing post
     @PutMapping("/{postId}")
     public ResponseEntity<PostResponse> updatePost(@PathVariable Long postId, @RequestBody PostRequest postRequest) {

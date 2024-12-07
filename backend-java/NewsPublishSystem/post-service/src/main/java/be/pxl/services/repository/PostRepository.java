@@ -9,7 +9,7 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-//    List<Post> findByStatus(PostStatus status);
+List<Post> findByStatus(PostStatus status);
 //    List<Post> findByContent(String content);
 //    List<Post> findByCategory(String category);
 //    List<Post> findByAuthor(String author);
