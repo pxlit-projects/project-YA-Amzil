@@ -20,41 +20,33 @@ import { CommonModule } from '@angular/common';
 export class EditPostComponent implements OnInit {
   postService: PostService = inject(PostService);
   post!: Post;
-  // router: Router = inject(Router);
+  router: Router = inject(Router);
+  route: ActivatedRoute = inject(ActivatedRoute);
   fb: FormBuilder = inject(FormBuilder);
-  postForm: FormGroup = this.fb.group({
-    // id: 0,
-    title: ['', [Validators.required]],
-    content: ['', [Validators.required]],
-    category: ['', [Validators.required]],
-    author: ['', [Validators.required]],
-    // updateAt: new Date(),
-  });
+  updateForm!: FormGroup;
 
   ngOnInit(): void {
     this.post = history.state['post'];
-    this.postForm.patchValue({
-      title: this.post.title,
-      content: this.post.content,
-      category: this.post.category,
-      author: this.post.author,
+    this.updateForm = this.fb.group({
+      title: [this.post.title, [Validators.required]],
+      content: [this.post.content, [Validators.required]],
+      author: [this.post.author, [Validators.required]],
+      status: [this.post.status],
+      updateAt: [new Date().toISOString()],
     });
   }
 
   onSubmit(): void {
-    if (this.postForm.valid) {
-      const post: Post = this.postForm.value as Post;
-      this.editPost(post);
+    if (this.updateForm.valid) {
+      const updatedPost: Post = { ...this.post, ...this.updateForm.value };
+      this.postService.updatePost(updatedPost).subscribe(() => {
+      this.router.navigate(['/home']);
+      });
     }
   }
 
-  editPost(post: Post) {
-    this.postService.updatePost(post).subscribe(() => {
-      // this.router.navigate(['/posts']);
-    });
-  }
-
-  // cancel(): void {
+  // OnCancel() {
   //   this.router.navigate(['/posts']);
   // }
 }
+

@@ -17,14 +17,13 @@ export class PostService {
     return this.http.post<Post>(this.api, post);
   }
 
+  updatePost(post: Post): Observable<Post> {
+    return this.http.put<Post>(`${this.api}/${post.id}`, post);
+  }
+
   getAllPublishedPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.api}/published`);
   }
-
-
-  // updatePost(updatePost: Post): Observable<Post> {
-  //   return this.http.put<Post>(`${this.api}/${updatePost.id}`, updatePost);
-  // }
 
   // getRelevantPosts(filter: Filter): Observable<Post[]> {
   //   let params = new HttpParams();
