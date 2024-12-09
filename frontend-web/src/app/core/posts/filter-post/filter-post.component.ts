@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Filter } from '../../../shared/models/filter.model';
-import { Post } from '../../../shared/models/post.model';
-import { PostService } from '../../../shared/services/post.service';
 
 @Component({
   selector: 'app-filter-post',
@@ -13,11 +11,8 @@ import { PostService } from '../../../shared/services/post.service';
 })
 export class FilterPostComponent {
   filter: Filter = { title: '', author: '', content: '', createAt: null };
-  // posts: Post[] = [];
 
   @Output() filterChanged = new EventEmitter<Filter>();
-
-  // constructor(private postService: PostService) {}
 
   onSubmit(form: any) {
     if (form.valid) {
@@ -27,9 +22,6 @@ export class FilterPostComponent {
 
       this.filter.createAt = form.value.createAt;
       this.filterChanged.emit(this.filter);
-      // this.postService.getRelevantPosts(this.filter).subscribe((posts) => {
-      //   this.posts = posts;
-      // });
     }
   }
 }

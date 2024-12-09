@@ -1,5 +1,12 @@
+<app-filter-post (filterChanged)="handleFilter($event)"></app-filter-post>
+
 <div>
-      @for (post of posts; track post.id) {
+      <!-- @for (post of posts; track post.id) {
+        <app-post-item [post]="post"></app-post-item>
+      } @empty {
+        <p class="empty-message">No published posts available.</p>
+      } -->
+      @for (post of filteredData; track post.id) {
         <app-post-item [post]="post"></app-post-item>
       } @empty {
         <p class="empty-message">No published posts available.</p>

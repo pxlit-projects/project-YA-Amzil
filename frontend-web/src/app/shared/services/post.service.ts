@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 import { Post } from '../models/post.model';
 import { environment } from '../../../environments/environment.development';
 import { Filter } from '../models/filter.model';
@@ -25,17 +25,41 @@ export class PostService {
     return this.http.get<Post[]>(`${this.api}/published`);
   }
 
-  // getRelevantPosts(filter: Filter): Observable<Post[]> {
-  //   let params = new HttpParams();
-  //   if (filter.content) {
-  //     params = params.append('content', filter.content.toLowerCase());
-  //   }
-  //   if (filter.category) {
-  //     params = params.append('category', filter.category.toLowerCase());
-  //   }
-  //   if (filter.author) {
-  //     params = params.append('author', filter.author.toLowerCase());
-  //   }
-  //   return this.http.get<Post[]>(`${this.api}/filter`, { params });
-  // }
+  filterPosts(filter: Filter): Observable<Post[]> {
+    return this.getAllPublishedPosts().pipe(
+      map((posts: Post[]) =>
+        posts.filter((post) => this.isPostMatchingFilter(post, filter))
+      )
+    );
+  }
+
+  private isPostMatchingFilter(post: Post, filter: Filter): boolean {
+    const matchesTitle = post.title
+      .toLowerCase()
+      .includes(filter.title.toLowerCase());
+    const matchesAuthor = post.author
+      .toLowerCase()
+      .includes(filter.author.toLowerCase());
+    const matchesContent = post.content
+      .toLowerCase()
+      .includes(filter.content.toLowerCase());
+
+    const filterCreatedAtDate = filter.createAt
+      ? this.normalizeDate(new Date(filter.createAt))
+      : null;
+    const postCreatedAtDate = this.normalizeDate(new Date(post.createAt));
+
+    const matchesCreatedAt =
+      filterCreatedAtDate && !isNaN(filterCreatedAtDate.getTime())
+        ? postCreatedAtDate.getTime() === filterCreatedAtDate.getTime()
+        : true;
+
+    return matchesTitle && matchesAuthor && matchesContent && matchesCreatedAt;
+  }
+
+  private normalizeDate(date: Date): Date {
+    if (isNaN(date.getTime())) return date;
+    date.setHours(0, 0, 0, 0);
+    return date;
+  }
 }
