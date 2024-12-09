@@ -25,8 +25,20 @@ export class PostService {
     return this.http.get<Post[]>(`${this.api}/published`);
   }
 
-  filterPosts(filter: Filter): Observable<Post[]> {
+  getAllDraftAndPendingPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.api}/draft-pending`);
+  }
+
+  filterPublishedPosts(filter: Filter): Observable<Post[]> {
     return this.getAllPublishedPosts().pipe(
+      map((posts: Post[]) =>
+        posts.filter((post) => this.isPostMatchingFilter(post, filter))
+      )
+    );
+  }
+
+  filterDraftAndPendingPosts(filter: Filter): Observable<Post[]> {
+    return this.getAllDraftAndPendingPosts().pipe(
       map((posts: Post[]) =>
         posts.filter((post) => this.isPostMatchingFilter(post, filter))
       )
@@ -63,3 +75,4 @@ export class PostService {
     return date;
   }
 }
+

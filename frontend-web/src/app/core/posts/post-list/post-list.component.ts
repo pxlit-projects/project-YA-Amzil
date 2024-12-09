@@ -23,10 +23,11 @@ export class PostListComponent implements OnInit {
   }
 
   handleFilter(filter: Filter) {
-    this.postService.filterPosts(filter).subscribe({
+    this.postService.filterPublishedPosts(filter).subscribe({
       next: (posts) => {
         this.filteredData = posts;
-        posts; console.log('Filtered Posts:', this.filteredData);
+        posts;
+        console.log('Filtered Posts:', this.filteredData);
       },
     });
   }
