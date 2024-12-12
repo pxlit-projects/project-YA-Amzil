@@ -1,58 +1,69 @@
-<div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8">
+<div
+  class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 max-h-[80vh] overflow-y-auto"
+>
   <h2 class="text-2xl font-bold text-gray-100 mb-6">Create Post</h2>
   <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
     <!-- Title -->
     <div class="mb-4">
-      <label for="title" class="block text-gray-300 text-sm font-bold mb-2">Title:</label>
+      <label for="title" class="block text-gray-300 text-sm font-bold mb-2"
+        >Title:</label
+      >
       <input
-        type="text"
         id="title"
+        type="text"
         formControlName="title"
         class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
       />
-        @if (postForm.get('title')?.touched && postForm.get('title')?.hasError('required')) {
-				<div class="text-red-500 text-sm mt-1">Title is required</div>
-			}
+      @if (postForm.get('title')?.touched && postForm.get('title')?.hasError('required')) {
+          <div class="text-red-500 text-sm mt-1">Title is required</div>
+      }
     </div>
 
     <!-- Content -->
     <div class="mb-4">
-      <label for="content" class="block text-gray-300 text-sm font-bold mb-2">Content:</label>
+      <label for="content" class="block text-gray-300 text-sm font-bold mb-2"
+        >Content:</label
+      >
       <textarea
         id="content"
         formControlName="content"
-        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
+        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500 h-32"
       ></textarea>
-       @if (postForm.get('content')?.touched && postForm.get('content')?.hasError('required')) {
-				<div class="text-red-500 text-sm mt-1">Content is required</div>
-			}
+      @if (postForm.get('content')?.touched && postForm.get('content')?.hasError('required')) {
+          <div class="text-red-500 text-sm mt-1">Content is required</div>
+      }
     </div>
 
     <!-- Author -->
     <div class="mb-4">
-      <label for="author" class="block text-gray-300 text-sm font-bold mb-2">Author:</label>
+      <label for="author" class="block text-gray-300 text-sm font-bold mb-2"
+        >Author:</label
+      >
       <input
-        type="text"
         id="author"
+        type="text"
         formControlName="author"
         class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
       />
-       @if (postForm.get('author')?.touched && postForm.get('author')?.hasError('required')) {
-				<div class="text-red-500 text-sm mt-1">Author is required</div>
-			}
+      @if (postForm.get('author')?.touched && postForm.get('author')?.hasError('required')) {
+          <div class="text-red-500 text-sm mt-1">Author is required</div>
+      }
     </div>
 
-     <div class="mb-4">
-      <label for="status" class="block text-gray-700 text-sm font-bold mb-2">Status:</label>
+    <div class="mb-4">
+      <label for="status" class="block text-gray-300 text-sm font-bold mb-2">Status:</label>
       <select
-        formControlName="status"
         id="status"
-        class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        formControlName="status"
+        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
       >
-        <option value="DRAFT">Draft</option>
-        <option value="PENDING">Pending</option>
-        <option value="PUBLISHED">Published</option>
+        <option value="DRAFT" class="text-center">Draft</option>
+        <option value="PENDING" class="text-center">Pending</option>
+        <option value="PUBLISHED" class="text-center">Published</option>
       </select>
+      @if (postForm.get('status')?.touched && postForm.get('status')?.hasError('required')) {
+          <div class="text-red-500 text-sm mt-1">Status is required</div>
+      }
     </div>
 
     <!-- Buttons -->
@@ -60,24 +71,20 @@
       <!-- Submit Button -->
       <button
         type="submit"
-        class="bg-gray-700 hover:bg-gray-600 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50"
+        class="bg-gray-900 hover:bg-gray-800 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-gray-500 disabled:opacity-50"
         [disabled]="!postForm.valid"
       >
         Submit
       </button>
 
       <!-- Cancel Button -->
-      <!-- <button
+      <button
         type="button"
-        (click)="cancel()"
-        class="bg-gray-600 hover:bg-gray-500 text-gray-300 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-gray-400"
+        (click)="OnCancel()"
+        class="bg-gray-900 hover:bg-gray-800 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-gray-500"
       >
         Cancel
-      </button> -->
-
-        <!-- <button type="button" (click)="cancel()" [ngClass]="{'bg-button-primary hover:bg-secondary': postForm.valid, 'bg-neutral-light': !postForm.valid}"
-				class="text-white font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-primary mr-4" [disabled]="!postForm.valid">Cancel
-		</button> -->
+      </button>
     </div>
   </form>
 </div>

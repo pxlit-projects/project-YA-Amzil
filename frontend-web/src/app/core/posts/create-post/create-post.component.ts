@@ -25,7 +25,7 @@ export class CreatePostComponent {
     author: ['', [Validators.required]],
     createAt: [new Date().toISOString()],
     updateAt: [new Date().toISOString()],
-    status: [''],
+    status: ['', [Validators.required]]
   });
 
   onSubmit(): void {
@@ -38,7 +38,7 @@ export class CreatePostComponent {
     }
   }
 
-  // OnCancel() {
-  //   this.router.navigate(['/posts']);
-  // }
+  OnCancel() {
+    this.router.navigate(['/home']);
+  }
 }
