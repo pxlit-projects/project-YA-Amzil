@@ -9,20 +9,15 @@ public interface IPostService {
     // Method to create a post
     void createPost(PostRequest postRequest);
 
+    // Method to update a post
+    PostResponse updatePost(Long postId, PostRequest postRequest);;
+
     // Method to get all posts
     List<PostResponse> getAllPosts();
-
-    // Method to update a post
-    PostResponse updatePost(Long postId, PostRequest postRequest);
-
-    // Method to publish a post
-    PostResponse publishPost(Long postId);
 
     // Method to get all published posts
     List<PostResponse> getAllPublishedPosts();
 
+    // Method to get all draft and pending posts
     List<PostResponse> getAllDraftAndPendingPosts();
-
-    // Method to get relevant posts
-    // List<PostResponse> getRelevantPosts(String content, String category, String author);
 }

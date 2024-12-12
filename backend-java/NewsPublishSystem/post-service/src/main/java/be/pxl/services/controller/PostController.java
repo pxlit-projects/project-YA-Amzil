@@ -27,47 +27,35 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    // Get all posts
-    @GetMapping
-    public ResponseEntity<List<PostResponse>> getAllPosts() {
-        List<PostResponse> getAllPosts = postService.getAllPosts();
-        return ResponseEntity.status(HttpStatus.OK).body(getAllPosts);
-    }
-
     // Update an existing post
     @PutMapping("/{postId}")
     public ResponseEntity<PostResponse> updatePost(@PathVariable Long postId, @RequestBody PostRequest postRequest) {
         PostResponse updatedPost = postService.updatePost(postId, postRequest);
+        log.info("Updating post with id: {}", postId);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedPost);
     }
 
-    // Publish a draft post
-    @PutMapping("/{postId}/publish")
-    public ResponseEntity<PostResponse> publishPost(@PathVariable Long postId) {
-        PostResponse publishedPost = postService.publishPost(postId);
-        return ResponseEntity.status(HttpStatus.ACCEPTED).body(publishedPost);
+    // Get all posts
+    @GetMapping
+    public ResponseEntity<List<PostResponse>> getAllPosts() {
+        List<PostResponse> getAllPosts = postService.getAllPosts();
+        log.info("Getting all posts");
+        return ResponseEntity.status(HttpStatus.OK).body(getAllPosts);
     }
 
     // Get all published posts
     @GetMapping("/published")
     public ResponseEntity<List<PostResponse>> getAllPublishedPosts() {
         List<PostResponse> publishedPosts = postService.getAllPublishedPosts();
+        log.info("Getting all published posts");
         return ResponseEntity.status(HttpStatus.OK).body(publishedPosts);
     }
 
+    // Get all draft and pending posts
     @GetMapping("/draft-pending")
     public ResponseEntity<List<PostResponse>> getAllDraftAndPendingPosts() {
         List<PostResponse>  draftAndPendingPosts = postService.getAllDraftAndPendingPosts();
+        log.info("Getting all draft and pending posts");
         return ResponseEntity.status(HttpStatus.OK).body(draftAndPendingPosts);
     }
-
-    // Get relevant posts based on a filter criteria (content, category, author)
-//    @GetMapping("/filter")
-//    public ResponseEntity<List<PostResponse>> getRelevantPosts(
-//            @RequestParam("content") String content,
-//            @RequestParam("category") String category,
-//            @RequestParam("author") String author) {
-//        List<PostResponse> relevantPosts = postService.getRelevantPosts(content, category, author);
-//        return ResponseEntity.status(HttpStatus.OK).body(relevantPosts);
-//    }
 }
