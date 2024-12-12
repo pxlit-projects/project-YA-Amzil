@@ -8,7 +8,6 @@ export class Post {
   status: 'DRAFT' | 'PUBLISHED' | 'PENDING';
 
   constructor(
-    // id: number,
     title: string,
     content: string,
     author: string,
@@ -16,7 +15,6 @@ export class Post {
     updateAt: string,
     status: 'DRAFT' | 'PUBLISHED' | 'PENDING'
   ) {
-    // this.id = id;
     this.title = title;
     this.content = content;
     this.author = author;
