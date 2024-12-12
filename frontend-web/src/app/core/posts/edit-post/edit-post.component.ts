@@ -31,7 +31,7 @@ export class EditPostComponent implements OnInit {
       title: [this.post.title, [Validators.required]],
       content: [this.post.content, [Validators.required]],
       author: [this.post.author, [Validators.required]],
-      status: [this.post.status],
+      status: [this.post.status, [Validators.required]],
       updateAt: [new Date().toISOString()],
     });
   }
@@ -40,13 +40,12 @@ export class EditPostComponent implements OnInit {
     if (this.updateForm.valid) {
       const updatedPost: Post = { ...this.post, ...this.updateForm.value };
       this.postService.updatePost(updatedPost).subscribe(() => {
-      this.router.navigate(['/home']);
+        this.router.navigate(['/home']);
       });
     }
   }
 
-  // OnCancel() {
-  //   this.router.navigate(['/posts']);
-  // }
+  OnCancel() {
+    this.router.navigate(['/home']);
+  }
 }
-
