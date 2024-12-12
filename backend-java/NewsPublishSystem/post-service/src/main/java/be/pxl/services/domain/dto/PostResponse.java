@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+import be.pxl.services.domain.PostStatus;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -16,8 +18,7 @@ public class PostResponse {
     private String title;
     private String content;
     private String author;
-    private String category;
-    private LocalDateTime creationDate;
-    private LocalDateTime lastUpdateDate;
-    private String status;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
+    private PostStatus status;
 }

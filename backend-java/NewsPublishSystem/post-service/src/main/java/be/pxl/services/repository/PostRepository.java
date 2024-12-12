@@ -9,8 +9,6 @@ import java.util.List;
 
 @Repository
 public interface PostRepository extends JpaRepository<Post, Long> {
-    List<Post> findByStatus(PostStatus status);
-    List<Post> findByAuthor(String author);
-    List<Post> findByCategory(String category);
-    List<Post> findByContentContainingOrCategoryOrAuthor(String content, String category, String author);
+ List<Post> findByStatus(PostStatus status);
+ List<Post> findByStatusIn(List<PostStatus> statuses);
 }

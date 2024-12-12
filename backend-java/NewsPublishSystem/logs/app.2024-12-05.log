@@ -1,0 +1,37 @@
+2024-12-05T13:46:20.483+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 11992 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-05T13:46:20.510+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-05T13:46:20.514+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T13:53:37.713+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 9004 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-05T13:53:37.715+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-05T13:53:37.717+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T13:53:44.275+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 8.581 seconds (process running for 9.991)
+2024-12-05T14:01:53.564+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Adding new post: test
+2024-12-05T14:01:53.676+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Post added successfully: test
+2024-12-05T14:01:53.676+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Creating new post
+2024-12-05T14:09:09.937+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 1708 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-05T14:09:09.939+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-05T14:09:09.939+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T14:09:17.012+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 8.789 seconds (process running for 10.016)
+2024-12-05T14:10:20.221+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Adding new post: test
+2024-12-05T14:10:20.330+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post added successfully: test
+2024-12-05T14:10:20.330+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
+2024-12-05T14:11:16.922+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Adding new post: test
+2024-12-05T14:11:16.954+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Post added successfully: test
+2024-12-05T14:11:16.954+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Creating new post
+2024-12-05T14:12:53.425+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 12200 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-05T14:12:53.427+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-05T14:12:53.427+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T14:13:00.108+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 8.488 seconds (process running for 9.708)
+2024-12-05T14:14:06.379+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Adding new post: test
+2024-12-05T14:14:06.542+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Post added successfully: test
+2024-12-05T14:14:06.543+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Creating new post
+2024-12-05T14:14:45.156+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Adding new post: test
+2024-12-05T14:14:45.189+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post added successfully: test
+2024-12-05T14:14:45.190+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
+2024-12-05T14:38:21.624+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 22176 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-05T14:38:21.625+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-05T14:38:21.626+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-05T14:38:29.305+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 9.571 seconds (process running for 10.786)
+2024-12-05T14:39:49.168+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Adding new post: test
+2024-12-05T14:39:49.291+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post added successfully: test
+2024-12-05T14:39:49.292+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post

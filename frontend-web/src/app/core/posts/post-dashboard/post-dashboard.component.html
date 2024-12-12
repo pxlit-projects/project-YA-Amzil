@@ -1,0 +1,16 @@
+<section class="py-12">
+  <div class="container mx-auto">
+    <app-filter-post (filterChanged)="handleFilter($event)"></app-filter-post>
+
+    <div class="flex flex-wrap justify-center gap-8 mt-5">
+      @for (post of filteredData; track post.id) {
+        <div class="flex justify-center items-center">
+          <app-post-item [post]="post"></app-post-item>
+        </div>
+      }
+      @empty {
+        <p class="empty-message text-center">No draft or pending posts available.</p>
+      }
+    </div>
+  </div>
+</section>

@@ -1,1 +1,44 @@
-<p>filter-post works!</p>
+<div class="container mx-auto">
+  <div class="flex justify-center items-center">
+    <form #filterForm="ngForm" (ngSubmit)="onSubmit(filterForm)" class="w-full max-w-5xl">
+      <div class="flex items-center space-x-4">
+        <input
+          type="text"
+          class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="Search by Title"
+          name="title"
+          [(ngModel)]="filter.title">
+
+        <input
+          type="text"
+          class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="Search by Author"
+          name="author"
+          [(ngModel)]="filter.author">
+
+        <input
+          type="text"
+          class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="Search by Content"
+          name="content"
+          [(ngModel)]="filter.content">
+
+        <input
+          type="date"
+          class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+          placeholder="Search by Date"
+          name="createAt"
+          [(ngModel)]="filter.createAt">
+
+        <button
+          type="submit"
+          class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Search</button>
+
+          <button
+          type="submit"
+          (click)="onClear()"
+          class="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg">Clear</button>
+      </div>
+    </form>
+  </div>
+</div>
