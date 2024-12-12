@@ -24,4 +24,10 @@ export class FilterPostComponent {
       this.filterChanged.emit(this.filter);
     }
   }
+
+  onClear() : void {
+    this.filter = { title: '', author: '', content: '', createAt: null };
+    this.filterChanged.emit(this.filter);
+  }
+
 }
