@@ -22,7 +22,7 @@ export class PostDashboardComponent {
   }
 
   handleFilter(filter: Filter) {
-    this.postService.filterPublishedPosts(filter).subscribe({
+    this.postService.filterDraftAndPendingPosts(filter).subscribe({
       next: (posts) => {
         this.filteredData = posts;
         posts;
@@ -34,8 +34,7 @@ export class PostDashboardComponent {
   getPosts() {
     this.postService.getAllDraftAndPendingPosts().subscribe({
       next: (posts) => {
-        // this.posts = posts; // --> Hier krijg mij lijst van posts te zien
-        this.filteredData = posts; // --> Hier krijg ik de gefilterde lijst te zien
+        this.filteredData = posts;
       },
     });
   }

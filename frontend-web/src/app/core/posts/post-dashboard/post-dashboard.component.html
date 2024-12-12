@@ -1,14 +1,16 @@
-<app-filter-post (filterChanged)="handleFilter($event)"></app-filter-post>
+<section class="py-12">
+  <div class="container mx-auto">
+    <app-filter-post (filterChanged)="handleFilter($event)"></app-filter-post>
 
-<div>
-      <!-- @for (post of posts; track post.id) {
-        <app-post-item [post]="post"></app-post-item>
-      } @empty {
-        <p class="empty-message">No published posts available.</p>
-      } -->
+    <div class="flex flex-wrap justify-center gap-8 mt-5">
       @for (post of filteredData; track post.id) {
-        <app-post-item [post]="post"></app-post-item>
-      } @empty {
-        <p class="empty-message">No draft and pendig posts available.</p>
+        <div class="flex justify-center items-center">
+          <app-post-item [post]="post"></app-post-item>
+        </div>
       }
-</div>
+      @empty {
+        <p class="empty-message text-center">No draft or pending posts available.</p>
+      }
+    </div>
+  </div>
+</section>

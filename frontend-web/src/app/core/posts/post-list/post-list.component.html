@@ -1,14 +1,9 @@
 <app-filter-post (filterChanged)="handleFilter($event)"></app-filter-post>
 
-<div>
-      <!-- @for (post of posts; track post.id) {
-        <app-post-item [post]="post"></app-post-item>
-      } @empty {
-        <p class="empty-message">No published posts available.</p>
-      } -->
-      @for (post of filteredData; track post.id) {
-        <app-post-item [post]="post"></app-post-item>
-      } @empty {
-        <p class="empty-message">No published posts available.</p>
-      }
+<div class="flex flex-wrap justify-center gap-8 mt-5">
+  @for (post of filteredData; track post.id) {
+    <app-post-item [post]="post" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4"></app-post-item>
+  } @empty {
+    <p class="empty-message text-center">No published posts available.</p>
+  }
 </div>

@@ -35,8 +35,7 @@ export class PostListComponent implements OnInit {
   getPosts() {
     this.postService.getAllPublishedPosts().subscribe({
       next: (posts) => {
-        // this.posts = posts; // --> Hier krijg mij lijst van posts te zien
-        this.filteredData = posts; // --> Hier krijg ik de gefilterde lijst te zien
+        this.filteredData = posts; 
       },
     });
   }

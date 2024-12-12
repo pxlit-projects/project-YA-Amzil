@@ -1,21 +1,34 @@
-<div class="bg-gray-800 p-6 rounded-lg shadow-md">
-  <h4 class="text-xl font-bold mb-2">{{ post.title }}</h4>
+<div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+  <h4 class="text-2xl font-semibold mb-3 text-white">{{ post.title }}</h4>
   <p class="text-gray-400 text-sm mb-4">
-    By <span class="font-semibold text-gray-300">{{ post.author }}</span> on
+    By <span class="font-semibold text-gray-200">{{ post.author }}</span> on
     {{ post.createAt | date: 'dd/MM/yyyy' }}
   </p>
-  <p class="post-details">
-    <strong>Updated at:</strong> {{ post.updateAt | date: 'dd/MM/yyyy' }}
+  <div class="mb-4">
+    <p class="text-gray-300">
+      <span class="font-semibold text-gray-200">Updated at:</span> {{ post.updateAt | date: 'dd/MM/yyyy' }}
+    </p>
+  </div>
+  <p class="text-gray-300 text-base mb-6">
+    {{ post.content | slice: 0 : 150 }}...
   </p>
-  <p class="text-gray-300">
-    {{ post.content | slice: 0 : 100 }}...
-  </p>
-  <div class="mt-4 flex justify-between">
-    <a href="#" class="text-sm text-gray-400 hover:text-gray-200 font-medium">Read More</a>
-    <button (click)="onEdit(post)" class="bg-gray-700 hover:bg-gray-600 text-gray-300 text-sm font-bold py-1 px-4 rounded">
-      Edit
+  <div class="mt-4 flex justify-between items-center">
+    <!--Readmore Button-->
+    <button class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+      Readmore
     </button>
-    <!--Details-->
-    <!--Comment-->
+    @if (role === 'editor') {
+    <div class="flex space-x-3 ml-4">
+      <!--Edit Button-->
+      <button (click)="onEdit(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+        Edit
+      </button>
+
+      <!--Comment Button-->
+      <button class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+        Comment
+      </button>
+    </div>
+  }
   </div>
 </div>
