@@ -1,5 +1,7 @@
 package be.pxl.services.services;
 
+import be.pxl.services.client.NotificationClient;
+import be.pxl.services.domain.NotificationRequest;
 import be.pxl.services.domain.Post;
 import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.dto.PostRequest;
@@ -18,6 +20,7 @@ import java.util.List;
 public class PostService implements IPostService {
 
     private final PostRepository postRepository;
+    private final NotificationClient notificationClient;
     private static final Logger log = LoggerFactory.getLogger(PostService.class);
 
     // US1
@@ -41,6 +44,12 @@ public class PostService implements IPostService {
                 .build();
         postRepository.save(post);
         log.info("Post added successfully: {}", post.getTitle());
+
+        NotificationRequest notificationRequest = NotificationRequest.builder()
+                .message("Post created")
+                .sender(post.getAuthor())
+                .build();
+        notificationClient.sendNotification(notificationRequest);
     }
 
     // US2 - US3
