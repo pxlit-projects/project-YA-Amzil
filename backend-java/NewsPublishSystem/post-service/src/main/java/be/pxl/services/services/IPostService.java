@@ -10,10 +10,16 @@ public interface IPostService {
     void createPost(PostRequest postRequest);
 
     // Method to update a post
-    PostResponse updatePost(Long postId, PostRequest postRequest);;
+    PostResponse updatePost(Long postId, PostRequest postRequest);
+
+    //Method to get one post
+    PostResponse getPost(Long postId);
 
     // Method to get all posts
     List<PostResponse> getAllPosts();
+
+    //Method to get all draft posts
+    List<PostResponse> getAllDraftPosts();
 
     // Method to get all published posts
     List<PostResponse> getAllPublishedPosts();

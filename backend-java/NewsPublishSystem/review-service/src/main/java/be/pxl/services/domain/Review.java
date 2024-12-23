@@ -19,25 +19,28 @@ public class Review {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Long postId; // References the Post being reviewed
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Long reviewerId; // ID of the reviewer (user)
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
+    // @Enumerated(EnumType.STRING)
+    // @Column(nullable = false)
     private ReviewStatus status; // Status of the review (PENDING, APPROVED, REJECTED)
 
-    @Column(length = 1000)
+    private String reviewer;
+
+    // @Column(length = 1000)
     private String comment; // Optional review comment
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
+    @Column(name = "reviewed_at")
     private LocalDateTime reviewedAt; // Timestamp of when the review was made
 
-    @PrePersist
-    @PreUpdate
-    protected void onPersistOrUpdate() {
-        this.reviewedAt = LocalDateTime.now();
-    }
+//    @PrePersist
+//    @PreUpdate
+//    protected void onPersistOrUpdate() {
+//        this.reviewedAt = LocalDateTime.now();
+//    }
 }

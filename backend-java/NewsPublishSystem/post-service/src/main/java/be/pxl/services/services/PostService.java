@@ -1,7 +1,7 @@
 package be.pxl.services.services;
 
-import be.pxl.services.client.NotificationClient;
-import be.pxl.services.domain.NotificationRequest;
+//import be.pxl.services.client.NotificationClient;
+//import be.pxl.services.domain.NotificationRequest;
 import be.pxl.services.domain.Post;
 import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.dto.PostRequest;
@@ -20,7 +20,7 @@ import java.util.List;
 public class PostService implements IPostService {
 
     private final PostRepository postRepository;
-    private final NotificationClient notificationClient;
+//    private final NotificationClient notificationClient;
     private static final Logger log = LoggerFactory.getLogger(PostService.class);
 
     // US1
@@ -45,11 +45,11 @@ public class PostService implements IPostService {
         postRepository.save(post);
         log.info("Post added successfully: {}", post.getTitle());
 
-        NotificationRequest notificationRequest = NotificationRequest.builder()
-                .message("Post created")
-                .sender(post.getAuthor())
-                .build();
-        notificationClient.sendNotification(notificationRequest);
+//        NotificationRequest notificationRequest = NotificationRequest.builder()
+//                .message("Post created")
+//                .sender(post.getAuthor())
+//                .build();
+//        notificationClient.sendNotification(notificationRequest);
     }
 
     // US2 - US3
@@ -70,9 +70,25 @@ public class PostService implements IPostService {
     }
 
     @Override
+    public PostResponse getPost(Long postId) {
+        log.info("Getting post with id: {}", postId);
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException("Post not found with id [" + postId + "]"));
+        return mapToResponse(post);
+    }
+
+    @Override
     public List<PostResponse> getAllPosts() {
         log.info("Getting all posts");
         return postRepository.findAll().stream().map(this::mapToResponse).toList();
+    }
+
+    @Override
+    public List<PostResponse> getAllDraftPosts() {
+        log.info("Getting all draft posts");
+        return postRepository.findByStatus(PostStatus.DRAFT).stream()
+                .map(this::mapToResponse)
+                .toList();
     }
 
     // US4

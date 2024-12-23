@@ -24,31 +24,49 @@ public class ReviewController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    // Endpoint to update the status of a review
-    @PutMapping("/{reviewId}")
-    public ResponseEntity<ReviewResponse> updateReviewStatus(@PathVariable Long reviewId, @RequestBody ReviewRequest reviewRequest) {
-        ReviewResponse updateReview = reviewService.updateReviewStatus(reviewId, reviewRequest);
-        return  ResponseEntity.status(HttpStatus.ACCEPTED).body(updateReview);
+    @PutMapping("/approve/{reviewId}")
+    public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long reviewId) {
+        ReviewResponse approvedReview = reviewService.approveReview(reviewId);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(approvedReview);
     }
 
-    // Endpoint to get all reviews for a specific post
-    @GetMapping("/post/{postId}")
-    public ResponseEntity<List<ReviewResponse>> getReviewsForPost(@PathVariable Long postId) {
-        List<ReviewResponse> reviewResponse = reviewService.getReviewsForPost(postId);
-        return ResponseEntity.status(HttpStatus.OK).body(reviewResponse);
+    @PutMapping("/reject/{reviewId}")
+    public ResponseEntity<ReviewResponse> rejectReview(@PathVariable Long reviewId, @RequestBody ReviewRequest reviewRequest) {
+        ReviewResponse rejectedReview = reviewService.rejectReview(reviewId, reviewRequest);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(rejectedReview);
     }
 
-    // Endpoint to get all reviews made by a specific reviewer
-    @GetMapping("/reviewer/{reviewerId}")
-    public ResponseEntity<List<ReviewResponse>> getReviewsByReviewer(@PathVariable Long reviewerId) {
-        List<ReviewResponse> reviewResponse = reviewService.getReviewsByReviewer(reviewerId);
-        return ResponseEntity.status(HttpStatus.OK).body(reviewResponse);
+    @GetMapping
+    public ResponseEntity<List<ReviewResponse>> getAllReviews() {
+        List<ReviewResponse> reviews = reviewService.getAllReviews();
+        return ResponseEntity.status(HttpStatus.OK).body(reviews);
     }
 
-    // Endpoint to get all reviews with a specific status (e.g., PENDING, APPROVED, REJECTED)
-    @GetMapping("/status/{status}")
-    public ResponseEntity<List<ReviewResponse>> getReviewsByStatus(@PathVariable String status) {
-        List<ReviewResponse> reviewResponses = reviewService.getReviewsByStatus(status);
-        return ResponseEntity.status(HttpStatus.OK).body(reviewResponses);
-    }
+//    // Endpoint to update the status of a review
+//    @PutMapping("/{reviewId}")
+//    public ResponseEntity<ReviewResponse> updateReviewStatus(@PathVariable Long reviewId, @RequestBody ReviewRequest reviewRequest) {
+//        ReviewResponse updateReview = reviewService.updateReviewStatus(reviewId, reviewRequest);
+//        return  ResponseEntity.status(HttpStatus.ACCEPTED).body(updateReview);
+//    }
+//
+//    // Endpoint to get all reviews for a specific post
+//    @GetMapping("/post/{postId}")
+//    public ResponseEntity<List<ReviewResponse>> getReviewsForPost(@PathVariable Long postId) {
+//        List<ReviewResponse> reviewResponse = reviewService.getReviewsForPost(postId);
+//        return ResponseEntity.status(HttpStatus.OK).body(reviewResponse);
+//    }
+//
+//    // Endpoint to get all reviews made by a specific reviewer
+//    @GetMapping("/reviewer/{reviewerId}")
+//    public ResponseEntity<List<ReviewResponse>> getReviewsByReviewer(@PathVariable Long reviewerId) {
+//        List<ReviewResponse> reviewResponse = reviewService.getReviewsByReviewer(reviewerId);
+//        return ResponseEntity.status(HttpStatus.OK).body(reviewResponse);
+//    }
+//
+//    // Endpoint to get all reviews with a specific status (e.g., PENDING, APPROVED, REJECTED)
+//    @GetMapping("/status/{status}")
+//    public ResponseEntity<List<ReviewResponse>> getReviewsByStatus(@PathVariable String status) {
+//        List<ReviewResponse> reviewResponses = reviewService.getReviewsByStatus(status);
+//        return ResponseEntity.status(HttpStatus.OK).body(reviewResponses);
+//    }
 }

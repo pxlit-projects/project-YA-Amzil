@@ -27,6 +27,14 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    // Get one post
+    @GetMapping("/{postId}")
+    public ResponseEntity<PostResponse> getPost(@PathVariable Long postId) {
+        PostResponse post = postService.getPost(postId);
+        log.info("Getting post with id: {}", postId);
+        return ResponseEntity.status(HttpStatus.OK).body(post);
+    }
+
     // Update an existing post
     @PutMapping("/{postId}")
     public ResponseEntity<PostResponse> updatePost(@PathVariable Long postId, @RequestBody PostRequest postRequest) {
@@ -41,6 +49,14 @@ public class PostController {
         List<PostResponse> getAllPosts = postService.getAllPosts();
         log.info("Getting all posts");
         return ResponseEntity.status(HttpStatus.OK).body(getAllPosts);
+    }
+
+    // Get all draft posts
+    @GetMapping("/draft")
+    public ResponseEntity<List<PostResponse>> getAllDraftPosts() {
+        List<PostResponse> draftPosts = postService.getAllDraftPosts();
+        log.info("Getting all draft posts");
+        return ResponseEntity.status(HttpStatus.OK).body(draftPosts);
     }
 
     // Get all published posts

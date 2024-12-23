@@ -1,5 +1,6 @@
 package be.pxl.services.domain.dto;
 
+import be.pxl.services.domain.ReviewStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,7 +15,8 @@ import java.time.LocalDateTime;
 public class ReviewRequest {
     private Long postId;
     private Long reviewerId;
-    private String status;
+    private String reviewer;
+    private ReviewStatus status;
     private String comment;
     private LocalDateTime reviewedAt;
 }
