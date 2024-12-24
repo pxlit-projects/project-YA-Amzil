@@ -25,7 +25,7 @@ public class PostService implements IPostService {
 
     // US1
     @Override
-    public void createPost(PostRequest postRequest) {
+    public Post createPost(PostRequest postRequest) {
         log.info("Adding new post: {}", postRequest.getTitle());
 
         // check if the title already exists
@@ -42,8 +42,8 @@ public class PostService implements IPostService {
                 .createAt(postRequest.getCreateAt())
                 .updateAt(postRequest.getUpdateAt())
                 .build();
-        postRepository.save(post);
-        log.info("Post added successfully: {}", post.getTitle());
+        return postRepository.save(post);
+//        log.info("Post added successfully: {}", post.getTitle());
 
 //        NotificationRequest notificationRequest = NotificationRequest.builder()
 //                .message("Post created")

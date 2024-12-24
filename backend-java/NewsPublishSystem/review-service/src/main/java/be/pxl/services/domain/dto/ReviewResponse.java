@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 public class ReviewResponse {
     private Long id;
     private Long postId;
-    private Long reviewerId;
     private String reviewer;
     private ReviewStatus status;
     private String comment;

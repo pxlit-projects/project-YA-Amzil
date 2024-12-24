@@ -14,7 +14,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class ReviewRequest {
     private Long postId;
-    private Long reviewerId;
     private String reviewer;
     private ReviewStatus status;
     private String comment;

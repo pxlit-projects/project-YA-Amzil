@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.*;
 @FeignClient(name = "post-service")
 public interface PostClient {
 
-    @PutMapping("/api/posts/{postId}")
+    @GetMapping("/api/post/{postId}")
+    PostRequest getPost(@PathVariable Long postId);
+
+    @PutMapping("/api/post/{postId}")
     void updatePost(@PathVariable Long postId, @RequestBody PostRequest postRequest);
 }
 

@@ -22,9 +22,6 @@ public class Review {
     // @Column(nullable = false)
     private Long postId; // References the Post being reviewed
 
-    // @Column(nullable = false)
-    private Long reviewerId; // ID of the reviewer (user)
-
     // @Enumerated(EnumType.STRING)
     // @Column(nullable = false)
     private ReviewStatus status; // Status of the review (PENDING, APPROVED, REJECTED)
