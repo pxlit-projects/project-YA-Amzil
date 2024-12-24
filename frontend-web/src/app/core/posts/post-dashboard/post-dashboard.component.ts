@@ -1,40 +1,73 @@
-import { Component, inject } from '@angular/core';
-import { PostItemComponent } from "../post-item/post-item.component";
+import { Component, inject, OnInit } from '@angular/core';
+import { PostItemComponent } from '../post-item/post-item.component';
 import { Post } from '../../../shared/models/post.model';
 import { PostService } from '../../../shared/services/post.service';
 import { Filter } from '../../../shared/models/filter.model';
-import { FilterPostComponent } from "../filter-post/filter-post.component";
+import { FilterPostComponent } from '../filter-post/filter-post.component';
 
 @Component({
   selector: 'app-post-dashboard',
   standalone: true,
   imports: [PostItemComponent, FilterPostComponent],
   templateUrl: './post-dashboard.component.html',
-  styleUrl: './post-dashboard.component.css',
+  styleUrls: ['./post-dashboard.component.css'],
 })
-export class PostDashboardComponent {
+export class PostDashboardComponent implements OnInit {
   posts!: Post[];
-  filteredData!: Post[];
+  filteredDraftData: Post[] = [];
+  filteredPendingData: Post[] = [];
+
   postService: PostService = inject(PostService);
 
   ngOnInit(): void {
-    this.getPosts();
+    this.getDraftPosts();
+    this.getPendingPosts();
   }
 
-  handleFilter(filter: Filter) {
-    this.postService.filterDraftAndPendingPosts(filter).subscribe({
+  getDraftPosts() {
+    this.postService.getAllDraftPosts().subscribe({
       next: (posts) => {
-        this.filteredData = posts;
-        posts;
-        console.log('Filtered Posts:', this.filteredData);
+        this.filteredDraftData = posts;
+      },
+      error: (err) => {
+        console.error('Error fetching draft posts:', err);
+        this.filteredDraftData = [];
       },
     });
   }
 
-  getPosts() {
-    this.postService.getAllDraftAndPendingPosts().subscribe({
+  getPendingPosts() {
+    this.postService.getAllPendingPosts().subscribe({
       next: (posts) => {
-        this.filteredData = posts;
+        this.filteredPendingData = posts;
+      },
+      error: (err) => {
+        console.error('Error fetching pending posts:', err);
+        this.filteredPendingData = [];
+      },
+    });
+  }
+
+  handleFilterDraft(filter: Filter) {
+    this.postService.filterDraftPosts(filter).subscribe({
+      next: (posts) => {
+        this.filteredDraftData = posts;
+        console.log('Filtered Draft Posts:', this.filteredDraftData);
+      },
+      error: (err) => {
+        console.error('Error filtering draft posts:', err);
+      },
+    });
+  }
+
+  handleFilterPending(filter: Filter) {
+    this.postService.filterPendingPosts(filter).subscribe({
+      next: (posts) => {
+        this.filteredPendingData = posts;
+        console.log('Filtered Pending Posts:', this.filteredPendingData);
+      },
+      error: (err) => {
+        console.error('Error filtering pending posts:', err);
       },
     });
   }

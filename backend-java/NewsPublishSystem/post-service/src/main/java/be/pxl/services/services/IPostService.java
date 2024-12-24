@@ -22,6 +22,9 @@ public interface IPostService {
     //Method to get all draft posts
     List<PostResponse> getAllDraftPosts();
 
+    // Method to get all pending posts
+    List<PostResponse> getAllPendingPosts();
+
     // Method to get all published posts
     List<PostResponse> getAllPublishedPosts();
 

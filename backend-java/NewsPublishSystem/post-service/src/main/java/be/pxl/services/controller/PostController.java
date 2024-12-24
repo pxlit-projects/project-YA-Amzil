@@ -73,6 +73,14 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.OK).body(draftPosts);
     }
 
+    // Get all pending posts
+    @GetMapping("/pending")
+    public ResponseEntity<List<PostResponse>> getAllPendingPosts() {
+        List<PostResponse> pendingPosts = postService.getAllPendingPosts();
+        log.info("Getting all pending posts");
+        return ResponseEntity.status(HttpStatus.OK).body(pendingPosts);
+    }
+
     // Get all published posts
     @GetMapping("/published")
     public ResponseEntity<List<PostResponse>> getAllPublishedPosts() {

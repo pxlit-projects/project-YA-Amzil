@@ -91,6 +91,14 @@ public class PostService implements IPostService {
                 .toList();
     }
 
+    @Override
+    public List<PostResponse> getAllPendingPosts() {
+        log.info("Getting all pending posts");
+        return postRepository.findByStatus(PostStatus.PENDING).stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
     // US4
     @Override
     public List<PostResponse> getAllPublishedPosts() {

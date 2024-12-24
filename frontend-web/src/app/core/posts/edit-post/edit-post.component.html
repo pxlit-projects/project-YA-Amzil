@@ -51,7 +51,6 @@
       >
         <option value="DRAFT" class="text-center">Draft</option>
         <option value="PENDING" class="text-center">Pending</option>
-        <option value="PUBLISHED" class="text-center">Published</option>
       </select>
       @if (updateForm.get('status')?.touched && updateForm.get('status')?.hasError('required')) {
           <div class="text-red-500 text-sm mt-1">Status is required</div>

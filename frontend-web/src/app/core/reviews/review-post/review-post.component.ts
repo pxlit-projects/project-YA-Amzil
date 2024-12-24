@@ -54,6 +54,6 @@ export class ReviewPostComponent implements OnInit {
   }
 
   OnCancel(): void {
-    this.router.navigate(['/home']);
+    this.router.navigate(['/dashboard']);
   }
 }

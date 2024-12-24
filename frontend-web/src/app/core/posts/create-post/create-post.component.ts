@@ -1,10 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { PostService } from '../../../shared/services/post.service';
 import { Post } from '../../../shared/models/post.model';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-create-post',
@@ -28,32 +32,29 @@ export class CreatePostComponent {
     status: ['', [Validators.required]],
   });
 
-  onSubmit(): void {
-    if (this.postForm.valid) {
-      const post: Post = this.postForm.value as Post;
-      this.postService.createPost(post).subscribe((createdPost: Post) => {
-        const postId = createdPost.id;
-        this.postForm.reset();
-        this.router.navigate(['/review-post', postId]); 
-      });
-    }
-  }
-
   // onSubmit(): void {
   //   if (this.postForm.valid) {
   //     const post: Post = this.postForm.value as Post;
-  //     this.postService.createPost(post).subscribe(() => {
+  //     this.postService.createPost(post).subscribe((createdPost: Post) => {
+  //       const postId = createdPost.id;
   //       this.postForm.reset();
-  //       console.log(post);
-  //       this.router.navigate(['/home']);
+  //       this.router.navigate(['/review-post', postId]);
   //     });
   //   }
   // }
+
+  onSubmit(): void {
+    if (this.postForm.valid) {
+      const post: Post = this.postForm.value as Post;
+      this.postService.createPost(post).subscribe(() => {
+        this.postForm.reset();
+        console.log(post);
+        this.router.navigate(['/dashboard']);
+      });
+    }
+  }
 
   OnCancel() {
     this.router.navigate(['/home']);
   }
 }
-
-
-

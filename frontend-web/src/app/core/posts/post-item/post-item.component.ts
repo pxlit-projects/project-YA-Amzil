@@ -21,4 +21,8 @@ export class PostItemComponent {
   onEdit(post: Post) {
     this.router.navigate(['/edit', post.id], { state: { post } });
   }
+
+  onReview(post: Post) {
+    this.router.navigate(['/review-post', post.id]);
+  }
 }
