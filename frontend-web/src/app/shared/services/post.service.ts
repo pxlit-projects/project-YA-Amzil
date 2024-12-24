@@ -21,6 +21,10 @@ export class PostService {
     return this.http.put<Post>(`${this.api}/${post.id}`, post);
   }
 
+  getPostById(postId: number): Observable<Post> {
+    return this.http.get<Post>(`${this.api}/${postId}`);
+  }
+
   getAllPublishedPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.api}/published`);
   }

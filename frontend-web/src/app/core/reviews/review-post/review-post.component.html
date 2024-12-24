@@ -1,0 +1,78 @@
+
+@if(post){
+  <div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 max-h-[80vh] overflow-y-auto"
+>
+  <h2 class="text-2xl font-bold text-gray-100 mb-6">Review Post</h2>
+
+  <div class="mb-4 border-b border-gray-700 pb-4">
+    <h3 class="text-xl font-bold text-gray-100">{{ post.title }}</h3>
+    <p class="text-gray-400">{{ post.content }}</p>
+    <p class="text-gray-500 text-sm">By {{ post.author }} on {{ post.createAt | date:'dd/MM/yyyy' }}</p>
+    <p class="text-gray-500 text-sm">State: {{ post.status }}</p>
+  </div>
+</div>
+}
+<div
+  class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 max-h-[80vh] overflow-y-auto"
+>
+  <h2 class="text-2xl font-bold text-gray-100 mb-6">Create Review</h2>
+  <form [formGroup]="reviewForm" (ngSubmit)="OnRejectPost()">
+    <!-- Reviewer -->
+    <div class="mb-4">
+      <label for="reviewer" class="block text-gray-300 text-sm font-bold mb-2"
+        >Reviewer:</label
+      >
+      <input
+        id="reviewer"
+        type="text"
+        formControlName="reviewer"
+        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
+      />
+      @if (reviewForm.get('reviewer')?.touched && reviewForm.get('reviewer')?.hasError('required')) {
+          <div class="text-red-500 text-sm mt-1">Reviewer is required</div>
+      }
+    </div>
+
+    <!-- Comment -->
+    <div class="mb-4">
+      <label for="comment" class="block text-gray-300 text-sm font-bold mb-2"
+        >Comment:</label
+      >
+      <textarea
+        id="comment"
+        formControlName="comment"
+        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500 h-32"
+      ></textarea>
+      @if (reviewForm.get('comment')?.touched && reviewForm.get('comment')?.hasError('required')) {
+          <div class="text-red-500 text-sm mt-1">Comment is required</div>
+      }
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex justify-between mt-6">
+      <button
+        type="button"
+        (click)="OnApprovePost()"
+        class="bg-green-600 hover:bg-green-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+
+        >
+        Approve
+      </button>
+      <button
+        type="submit"
+        class="bg-red-600 hover:bg-red-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+        [disabled]="!reviewForm.valid"
+
+        >
+        Reject
+      </button>
+      <button
+        type="button"
+        (click)="OnCancel()"
+        class="bg-gray-900 hover:bg-gray-800 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-gray-500"
+      >
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

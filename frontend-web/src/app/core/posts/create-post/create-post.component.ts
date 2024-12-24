@@ -25,20 +25,35 @@ export class CreatePostComponent {
     author: ['', [Validators.required]],
     createAt: [new Date().toISOString()],
     updateAt: [new Date().toISOString()],
-    status: ['', [Validators.required]]
+    status: ['', [Validators.required]],
   });
 
   onSubmit(): void {
     if (this.postForm.valid) {
       const post: Post = this.postForm.value as Post;
-      this.postService.createPost(post).subscribe(() => {
+      this.postService.createPost(post).subscribe((createdPost: Post) => {
+        const postId = createdPost.id;
         this.postForm.reset();
-        this.router.navigate(['/home']);
+        this.router.navigate(['/review-post', postId]); 
       });
     }
   }
+
+  // onSubmit(): void {
+  //   if (this.postForm.valid) {
+  //     const post: Post = this.postForm.value as Post;
+  //     this.postService.createPost(post).subscribe(() => {
+  //       this.postForm.reset();
+  //       console.log(post);
+  //       this.router.navigate(['/home']);
+  //     });
+  //   }
+  // }
 
   OnCancel() {
     this.router.navigate(['/home']);
   }
 }
+
+
+
