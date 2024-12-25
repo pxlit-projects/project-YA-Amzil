@@ -23,15 +23,35 @@ export class ReviewPostComponent implements OnInit {
   fb: FormBuilder = inject(FormBuilder);
 
   reviewForm: FormGroup = this.fb.group({
+    action: ['', [Validators.required]],
     reviewer: ['', [Validators.required]],
     comment: ['', [Validators.required]],
     reviewedAt: [new Date().toISOString()],
   });
 
+  // ngOnInit(): void {
+  //   const postId = this.route.snapshot.params['id'];
+  //   this.postService.getPostById(postId).subscribe((data: Post) => {
+  //     this.post = data;
+  //   });
+  // }
+
   ngOnInit(): void {
     const postId = this.route.snapshot.params['id'];
     this.postService.getPostById(postId).subscribe((data: Post) => {
       this.post = data;
+    });
+
+    this.reviewForm.get('action')?.valueChanges.subscribe((action) => {
+      if (action === 'reject') {
+        this.reviewForm.get('reviewer')?.setValidators([Validators.required]);
+        this.reviewForm.get('comment')?.setValidators([Validators.required]);
+      } else {
+        this.reviewForm.get('reviewer')?.clearValidators();
+        this.reviewForm.get('comment')?.clearValidators();
+      }
+      this.reviewForm.get('reviewer')?.updateValueAndValidity();
+      this.reviewForm.get('comment')?.updateValueAndValidity();
     });
   }
 
@@ -50,6 +70,15 @@ export class ReviewPostComponent implements OnInit {
       this.reviewService.rejectReview(review).subscribe(() => {
         this.router.navigate(['/home']);
       });
+    }
+  }
+
+  OnSubmit(): void {
+    const action = this.reviewForm.get('action')?.value;
+    if (action === 'approve') {
+      this.OnApprovePost();
+    } else if (action === 'reject') {
+      this.OnRejectPost();
     }
   }
 

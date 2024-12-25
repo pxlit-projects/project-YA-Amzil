@@ -1,69 +1,89 @@
-
-@if(post){
-  <div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 max-h-[80vh] overflow-y-auto"
->
+<div class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 max-h-[80vh] overflow-y-auto">
   <h2 class="text-2xl font-bold text-gray-100 mb-6">Review Post</h2>
 
-  <div class="mb-4 border-b border-gray-700 pb-4">
-    <h3 class="text-xl font-bold text-gray-100">{{ post.title }}</h3>
-    <p class="text-gray-400">{{ post.content }}</p>
-    <p class="text-gray-500 text-sm">By {{ post.author }} on {{ post.createAt | date:'dd/MM/yyyy' }}</p>
-    <p class="text-gray-500 text-sm">State: {{ post.status }}</p>
-  </div>
-</div>
-}
-<div
-  class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 max-h-[80vh] overflow-y-auto"
->
-  <h2 class="text-2xl font-bold text-gray-100 mb-6">Create Review</h2>
-  <form [formGroup]="reviewForm" (ngSubmit)="OnRejectPost()">
+  <form [formGroup]="reviewForm" (ngSubmit)="OnSubmit()">
+    <!-- Select Action -->
+    <div class="mb-6">
+      <label class="block text-gray-300 text-sm font-bold mb-2">Action:</label>
+      <div class="flex gap-4">
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            formControlName="action"
+            value="approve"
+            class="form-radio text-green-500 focus:ring-green-500"
+          />
+          <span class="ml-2 text-gray-200">Approve</span>
+        </label>
+        <label class="inline-flex items-center">
+          <input
+            type="radio"
+            formControlName="action"
+            value="reject"
+            class="form-radio text-red-500 focus:ring-red-500"
+          />
+          <span class="ml-2 text-gray-200">Reject</span>
+        </label>
+      </div>
+    </div>
+
     <!-- Reviewer -->
-    <div class="mb-4">
-      <label for="reviewer" class="block text-gray-300 text-sm font-bold mb-2"
-        >Reviewer:</label
-      >
+    <div
+      class="mb-4"
+      *ngIf="reviewForm.get('action')?.value === 'reject'"
+    >
+      <label for="reviewer" class="block text-gray-300 text-sm font-bold mb-2">
+        Reviewer:
+      </label>
       <input
         id="reviewer"
         type="text"
         formControlName="reviewer"
-        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
+        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-gray-500"
       />
-      @if (reviewForm.get('reviewer')?.touched && reviewForm.get('reviewer')?.hasError('required')) {
-          <div class="text-red-500 text-sm mt-1">Reviewer is required</div>
-      }
+      <div
+        *ngIf="reviewForm.get('reviewer')?.touched && reviewForm.get('reviewer')?.hasError('required')"
+        class="text-red-500 text-sm mt-1"
+      >
+        Reviewer is required
+      </div>
     </div>
 
     <!-- Comment -->
-    <div class="mb-4">
-      <label for="comment" class="block text-gray-300 text-sm font-bold mb-2"
-        >Comment:</label
-      >
+    <div
+      class="mb-4"
+      *ngIf="reviewForm.get('action')?.value === 'reject'"
+    >
+      <label for="comment" class="block text-gray-300 text-sm font-bold mb-2">
+        Comment:
+      </label>
       <textarea
         id="comment"
         formControlName="comment"
-        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500 h-32"
+        class="shadow appearance-none border border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:ring-2 focus:ring-gray-500 h-32"
       ></textarea>
-      @if (reviewForm.get('comment')?.touched && reviewForm.get('comment')?.hasError('required')) {
-          <div class="text-red-500 text-sm mt-1">Comment is required</div>
-      }
+      <div
+        *ngIf="reviewForm.get('comment')?.touched && reviewForm.get('comment')?.hasError('required')"
+        class="text-red-500 text-sm mt-1"
+      >
+        Comment is required
+      </div>
     </div>
 
     <!-- Buttons -->
     <div class="flex justify-between mt-6">
       <button
-        type="button"
-        (click)="OnApprovePost()"
+        type="submit"
         class="bg-green-600 hover:bg-green-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
-
-        >
+        [disabled]="reviewForm.get('action')?.value !== 'approve'"
+      >
         Approve
       </button>
       <button
         type="submit"
         class="bg-red-600 hover:bg-red-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
-        [disabled]="!reviewForm.valid"
-
-        >
+        [disabled]="reviewForm.get('action')?.value !== 'reject' || !reviewForm.valid"
+      >
         Reject
       </button>
       <button
