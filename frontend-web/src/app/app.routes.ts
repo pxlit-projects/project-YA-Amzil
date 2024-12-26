@@ -6,6 +6,7 @@ import { authGuard } from './auth.guard';
 import { EditPostComponent } from './core/posts/edit-post/edit-post.component';
 import { PostDashboardComponent } from './core/posts/post-dashboard/post-dashboard.component';
 import { ReviewPostComponent } from './core/reviews/review-post/review-post.component';
+import { ReviewListComponent } from './core/reviews/review-list/review-list.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -14,8 +15,8 @@ export const routes: Routes = [
   { path: 'create', component: CreatePostComponent, canActivate: [authGuard] },
   { path: 'dashboard', component: PostDashboardComponent, canActivate: [authGuard] },
   { path: 'edit/:id', component: EditPostComponent },
-  { path: 'review-post/:id', component: ReviewPostComponent }
-  // { path: 'reject-post/:id', component: RejectPostComponent }
+  { path: 'review-post/:id', component: ReviewPostComponent },
+  { path: 'review', component: ReviewListComponent}
 ];
 
 // export const routes: Routes = [

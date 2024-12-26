@@ -16,6 +16,15 @@ public interface IReviewService {
     //Method to get rejected reviews
     List<ReviewResponse> getRejectedReviews();
 
+    // Method to get approved reviews
+    List<ReviewResponse> getApprovedReviews();
+
+    // Method to publish a post
+    ReviewResponse publishPost(Long postId);
+
+    // Method to revise a post
+    ReviewResponse revisePost(Long postId);
+
     // Method to get all reviews
     List<ReviewResponse> getAllReviews();
 }

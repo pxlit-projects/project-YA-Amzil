@@ -36,14 +36,15 @@ public class ReviewService implements IReviewService {
 
         Review review = Review.builder()
                 .postId(postId)
+                .reviewer("Editor")
+                .comment("Approved")
                 .status(ReviewStatus.APPROVED)
                 .reviewedAt(LocalDateTime.now())
                 .build();
-
         reviewRepository.save(review);
 
-        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
-        reviewMessageProducer.sendMessage(reviewMessage);
+//        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
+//        reviewMessageProducer.sendMessage(reviewMessage);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .sender("Review Service")
@@ -76,8 +77,8 @@ public class ReviewService implements IReviewService {
 
         reviewRepository.save(review);
 
-        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.REJECTED);
-        reviewMessageProducer.sendMessage(reviewMessage);
+//        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.REJECTED);
+//        reviewMessageProducer.sendMessage(reviewMessage);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .sender("Review Service")
@@ -94,6 +95,41 @@ public class ReviewService implements IReviewService {
         return reviewRepository.findByStatus(ReviewStatus.REJECTED).stream()
                 .map(this::mapToResponse)
                 .toList();
+    }
+
+    @Override
+    public List<ReviewResponse> getApprovedReviews() {
+        return reviewRepository.findByStatus(ReviewStatus.APPROVED).stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
+    @Override
+    public ReviewResponse publishPost(Long postId) {
+        Review review = reviewRepository.findById(postId)
+                .orElseThrow(() -> new IllegalArgumentException("Review not found for post id [" + postId + "]"));
+
+        review.setStatus(ReviewStatus.PUBLISHED);
+        reviewRepository.save(review);
+
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        return mapToResponse(review);
+    }
+
+    @Override
+    public ReviewResponse revisePost(Long postId) {
+        Review review = reviewRepository.findById(postId)
+                .orElseThrow(() -> new IllegalArgumentException("Review not found for post id [" + postId + "]"));
+
+        review.setStatus(ReviewStatus.PENDING);
+        reviewRepository.save(review);
+
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PENDING);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        return mapToResponse(review);
     }
 
 

@@ -12,12 +12,27 @@ export class ReviewService {
   private http: HttpClient = inject(HttpClient);
 
   approveReview(postId: number): Observable<Review> {
-    return this.http.put<Review>(`${this.api}/approve/${postId}`, {});
+    return this.http.post<Review>(`${this.api}/approve/${postId}`, {});
   }
 
   rejectReview(review: Review): Observable<Review> {
-    return this.http.put<Review>(`${this.api}/reject/${review.postId}`, review);
+    return this.http.post<Review>(`${this.api}/reject/${review.postId}`, review);
+  }
+
+  getAllApprovedPosts(): Observable<Review[]> {
+    return this.http.get<Review[]>(`${this.api}/approved`);
+  }
+
+  getAllRejectedPosts(): Observable<Review[]> {
+    return this.http.get<Review[]>(`${this.api}/rejected`);
+  }
+
+  publishPost(postId: number): Observable<Review> {
+    return this.http.put<Review>(`${this.api}/publish/${postId}`, {});
+  }
+
+  revisePost(postId: number): Observable<Review> {
+    return this.http.put<Review>(`${this.api}/revise/${postId}`, {});
   }
 }
-
 
