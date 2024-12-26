@@ -9,9 +9,6 @@ public interface PostClient {
 
     @GetMapping("/api/post/{postId}")
     PostRequest getPost(@PathVariable Long postId);
-
-//    @PutMapping("/api/post/{postId}")
-//    void updatePost(@PathVariable Long postId, @RequestBody PostRequest postRequest);
 }
 
 

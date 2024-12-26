@@ -6,6 +6,8 @@ import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.Review;
 import be.pxl.services.domain.ReviewStatus;
 import be.pxl.services.domain.dto.*;
+import be.pxl.services.exceptions.PostNotFoundException;
+import be.pxl.services.exceptions.ReviewNotFoundException;
 import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
@@ -23,16 +25,14 @@ public class ReviewService implements IReviewService {
     private final ReviewMessageProducer reviewMessageProducer;
     private final NotificationClient notificationClient;
 
+    // US6 - US7
     @Override
     public ReviewResponse approveReview(Long postId) {
 
         PostRequest post = postClient.getPost(postId);
         if (post == null) {
-            throw new IllegalArgumentException("Post not found with id [" + postId + "]");
+            throw new PostNotFoundException("Post not found with id [" + postId + "]");
         }
-
-        // post.setStatus(PostStatus.PUBLISHED);
-        // postClient.updatePost(postId, post);
 
         Review review = Review.builder()
                 .postId(postId)
@@ -42,9 +42,6 @@ public class ReviewService implements IReviewService {
                 .reviewedAt(LocalDateTime.now())
                 .build();
         reviewRepository.save(review);
-
-//        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
-//        reviewMessageProducer.sendMessage(reviewMessage);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .sender("Review Service")
@@ -56,16 +53,14 @@ public class ReviewService implements IReviewService {
         return mapToResponse(review);
     }
 
+    // US6 - US7 - US8
     @Override
     public ReviewResponse rejectReview(Long postId, ReviewRequest reviewRequest) {
 
         PostRequest post = postClient.getPost(postId);
         if (post == null) {
-            throw new IllegalArgumentException("Post not found with id [" + postId + "]");
+            throw new PostNotFoundException("Post not found with id [" + postId + "]");
         }
-
-        // post.setStatus(PostStatus.REJECTED);
-        // postClient.updatePost(postId, post);
 
         Review review = Review.builder()
                 .postId(postId)
@@ -77,15 +72,46 @@ public class ReviewService implements IReviewService {
 
         reviewRepository.save(review);
 
-//        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.REJECTED);
-//        reviewMessageProducer.sendMessage(reviewMessage);
-
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .sender("Review Service")
                 .message("Post with id [" + postId + "] has been rejected")
                 .build();
 
         notificationClient.sendNotification(notificationRequest);
+
+        return mapToResponse(review);
+    }
+
+    // US7
+    @Override
+    public ReviewResponse publishPost(Long postId) {
+        Review review = reviewRepository.findById(postId)
+                .orElseThrow(() -> new ReviewNotFoundException("Review not found for post id [" + postId + "]"));
+
+        review.setReviewer("Editor");
+        review.setComment("Published");
+        review.setStatus(ReviewStatus.PUBLISHED);
+        reviewRepository.save(review);
+
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        return mapToResponse(review);
+    }
+
+    // US7
+    @Override
+    public ReviewResponse revisePost(Long postId) {
+        Review review = reviewRepository.findById(postId)
+                .orElseThrow(() -> new ReviewNotFoundException("Review not found for post id [" + postId + "]"));
+
+        review.setReviewer("Editor");
+        review.setComment("Revised");
+        review.setStatus(ReviewStatus.PENDING);
+        reviewRepository.save(review);
+
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PENDING);
+        reviewMessageProducer.sendMessage(reviewMessage);
 
         return mapToResponse(review);
     }
@@ -105,35 +131,6 @@ public class ReviewService implements IReviewService {
     }
 
     @Override
-    public ReviewResponse publishPost(Long postId) {
-        Review review = reviewRepository.findById(postId)
-                .orElseThrow(() -> new IllegalArgumentException("Review not found for post id [" + postId + "]"));
-
-        review.setStatus(ReviewStatus.PUBLISHED);
-        reviewRepository.save(review);
-
-        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
-        reviewMessageProducer.sendMessage(reviewMessage);
-
-        return mapToResponse(review);
-    }
-
-    @Override
-    public ReviewResponse revisePost(Long postId) {
-        Review review = reviewRepository.findById(postId)
-                .orElseThrow(() -> new IllegalArgumentException("Review not found for post id [" + postId + "]"));
-
-        review.setStatus(ReviewStatus.PENDING);
-        reviewRepository.save(review);
-
-        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PENDING);
-        reviewMessageProducer.sendMessage(reviewMessage);
-
-        return mapToResponse(review);
-    }
-
-
-    @Override
     public List<ReviewResponse> getAllReviews() {
         return reviewRepository.findAll().stream()
                 .map(this::mapToResponse)
@@ -141,7 +138,6 @@ public class ReviewService implements IReviewService {
     }
 
     private ReviewResponse mapToResponse(Review review) {
-        // Convert the Review entity to a ReviewResponse DTO
         return ReviewResponse.builder()
                 .id(review.getId())
                 .postId(review.getPostId())

@@ -1,6 +1,5 @@
 package be.pxl.services.domain.dto;
 
-// import be.pxl.services.domain.ReviewStatus;
 import be.pxl.services.domain.PostStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

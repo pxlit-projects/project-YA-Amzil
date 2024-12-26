@@ -29,13 +29,6 @@ export class ReviewPostComponent implements OnInit {
     reviewedAt: [new Date().toISOString()],
   });
 
-  // ngOnInit(): void {
-  //   const postId = this.route.snapshot.params['id'];
-  //   this.postService.getPostById(postId).subscribe((data: Post) => {
-  //     this.post = data;
-  //   });
-  // }
-
   ngOnInit(): void {
     const postId = this.route.snapshot.params['id'];
     this.postService.getPostById(postId).subscribe((data: Post) => {
@@ -58,7 +51,6 @@ export class ReviewPostComponent implements OnInit {
   OnApprovePost(): void {
     const postId = this.route.snapshot.params['id'];
     this.reviewService.approveReview(postId).subscribe(() => {
-      //this.router.navigate(['/home']);
       this.router.navigate(['/review']);
     });
   }
@@ -69,7 +61,6 @@ export class ReviewPostComponent implements OnInit {
       const review: Review = this.reviewForm.value as Review;
       review.postId = postId;
       this.reviewService.rejectReview(review).subscribe(() => {
-        //this.router.navigate(['/home']);
         this.router.navigate(['/review']);
       });
     }

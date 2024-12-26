@@ -32,23 +32,11 @@ export class CreatePostComponent {
     status: ['', [Validators.required]],
   });
 
-  // onSubmit(): void {
-  //   if (this.postForm.valid) {
-  //     const post: Post = this.postForm.value as Post;
-  //     this.postService.createPost(post).subscribe((createdPost: Post) => {
-  //       const postId = createdPost.id;
-  //       this.postForm.reset();
-  //       this.router.navigate(['/review-post', postId]);
-  //     });
-  //   }
-  // }
-
   onSubmit(): void {
     if (this.postForm.valid) {
       const post: Post = this.postForm.value as Post;
       this.postService.createPost(post).subscribe(() => {
         this.postForm.reset();
-        console.log(post);
         this.router.navigate(['/dashboard']);
       });
     }

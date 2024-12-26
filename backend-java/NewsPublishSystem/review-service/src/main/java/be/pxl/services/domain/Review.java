@@ -34,10 +34,4 @@ public class Review {
     // @Column(nullable = false)
     @Column(name = "reviewed_at")
     private LocalDateTime reviewedAt; // Timestamp of when the review was made
-
-//    @PrePersist
-//    @PreUpdate
-//    protected void onPersistOrUpdate() {
-//        this.reviewedAt = LocalDateTime.now();
-//    }
 }

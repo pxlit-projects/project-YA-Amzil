@@ -1,3 +1,4 @@
+import { PostService } from './../../../shared/services/post.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Review } from './../../../shared/models/review.model';
 import { Component, inject, Input } from '@angular/core';
@@ -22,7 +23,7 @@ export class ReviewItemComponent {
 
   OnPublish(postId: number): void {
     this.reviewService.publishPost(postId).subscribe(() => {
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/home']);
     });
   }
 
