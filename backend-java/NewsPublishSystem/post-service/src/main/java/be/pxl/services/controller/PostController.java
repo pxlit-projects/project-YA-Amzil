@@ -22,23 +22,10 @@ public class PostController {
     private static final Logger log = LoggerFactory.getLogger(PostController.class);
 
     @PostMapping
-    public ResponseEntity<PostResponse> createPost(@RequestBody PostRequest postRequest) {
-//        postService.createPost(postRequest);
-//        log.info("Creating new post");
-//        return ResponseEntity.status(HttpStatus.CREATED).build();
-
-        Post post = postService.createPost(postRequest);
-        PostResponse postResponse = PostResponse.builder()
-                .id(post.getId())
-                .title(post.getTitle())
-                .content(post.getContent())
-                .author(post.getAuthor())
-                .status(post.getStatus())
-                .createAt(post.getCreateAt())
-                .updateAt(post.getUpdateAt())
-                .build();
+    public ResponseEntity<Void> createPost(@RequestBody PostRequest postRequest) {
+        postService.createPost(postRequest);
         log.info("Creating new post");
-        return ResponseEntity.status(HttpStatus.CREATED).body(postResponse);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     // Get one post

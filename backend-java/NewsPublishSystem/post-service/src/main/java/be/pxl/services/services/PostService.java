@@ -20,36 +20,22 @@ import java.util.List;
 public class PostService implements IPostService {
 
     private final PostRepository postRepository;
-//    private final NotificationClient notificationClient;
     private static final Logger log = LoggerFactory.getLogger(PostService.class);
 
     // US1
     @Override
-    public Post createPost(PostRequest postRequest) {
-        log.info("Adding new post: {}", postRequest.getTitle());
-
-        // check if the title already exists
-//        if (postRepository.existsByTitle(postRequest.getTitle())) {
-//            log.error("Post with title [{}] already exists", postRequest.getTitle());
-//            throw new IllegalArgumentException("Post with title [" + postRequest.getTitle() + "] already exists");
-//        }
-
+    public void createPost(PostRequest postRequest) {
+        log.info("Creating new post");
         Post post = Post.builder()
                 .title(postRequest.getTitle())
                 .content(postRequest.getContent())
                 .author(postRequest.getAuthor())
-                .status((postRequest.getStatus() != null ? postRequest.getStatus() : PostStatus.DRAFT))
+                .status(postRequest.getStatus())
                 .createAt(postRequest.getCreateAt())
                 .updateAt(postRequest.getUpdateAt())
                 .build();
-        return postRepository.save(post);
-//        log.info("Post added successfully: {}", post.getTitle());
-
-//        NotificationRequest notificationRequest = NotificationRequest.builder()
-//                .message("Post created")
-//                .sender(post.getAuthor())
-//                .build();
-//        notificationClient.sendNotification(notificationRequest);
+        postRepository.save(post);
+        log.info("Post created successfully: {}", post.getTitle());
     }
 
     // US2 - US3
@@ -103,6 +89,7 @@ public class PostService implements IPostService {
                 .toList();
     }
 
+    // US4
     @Override
     public List<PostResponse> getAllPendingPosts() {
         log.info("Getting all pending posts");
@@ -120,7 +107,6 @@ public class PostService implements IPostService {
         .toList();
     }
 
-    // US4
     @Override
     public List<PostResponse> getAllDraftAndPendingPosts() {
         log.info("Getting all draft and pending posts");

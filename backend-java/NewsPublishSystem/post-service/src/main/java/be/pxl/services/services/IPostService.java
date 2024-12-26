@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface IPostService {
     // Method to create a post
-    Post createPost(PostRequest postRequest);
+    void createPost(PostRequest postRequest);
 
     // Method to update a post
     PostResponse updatePost(Long postId, PostRequest postRequest);
