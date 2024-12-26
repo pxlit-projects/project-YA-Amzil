@@ -17,12 +17,6 @@ public class ReviewController {
 
     private final IReviewService reviewService;
 
-    @PostMapping
-    public ResponseEntity<Void> createReview(@RequestBody ReviewRequest reviewRequest) {
-        reviewService.createReview(reviewRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
-
     @PutMapping("/approve/{postId}")
     public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long postId) {
         ReviewResponse approvedReview = reviewService.approveReview(postId);

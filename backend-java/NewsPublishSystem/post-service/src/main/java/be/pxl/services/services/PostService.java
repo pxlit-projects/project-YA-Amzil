@@ -70,6 +70,18 @@ public class PostService implements IPostService {
     }
 
     @Override
+    public PostResponse updatePostStatus(Long postId, PostStatus postStatus) {
+        log.info("Updating post status with id: {}", postId);
+        Post post = postRepository.findById(postId)
+                .orElseThrow(() -> new PostNotFoundException("Post not found with id [" + postId + "]"));
+
+        post.setStatus(postStatus);
+        postRepository.save(post);
+        log.info("Post status updated successfully: {}", post.getTitle());
+        return mapToResponse(post);
+    }
+
+    @Override
     public PostResponse getPost(Long postId) {
         log.info("Getting post with id: {}", postId);
         Post post = postRepository.findById(postId)

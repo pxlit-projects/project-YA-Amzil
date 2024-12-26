@@ -1,19 +1,14 @@
 package be.pxl.services.services;
 
-// import be.pxl.services.client.NotificationClient;
+import be.pxl.services.client.NotificationClient;
 import be.pxl.services.client.PostClient;
-// import be.pxl.services.domain.NotificationRequest;
-import be.pxl.services.domain.Post;
 import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.Review;
 import be.pxl.services.domain.ReviewStatus;
-import be.pxl.services.domain.dto.PostRequest;
-import be.pxl.services.domain.dto.ReviewRequest;
-import be.pxl.services.domain.dto.ReviewResponse;
-import be.pxl.services.exceptions.ReviewNotFoundException;
+import be.pxl.services.domain.dto.*;
+import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -25,22 +20,8 @@ public class ReviewService implements IReviewService {
 
     private final ReviewRepository reviewRepository;
     private final PostClient postClient;
-    // private final NotificationClient notificationClient;
-
-    @Override
-    public void createReview(ReviewRequest reviewRequest) {
-        // Create a new Review object using the data from ReviewRequest
-        Review review = Review.builder()
-                .postId(reviewRequest.getPostId()) // Refers to the article that is being reviewed
-                .status(ReviewStatus.PENDING) // Status of the review (PENDING, APPROVED, REJECTED)
-                .reviewer(reviewRequest.getReviewer()) // Name of the reviewer
-                .comment(reviewRequest.getComment()) // Comment by the reviewer, if any
-                .reviewedAt(LocalDateTime.now()) // Timestamp of review
-                .build();
-
-        // Save the review in the repository
-        reviewRepository.save(review);
-    }
+    private final ReviewMessageProducer reviewMessageProducer;
+    private final NotificationClient notificationClient;
 
     @Override
     public ReviewResponse approveReview(Long postId) {
@@ -50,20 +31,28 @@ public class ReviewService implements IReviewService {
             throw new IllegalArgumentException("Post not found with id [" + postId + "]");
         }
 
-        post.setStatus(PostStatus.PUBLISHED);
-        postClient.updatePost(postId, post);
+        // post.setStatus(PostStatus.PUBLISHED);
+        // postClient.updatePost(postId, post);
 
         Review review = Review.builder()
                 .postId(postId)
                 .status(ReviewStatus.APPROVED)
+                .reviewedAt(LocalDateTime.now())
                 .build();
 
         reviewRepository.save(review);
 
-        return ReviewResponse.builder()
-                .postId(postId)
-                .status(ReviewStatus.APPROVED)
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        NotificationRequest notificationRequest = NotificationRequest.builder()
+                .sender("Review Service")
+                .message("Post with id [" + postId + "] has been approved")
                 .build();
+
+        notificationClient.sendNotification(notificationRequest);
+
+        return mapToResponse(review);
     }
 
     @Override
@@ -74,8 +63,8 @@ public class ReviewService implements IReviewService {
             throw new IllegalArgumentException("Post not found with id [" + postId + "]");
         }
 
-        post.setStatus(PostStatus.REJECTED);
-        postClient.updatePost(postId, post);
+        // post.setStatus(PostStatus.REJECTED);
+        // postClient.updatePost(postId, post);
 
         Review review = Review.builder()
                 .postId(postId)
@@ -87,13 +76,24 @@ public class ReviewService implements IReviewService {
 
         reviewRepository.save(review);
 
-        return ReviewResponse.builder()
-                .postId(postId)
-                .reviewer(reviewRequest.getReviewer())
-                .status(ReviewStatus.REJECTED)
-                .comment(reviewRequest.getComment())
-                .reviewedAt(reviewRequest.getReviewedAt())
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.REJECTED);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        NotificationRequest notificationRequest = NotificationRequest.builder()
+                .sender("Review Service")
+                .message("Post with id [" + postId + "] has been rejected")
                 .build();
+
+        notificationClient.sendNotification(notificationRequest);
+
+        return mapToResponse(review);
+    }
+
+    @Override
+    public List<ReviewResponse> getRejectedReviews() {
+        return reviewRepository.findByStatus(ReviewStatus.REJECTED).stream()
+                .map(this::mapToResponse)
+                .toList();
     }
 
 
