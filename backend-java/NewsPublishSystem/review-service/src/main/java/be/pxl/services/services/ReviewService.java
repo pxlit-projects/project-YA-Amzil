@@ -1,10 +1,14 @@
 package be.pxl.services.services;
 
+import be.pxl.services.client.NotificationClient;
+import be.pxl.services.client.PostClient;
+import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.Review;
 import be.pxl.services.domain.ReviewStatus;
-import be.pxl.services.domain.dto.ReviewRequest;
-import be.pxl.services.domain.dto.ReviewResponse;
+import be.pxl.services.domain.dto.*;
+import be.pxl.services.exceptions.PostNotFoundException;
 import be.pxl.services.exceptions.ReviewNotFoundException;
+import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,89 +21,128 @@ import java.util.List;
 public class ReviewService implements IReviewService {
 
     private final ReviewRepository reviewRepository;
+    private final PostClient postClient;
+    private final ReviewMessageProducer reviewMessageProducer;
+    private final NotificationClient notificationClient;
 
-    // US7: Als hoofdredacteur wil ik ingediende artikelen kunnen bekijken en goedkeuren of afwijzen, zodat alleen goedgekeurde content wordt gepubliceerd.
-    // This method allows the main editor (hoofdredacteur) to view reviews (i.e., reviews for articles) and approve or reject them.
+    // US6 - US7
     @Override
-    public void createReview(ReviewRequest reviewRequest) {
-        // Create a new Review object using the data from ReviewRequest
-        Review review = Review.builder()
-                .postId(reviewRequest.getPostId()) // Refers to the article that is being reviewed
-                .reviewerId(reviewRequest.getReviewerId())
-                .status(ReviewStatus.valueOf(reviewRequest.getStatus().toUpperCase())) // Status (approved/rejected)
-                .comment(reviewRequest.getComment()) // Comment by the reviewer, if any
-                .reviewedAt(LocalDateTime.now()) // Timestamp of review
-                .build();
+    public ReviewResponse approveReview(Long postId) {
 
-        // Save the review in the repository
-        reviewRepository.save(review);
-    }
-
-    // US7: Allows the main editor to update the status (approve/reject) of the review and provide feedback
-    // US9: Als redacteur wil ik opmerkingen kunnen toevoegen bij afwijzing van een artikel, zodat de redacteur weet welke wijzigingen er nodig zijn.
-    // This method is used by the main editor to update the review's status (approve/reject) and add comments when rejected.
-    @Override
-    public ReviewResponse updateReviewStatus(Long reviewId, ReviewRequest reviewRequest) {
-        // Fetch the review by its ID
-        Review review = reviewRepository.findById(reviewId)
-                .orElseThrow(() -> new ReviewNotFoundException("Review not found with id [" + reviewId + "]"));
-
-        // Update the review's status and comment (if rejected)
-        review.setStatus(ReviewStatus.valueOf(reviewRequest.getStatus().toUpperCase()));
-
-        // If the review is rejected, the editor can provide a comment
-        if (ReviewStatus.REJECTED.equals(review.getStatus()) && reviewRequest.getComment() != null) {
-            review.setComment(reviewRequest.getComment());
+        PostRequest post = postClient.getPost(postId);
+        if (post == null) {
+            throw new PostNotFoundException("Post not found with id [" + postId + "]");
         }
 
-        // Update the timestamp when the review was processed
-        review.setReviewedAt(LocalDateTime.now());
-
-        // Save the updated review
+        Review review = Review.builder()
+                .postId(postId)
+                .reviewer("Editor")
+                .comment("Approved")
+                .status(ReviewStatus.APPROVED)
+                .reviewedAt(LocalDateTime.now())
+                .build();
         reviewRepository.save(review);
 
-        // Return the updated review as a response DTO
+        NotificationRequest notificationRequest = NotificationRequest.builder()
+                .sender("Review Service")
+                .message("Post with id [" + postId + "] has been approved")
+                .build();
+
+        notificationClient.sendNotification(notificationRequest);
+
         return mapToResponse(review);
     }
 
-    // US7: View all reviews related to a specific post (article)
+    // US6 - US7 - US8
     @Override
-    public List<ReviewResponse> getReviewsForPost(Long postId) {
-        // Fetch all reviews for a specific post
-        List<Review> reviews = reviewRepository.findByPostId(postId);
-        return reviews.stream()
-                .map(this::mapToResponse) // Map each review to a ReviewResponse DTO
-                .toList();
+    public ReviewResponse rejectReview(Long postId, ReviewRequest reviewRequest) {
+
+        PostRequest post = postClient.getPost(postId);
+        if (post == null) {
+            throw new PostNotFoundException("Post not found with id [" + postId + "]");
+        }
+
+        Review review = Review.builder()
+                .postId(postId)
+                .status(ReviewStatus.REJECTED)
+                .reviewer(reviewRequest.getReviewer())
+                .comment(reviewRequest.getComment())
+                .reviewedAt(reviewRequest.getReviewedAt())
+                .build();
+
+        reviewRepository.save(review);
+
+        NotificationRequest notificationRequest = NotificationRequest.builder()
+                .sender("Review Service")
+                .message("Post with id [" + postId + "] has been rejected")
+                .build();
+
+        notificationClient.sendNotification(notificationRequest);
+
+        return mapToResponse(review);
     }
 
-    // US8: Redacteur will be notified of the approval/rejection; This method retrieves reviews by the reviewer.
+    // US7
     @Override
-    public List<ReviewResponse> getReviewsByReviewer(Long reviewerId) {
-        // Fetch all reviews made by a specific reviewer (editor)
-        List<Review> reviews = reviewRepository.findByReviewerId(reviewerId);
-        return reviews.stream()
+    public ReviewResponse publishPost(Long postId) {
+        Review review = reviewRepository.findById(postId)
+                .orElseThrow(() -> new ReviewNotFoundException("Review not found for post id [" + postId + "]"));
+
+        review.setReviewer("Editor");
+        review.setComment("Published");
+        review.setStatus(ReviewStatus.PUBLISHED);
+        reviewRepository.save(review);
+
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        return mapToResponse(review);
+    }
+
+    // US7
+    @Override
+    public ReviewResponse revisePost(Long postId) {
+        Review review = reviewRepository.findById(postId)
+                .orElseThrow(() -> new ReviewNotFoundException("Review not found for post id [" + postId + "]"));
+
+        review.setReviewer("Editor");
+        review.setComment("Revised");
+        review.setStatus(ReviewStatus.PENDING);
+        reviewRepository.save(review);
+
+        ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PENDING);
+        reviewMessageProducer.sendMessage(reviewMessage);
+
+        return mapToResponse(review);
+    }
+
+    @Override
+    public List<ReviewResponse> getRejectedReviews() {
+        return reviewRepository.findByStatus(ReviewStatus.REJECTED).stream()
                 .map(this::mapToResponse)
                 .toList();
     }
 
-    // US7: View all reviews with a specific status (e.g., PENDING, APPROVED, REJECTED)
     @Override
-    public List<ReviewResponse> getReviewsByStatus(String status) {
-        // Fetch all reviews with a specific status (PENDING, APPROVED, REJECTED)
-        List<Review> reviews = reviewRepository.findByStatus(ReviewStatus.valueOf(status.toUpperCase()));
-        return reviews.stream()
+    public List<ReviewResponse> getApprovedReviews() {
+        return reviewRepository.findByStatus(ReviewStatus.APPROVED).stream()
                 .map(this::mapToResponse)
                 .toList();
     }
 
-    // Helper method to map a Review entity to a ReviewResponse DTO
+    @Override
+    public List<ReviewResponse> getAllReviews() {
+        return reviewRepository.findAll().stream()
+                .map(this::mapToResponse)
+                .toList();
+    }
+
     private ReviewResponse mapToResponse(Review review) {
-        // Convert the Review entity to a ReviewResponse DTO
         return ReviewResponse.builder()
                 .id(review.getId())
                 .postId(review.getPostId())
-                .reviewerId(review.getReviewerId())
-                .status(String.valueOf(review.getStatus())) // Converts the status to a string
+                .reviewer(review.getReviewer())
+                .status(review.getStatus())
                 .comment(review.getComment())
                 .reviewedAt(review.getReviewedAt())
                 .build();

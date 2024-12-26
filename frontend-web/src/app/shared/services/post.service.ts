@@ -21,12 +21,41 @@ export class PostService {
     return this.http.put<Post>(`${this.api}/${post.id}`, post);
   }
 
+  getPostById(postId: number): Observable<Post> {
+    return this.http.get<Post>(`${this.api}/${postId}`);
+  }
+
+  getAllDraftPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.api}/draft`);
+  }
+
+  getAllPendingPosts(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.api}/pending`);
+  }
+
   getAllPublishedPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.api}/published`);
   }
 
   getAllDraftAndPendingPosts(): Observable<Post[]> {
     return this.http.get<Post[]>(`${this.api}/draft-pending`);
+  }
+
+  filterDraftPosts(filter: Filter): Observable<Post[]> {
+    return this.getAllDraftPosts().pipe(
+      map((posts: Post[]) =>
+        posts.filter((post) => this.isPostMatchingFilter(post, filter))
+      )
+    );
+  }
+
+  filterPendingPosts(filter: Filter): Observable<Post[]> {
+    return this.getAllPendingPosts().pipe(
+      map((posts: Post[]) =>
+        posts.filter((post) => this.isPostMatchingFilter(post, filter))
+      )
+
+    );
   }
 
   filterPublishedPosts(filter: Filter): Observable<Post[]> {

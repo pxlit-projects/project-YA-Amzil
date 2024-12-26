@@ -40,7 +40,7 @@ export class EditPostComponent implements OnInit {
     if (this.updateForm.valid) {
       const updatedPost: Post = { ...this.post, ...this.updateForm.value };
       this.postService.updatePost(updatedPost).subscribe(() => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       });
     }
   }

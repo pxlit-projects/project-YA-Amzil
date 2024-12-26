@@ -1,10 +1,14 @@
 import { Component, inject } from '@angular/core';
 import { PostService } from '../../../shared/services/post.service';
 import { Post } from '../../../shared/models/post.model';
-import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
-
 
 @Component({
   selector: 'app-create-post',
@@ -25,7 +29,7 @@ export class CreatePostComponent {
     author: ['', [Validators.required]],
     createAt: [new Date().toISOString()],
     updateAt: [new Date().toISOString()],
-    status: ['', [Validators.required]]
+    status: ['', [Validators.required]],
   });
 
   onSubmit(): void {
@@ -33,7 +37,7 @@ export class CreatePostComponent {
       const post: Post = this.postForm.value as Post;
       this.postService.createPost(post).subscribe(() => {
         this.postForm.reset();
-        this.router.navigate(['/home']);
+        this.router.navigate(['/dashboard']);
       });
     }
   }

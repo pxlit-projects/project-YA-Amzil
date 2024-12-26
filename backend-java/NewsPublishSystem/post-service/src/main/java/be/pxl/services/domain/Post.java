@@ -42,7 +42,4 @@ public class Post {
     @Enumerated(EnumType.STRING)
     // @Column(nullable = false)
     private PostStatus status;
-
-    // private List<Review> reviews; @Transient
-    // private List<Comment> comments; @Transient
 }
