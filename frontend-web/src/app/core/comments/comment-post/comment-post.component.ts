@@ -4,6 +4,7 @@ import { CommentService } from '../../../shared/services/comment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Comment } from '../../../shared/models/comment.model';
 
 @Component({
   selector: 'app-comment-post',

@@ -8,6 +8,7 @@ import { PostDashboardComponent } from './core/posts/post-dashboard/post-dashboa
 import { ReviewPostComponent } from './core/reviews/review-post/review-post.component';
 import { ReviewListComponent } from './core/reviews/review-list/review-list.component';
 import { CommentPostComponent } from './core/comments/comment-post/comment-post.component';
+import { PostDetailComponent } from './core/posts/post-detail/post-detail.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -18,7 +19,8 @@ export const routes: Routes = [
   { path: 'edit/:id', component: EditPostComponent },
   { path: 'review-post/:id', component: ReviewPostComponent },
   { path: 'review', component: ReviewListComponent},
-  { path: 'comment-post/:id', component: CommentPostComponent}
+  { path: 'comment-post/:id', component: CommentPostComponent},
+  { path: 'read-post/:id', component: PostDetailComponent}
 ];
 
 // export const routes: Routes = [

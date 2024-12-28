@@ -29,4 +29,8 @@ export class PostItemComponent {
   onComment(post: Post) {
     this.router.navigate(['/comment-post', post.id]);
   }
+
+  onReadmore(post: Post) {
+    this.router.navigate(['/read-post', post.id]);
+  }
 }
