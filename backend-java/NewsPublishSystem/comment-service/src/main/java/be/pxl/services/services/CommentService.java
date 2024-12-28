@@ -21,15 +21,25 @@ public class CommentService implements ICommentService {
      * US10: Adds a new comment to a post, allowing users to share their opinions or ask questions.
      */
     @Override
-    public void createComment(Long postId, Long userId, CommentRequest commentRequest) {
+    public CommentResponse createComment(CommentRequest commentRequest) {
         Comment comment = Comment.builder()
-                .postId(postId)
-                .userId(userId)
+                .postId(commentRequest.getPostId())
+                .author(commentRequest.getAuthor())
                 .content(commentRequest.getContent())
-                .creationDate(LocalDateTime.now())
+                .createAt(LocalDateTime.now())
+                .updateAt(LocalDateTime.now())
                 .build();
 
         commentRepository.save(comment);
+
+        return mapToResponse(comment);
+    }
+
+    @Override
+    public List<CommentResponse> getAllComments() {
+        return commentRepository.findAll().stream()
+                .map(this::mapToResponse)
+                .toList();
     }
 
     /**
@@ -42,51 +52,50 @@ public class CommentService implements ICommentService {
                 .toList();
     }
 
-    /**
-     * US12: Edits a user's own comment, allowing them to correct or modify their contributions.
-     */
-    @Override
-    public CommentResponse editComment(Long commentId, Long userId, String newContent) {
-        Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
-
-        if (!comment.getUserId().equals(userId)) {
-            throw new IllegalArgumentException("User [" + userId + "] is not the author of the comment");
-        }
-
-        comment.setContent(newContent);
-        comment.setEditDate(LocalDateTime.now());
-        commentRepository.save(comment);
-
-        return mapToResponse(comment);
-    }
-
-    /**
-     * US12: Marks a user's own comment as deleted, so they can remove their contributions when needed.
-     */
-    @Override
-    public void deleteComment(Long commentId, Long userId) {
-        Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
-
-        // Ensure that only the owner of the comment can delete it
-        if (!comment.getUserId().equals(userId)) {
-            throw new IllegalArgumentException("User [" + userId + "] is not the author of the comment");
-        }
-
-        comment.setDeleted(true); // Mark the comment as deleted
-        commentRepository.save(comment);
-    }
+//    /**
+//     * US12: Edits a user's own comment, allowing them to correct or modify their contributions.
+//     */
+//    @Override
+//    public CommentResponse editComment(Long commentId, Long userId, String newContent) {
+//        Comment comment = commentRepository.findById(commentId)
+//                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
+//
+//        if (!comment.getUserId().equals(userId)) {
+//            throw new IllegalArgumentException("User [" + userId + "] is not the author of the comment");
+//        }
+//
+//        comment.setContent(newContent);
+//        comment.setEditDate(LocalDateTime.now());
+//        commentRepository.save(comment);
+//
+//        return mapToResponse(comment);
+//    }
+//
+//    /**
+//     * US12: Marks a user's own comment as deleted, so they can remove their contributions when needed.
+//     */
+//    @Override
+//    public void deleteComment(Long commentId, Long userId) {
+//        Comment comment = commentRepository.findById(commentId)
+//                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
+//
+//        // Ensure that only the owner of the comment can delete it
+//        if (!comment.getUserId().equals(userId)) {
+//            throw new IllegalArgumentException("User [" + userId + "] is not the author of the comment");
+//        }
+//
+//        comment.setDeleted(true); // Mark the comment as deleted
+//        commentRepository.save(comment);
+//    }
 
     private CommentResponse mapToResponse(Comment comment) {
         return CommentResponse.builder()
                 .id(comment.getId())
                 .postId(comment.getPostId())
-                .userId(comment.getUserId())
                 .content(comment.getContent())
-                .creationDate(comment.getCreationDate())
-                .editDate(comment.getEditDate())
-                .isDeleted(comment.isDeleted())
+                .author(comment.getAuthor())
+                .createAt(comment.getCreateAt())
+                .updateAt(comment.getUpdateAt())
                 .build();
     }
 }

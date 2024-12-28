@@ -21,9 +21,15 @@ public class CommentController {
      * US10: Endpoint to add a new comment.
      */
     @PostMapping
-    public ResponseEntity<Void> createComment(@RequestParam Long postId, @RequestParam Long userId, @RequestBody CommentRequest commentRequest) {
-        commentService.createComment(postId, userId, commentRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<CommentResponse> createComment(@RequestBody CommentRequest commentRequest) {
+        CommentResponse comment = commentService.createComment(commentRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(comment);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CommentResponse>> getAllComments() {
+        List<CommentResponse> comments = commentService.getAllComments();
+        return ResponseEntity.status(HttpStatus.OK).body(comments);
     }
 
     /**
@@ -34,22 +40,22 @@ public class CommentController {
         List<CommentResponse> comments = commentService.getCommentsForPost(postId);
         return ResponseEntity.status(HttpStatus.OK).body(comments);
     }
-
-    /**
-     * US12: Endpoint to edit a user's comment.
-     */
-    @PutMapping("/{commentId}")
-    public ResponseEntity<CommentResponse> editComment(@PathVariable Long commentId, @RequestParam Long userId, @RequestParam String newContent) {
-        CommentResponse updatedComment = commentService.editComment(commentId, userId, newContent);
-        return ResponseEntity.status(HttpStatus.OK).body(updatedComment);
-    }
-
-    /**
-     * US12: Endpoint to delete a user's comment.
-     */
-    @DeleteMapping("/{commentId}")
-    public ResponseEntity<Void> deleteComment(@PathVariable Long commentId, @RequestParam Long userId) {
-        commentService.deleteComment(commentId, userId);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
+//
+//    /**
+//     * US12: Endpoint to edit a user's comment.
+//     */
+//    @PutMapping("/{commentId}")
+//    public ResponseEntity<CommentResponse> editComment(@PathVariable Long commentId, @RequestParam Long userId, @RequestParam String newContent) {
+//        CommentResponse updatedComment = commentService.editComment(commentId, userId, newContent);
+//        return ResponseEntity.status(HttpStatus.OK).body(updatedComment);
+//    }
+//
+//    /**
+//     * US12: Endpoint to delete a user's comment.
+//     */
+//    @DeleteMapping("/{commentId}")
+//    public ResponseEntity<Void> deleteComment(@PathVariable Long commentId, @RequestParam Long userId) {
+//        commentService.deleteComment(commentId, userId);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//    }
 }
