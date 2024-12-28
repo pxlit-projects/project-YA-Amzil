@@ -15,11 +15,9 @@ public interface ICommentService {
     // Method to get all comments for a post
     List<CommentResponse> getCommentsForPost(Long postId);
 
+    // Method to edit a comment
+    CommentResponse updateComment(Long commentId, CommentRequest commentRequest);
 
-//
-//    // Method to edit a comment
-//    CommentResponse editComment(Long commentId, Long userId, String newContent);
-//
-//    // Method to delete a comment
-//    void deleteComment(Long commentId, Long userId);
+    // Method to delete a comment
+    boolean deleteComment(Long commentId);
 }

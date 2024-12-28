@@ -40,22 +40,22 @@ public class CommentController {
         List<CommentResponse> comments = commentService.getCommentsForPost(postId);
         return ResponseEntity.status(HttpStatus.OK).body(comments);
     }
-//
-//    /**
-//     * US12: Endpoint to edit a user's comment.
-//     */
-//    @PutMapping("/{commentId}")
-//    public ResponseEntity<CommentResponse> editComment(@PathVariable Long commentId, @RequestParam Long userId, @RequestParam String newContent) {
-//        CommentResponse updatedComment = commentService.editComment(commentId, userId, newContent);
-//        return ResponseEntity.status(HttpStatus.OK).body(updatedComment);
-//    }
-//
-//    /**
-//     * US12: Endpoint to delete a user's comment.
-//     */
-//    @DeleteMapping("/{commentId}")
-//    public ResponseEntity<Void> deleteComment(@PathVariable Long commentId, @RequestParam Long userId) {
-//        commentService.deleteComment(commentId, userId);
-//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-//    }
+
+    /**
+     * US12: Endpoint to edit a user's comment.
+     */
+    @PutMapping("/{commentId}")
+    public ResponseEntity<CommentResponse> updateComment(@PathVariable Long commentId, @RequestBody CommentRequest commentRequest) {
+        CommentResponse comment = commentService.updateComment(commentId, commentRequest);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(comment);
+    }
+
+    /**
+     * US12: Endpoint to delete a user's comment.
+     */
+    @DeleteMapping("/{commentId}")
+    public ResponseEntity<Void> deleteComment(@PathVariable Long commentId) {
+       boolean isDeleted = commentService.deleteComment(commentId);
+       return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }

@@ -26,8 +26,8 @@ public class CommentService implements ICommentService {
                 .postId(commentRequest.getPostId())
                 .author(commentRequest.getAuthor())
                 .content(commentRequest.getContent())
-                .createAt(LocalDateTime.now())
-                .updateAt(LocalDateTime.now())
+                .createAt(commentRequest.getCreateAt())
+                .updateAt(commentRequest.getUpdateAt())
                 .build();
 
         commentRepository.save(comment);
@@ -52,41 +52,34 @@ public class CommentService implements ICommentService {
                 .toList();
     }
 
-//    /**
-//     * US12: Edits a user's own comment, allowing them to correct or modify their contributions.
-//     */
-//    @Override
-//    public CommentResponse editComment(Long commentId, Long userId, String newContent) {
-//        Comment comment = commentRepository.findById(commentId)
-//                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
-//
-//        if (!comment.getUserId().equals(userId)) {
-//            throw new IllegalArgumentException("User [" + userId + "] is not the author of the comment");
-//        }
-//
-//        comment.setContent(newContent);
-//        comment.setEditDate(LocalDateTime.now());
-//        commentRepository.save(comment);
-//
-//        return mapToResponse(comment);
-//    }
-//
-//    /**
-//     * US12: Marks a user's own comment as deleted, so they can remove their contributions when needed.
-//     */
-//    @Override
-//    public void deleteComment(Long commentId, Long userId) {
-//        Comment comment = commentRepository.findById(commentId)
-//                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
-//
-//        // Ensure that only the owner of the comment can delete it
-//        if (!comment.getUserId().equals(userId)) {
-//            throw new IllegalArgumentException("User [" + userId + "] is not the author of the comment");
-//        }
-//
-//        comment.setDeleted(true); // Mark the comment as deleted
-//        commentRepository.save(comment);
-//    }
+    /**
+     * US12: Edits a user's own comment, allowing them to correct or modify their contributions.
+     */
+    @Override
+    public CommentResponse updateComment(Long commentId,  CommentRequest commentRequest) {
+        Comment comment = commentRepository.findById(commentId)
+                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
+
+
+        comment.setContent(commentRequest.getContent());
+        comment.setUpdateAt(LocalDateTime.now());
+        commentRepository.save(comment);
+
+        return mapToResponse(comment);
+    }
+
+    /**
+     * US12: Marks a user's own comment as deleted, so they can remove their contributions when needed.
+     */
+    @Override
+    public boolean deleteComment(Long commentId) {
+       return commentRepository.findById(commentId)
+                .map(comment -> {
+                    commentRepository.delete(comment);
+                    return true;
+                })
+                .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
+    }
 
     private CommentResponse mapToResponse(Comment comment) {
         return CommentResponse.builder()
