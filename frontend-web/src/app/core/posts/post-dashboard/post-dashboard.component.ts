@@ -4,18 +4,19 @@ import { Post } from '../../../shared/models/post.model';
 import { PostService } from '../../../shared/services/post.service';
 import { Filter } from '../../../shared/models/filter.model';
 import { FilterPostComponent } from '../filter-post/filter-post.component';
+import { PostItemDashboardComponent } from "../post-item-dashboard/post-item-dashboard.component";
 
 @Component({
   selector: 'app-post-dashboard',
   standalone: true,
-  imports: [PostItemComponent, FilterPostComponent],
+  imports: [FilterPostComponent, PostItemDashboardComponent],
   templateUrl: './post-dashboard.component.html',
   styleUrls: ['./post-dashboard.component.css'],
 })
 export class PostDashboardComponent implements OnInit {
   posts!: Post[];
-  filteredDraftData: Post[] = [];
-  filteredPendingData: Post[] = [];
+  filteredDraftData!: Post[];
+  filteredPendingData!: Post[];
 
   postService: PostService = inject(PostService);
 

@@ -45,7 +45,7 @@ export class EditPostComponent implements OnInit {
     }
   }
 
-  OnCancel() {
+  onCancel() {
     this.router.navigate(['/home']);
   }
 }

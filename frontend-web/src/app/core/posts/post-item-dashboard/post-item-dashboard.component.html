@@ -14,13 +14,14 @@
   </p>
   <p class="text-gray-300 text-sm mb-4">State: {{ post.status }}</p>
   <div class="mt-4 flex justify-between items-center">
-    <!--Readmore Button-->
-    <button (click)="onReadmore(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
-      Readmore
-    </button>
-  <!--Comment Button-->
-      <button (click)="onComment(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
-        Comment
+    <div class="flex space-x-3 ml-4">
+      <!--Edit Button-->
+      <button (click)="onEdit(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+        Edit
       </button>
-  </div>
+
+      <button (click)="onReview(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+        Review
+      </button>
+    </div>
 </div>

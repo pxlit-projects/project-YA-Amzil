@@ -11,7 +11,6 @@ import { Filter } from '../models/filter.model';
 export class PostService {
   private api: string = environment.apiUrl + 'post/api/post';
   private http: HttpClient = inject(HttpClient);
-  postUpdated$: any;
 
   createPost(post: Post): Observable<Post> {
     return this.http.post<Post>(this.api, post);
@@ -54,7 +53,6 @@ export class PostService {
       map((posts: Post[]) =>
         posts.filter((post) => this.isPostMatchingFilter(post, filter))
       )
-
     );
   }
 
