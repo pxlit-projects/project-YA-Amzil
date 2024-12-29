@@ -1,6 +1,5 @@
 package be.pxl.services.controller;
 
-import be.pxl.services.domain.Post;
 import be.pxl.services.domain.dto.PostRequest;
 import be.pxl.services.domain.dto.PostResponse;
 import be.pxl.services.services.IPostService;
@@ -21,6 +20,7 @@ public class PostController {
     private final IPostService postService;
     private static final Logger log = LoggerFactory.getLogger(PostController.class);
 
+    // Create a new post
     @PostMapping
     public ResponseEntity<Void> createPost(@RequestBody PostRequest postRequest) {
         postService.createPost(postRequest);
