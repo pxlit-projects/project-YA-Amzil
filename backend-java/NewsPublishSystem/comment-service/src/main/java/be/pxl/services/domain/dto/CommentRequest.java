@@ -13,9 +13,8 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class CommentRequest {
     private Long postId;
-    private Long userId;
+    private String author;
     private String content;
-    private LocalDateTime creationDate;
-    private LocalDateTime editDate;
-    private boolean isDeleted;
+    private LocalDateTime createAt;
+    private LocalDateTime updateAt;
 }

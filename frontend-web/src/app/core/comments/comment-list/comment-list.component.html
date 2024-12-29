@@ -1,0 +1,7 @@
+<div class="flex flex-wrap justify-center gap-8 mt-5">
+  @for (comment of commentData; track comment.id) {
+    <app-comment-item [comment]="comment" class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4"></app-comment-item>
+  } @empty {
+    <p class="empty-message text-center">No comments available.</p>
+  }
+</div>

@@ -15,7 +15,7 @@
   <p class="text-gray-300 text-sm mb-4">State: {{ post.status }}</p>
   <div class="mt-4 flex justify-between items-center">
     <!--Readmore Button-->
-    <button class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+    <button (click)="onReadmore(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
       Readmore
     </button>
   @if (role === 'editor') {
@@ -28,12 +28,11 @@
       <button (click)="onReview(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
         Review
       </button>
-
-      <!--Comment Button-->
-      <button class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
-        Comment
-      </button>
     </div>
   }
+  <!--Comment Button-->
+      <button (click)="onComment(post)"  class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+        Comment
+      </button>
   </div>
 </div>

@@ -21,9 +21,15 @@ public class CommentController {
      * US10: Endpoint to add a new comment.
      */
     @PostMapping
-    public ResponseEntity<Void> createComment(@RequestParam Long postId, @RequestParam Long userId, @RequestBody CommentRequest commentRequest) {
-        commentService.createComment(postId, userId, commentRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<CommentResponse> createComment(@RequestBody CommentRequest commentRequest) {
+        CommentResponse comment = commentService.createComment(commentRequest);
+        return ResponseEntity.status(HttpStatus.CREATED).body(comment);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<CommentResponse>> getAllComments() {
+        List<CommentResponse> comments = commentService.getAllComments();
+        return ResponseEntity.status(HttpStatus.OK).body(comments);
     }
 
     /**
@@ -39,17 +45,17 @@ public class CommentController {
      * US12: Endpoint to edit a user's comment.
      */
     @PutMapping("/{commentId}")
-    public ResponseEntity<CommentResponse> editComment(@PathVariable Long commentId, @RequestParam Long userId, @RequestParam String newContent) {
-        CommentResponse updatedComment = commentService.editComment(commentId, userId, newContent);
-        return ResponseEntity.status(HttpStatus.OK).body(updatedComment);
+    public ResponseEntity<CommentResponse> updateComment(@PathVariable Long commentId, @RequestBody CommentRequest commentRequest) {
+        CommentResponse comment = commentService.updateComment(commentId, commentRequest);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(comment);
     }
 
     /**
      * US12: Endpoint to delete a user's comment.
      */
     @DeleteMapping("/{commentId}")
-    public ResponseEntity<Void> deleteComment(@PathVariable Long commentId, @RequestParam Long userId) {
-        commentService.deleteComment(commentId, userId);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    public ResponseEntity<Void> deleteComment(@PathVariable Long commentId) {
+       boolean isDeleted = commentService.deleteComment(commentId);
+       return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

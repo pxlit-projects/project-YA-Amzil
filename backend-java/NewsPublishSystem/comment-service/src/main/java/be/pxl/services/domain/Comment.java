@@ -21,29 +21,18 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private Long postId;
 
-    @Column(nullable = false)
-    private Long userId;
+    // @Column(nullable = false)
+    private String author;
 
-    @Column(nullable = false, length = 1000)
+    // @Column(nullable = false, length = 1000)
     private String content;
 
-    @Column(nullable = false, updatable = false)
-    private LocalDateTime creationDate;
-
-    private LocalDateTime editDate;
-
-    @Column(nullable = false)
-    private boolean isDeleted = false;
-
-    @PrePersist
-    @PreUpdate
-    protected void onPersistOrUpdate() {
-        if (this.creationDate == null) {
-            this.creationDate = LocalDateTime.now(); // Set creationDate only if it's null (during persist)
-        }
-        this.editDate = LocalDateTime.now(); // Set or update lastUpdateDate every time the post is persisted or updated
-    }
+    //  @Column(nullable = false, updatable = false)
+    @Column(name = "create_at")
+    private LocalDateTime createAt;
+    @Column(name = "update_at")
+    private LocalDateTime updateAt;
 }
