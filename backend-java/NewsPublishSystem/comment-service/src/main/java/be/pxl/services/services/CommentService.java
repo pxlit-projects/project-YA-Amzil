@@ -62,7 +62,7 @@ public class CommentService implements ICommentService {
 
 
         comment.setContent(commentRequest.getContent());
-        comment.setUpdateAt(LocalDateTime.now());
+        comment.setUpdateAt(commentRequest.getUpdateAt());
         commentRepository.save(comment);
 
         return mapToResponse(comment);
