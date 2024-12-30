@@ -24,8 +24,8 @@ public class ReviewService implements IReviewService {
 
     private final ReviewRepository reviewRepository;
     private final PostClient postClient;
-    private final ReviewMessageProducer reviewMessageProducer;
     private final NotificationClient notificationClient;
+    private final ReviewMessageProducer reviewMessageProducer;
     private static final Logger log = LoggerFactory.getLogger(ReviewService.class);
 
     // US6 - US7
