@@ -11,6 +11,8 @@ import be.pxl.services.exceptions.ReviewNotFoundException;
 import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -24,13 +26,16 @@ public class ReviewService implements IReviewService {
     private final PostClient postClient;
     private final ReviewMessageProducer reviewMessageProducer;
     private final NotificationClient notificationClient;
+    private static final Logger log = LoggerFactory.getLogger(ReviewService.class);
 
     // US6 - US7
     @Override
     public ReviewResponse approveReview(Long postId) {
+        log.info("Approving review for post with id: {}", postId);
 
         PostRequest post = postClient.getPost(postId);
         if (post == null) {
+            log.error("Post not found with id: {}", postId);
             throw new PostNotFoundException("Post not found with id [" + postId + "]");
         }
 
@@ -42,6 +47,7 @@ public class ReviewService implements IReviewService {
                 .reviewedAt(LocalDateTime.now())
                 .build();
         reviewRepository.save(review);
+        log.info("Review approved successfully for post with id: {}", postId);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .sender("Review Service")
@@ -49,6 +55,7 @@ public class ReviewService implements IReviewService {
                 .build();
 
         notificationClient.sendNotification(notificationRequest);
+        log.info("Notification sent successfully for post with id: {}", postId);
 
         return mapToResponse(review);
     }
@@ -56,9 +63,11 @@ public class ReviewService implements IReviewService {
     // US6 - US7 - US8
     @Override
     public ReviewResponse rejectReview(Long postId, ReviewRequest reviewRequest) {
+        log.info("Rejecting review for post with id: {}", postId);
 
         PostRequest post = postClient.getPost(postId);
         if (post == null) {
+            log.error("Post not found with id: {}", postId);
             throw new PostNotFoundException("Post not found with id [" + postId + "]");
         }
 
@@ -71,6 +80,7 @@ public class ReviewService implements IReviewService {
                 .build();
 
         reviewRepository.save(review);
+        log.info("Review rejected successfully for post with id: {}", postId);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .sender("Review Service")
@@ -78,6 +88,7 @@ public class ReviewService implements IReviewService {
                 .build();
 
         notificationClient.sendNotification(notificationRequest);
+        log.info("Notification sent successfully for post with id: {}", postId);
 
         return mapToResponse(review);
     }
@@ -85,16 +96,23 @@ public class ReviewService implements IReviewService {
     // US7
     @Override
     public ReviewResponse publishPost(Long postId) {
+        log.info("Publishing post with id: {}", postId);
+
         Review review = reviewRepository.findById(postId)
-                .orElseThrow(() -> new ReviewNotFoundException("Review not found for post id [" + postId + "]"));
+                .orElseThrow(() -> {
+                    log.error("Review not found for post with id: {}", postId);
+                    return new ReviewNotFoundException("Review not found for post id [" + postId + "]");
+                });
 
         review.setReviewer("Editor");
         review.setComment("Published");
         review.setStatus(ReviewStatus.PUBLISHED);
         reviewRepository.save(review);
+        log.info("Post published successfully with id: {}", postId);
 
         ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PUBLISHED);
         reviewMessageProducer.sendMessage(reviewMessage);
+        log.info("Review message sent successfully for post with id: {}", postId);
 
         return mapToResponse(review);
     }
@@ -102,22 +120,30 @@ public class ReviewService implements IReviewService {
     // US7
     @Override
     public ReviewResponse revisePost(Long postId) {
+        log.info("Revising post with id: {}", postId);
+
         Review review = reviewRepository.findById(postId)
-                .orElseThrow(() -> new ReviewNotFoundException("Review not found for post id [" + postId + "]"));
+                .orElseThrow(() -> {
+                    log.error("Review not found for post with id: {}", postId);
+                    return new ReviewNotFoundException("Review not found for post id [" + postId + "]");
+                });
 
         review.setReviewer("Editor");
         review.setComment("Revised");
         review.setStatus(ReviewStatus.PENDING);
         reviewRepository.save(review);
+        log.info("Post revised successfully with id: {}", postId);
 
         ReviewMessage reviewMessage = new ReviewMessage(postId, PostStatus.PENDING);
         reviewMessageProducer.sendMessage(reviewMessage);
+        log.info("Review message sent successfully for post with id: {}", postId);
 
         return mapToResponse(review);
     }
 
     @Override
     public List<ReviewResponse> getRejectedReviews() {
+        log.info("Getting all rejected reviews");
         return reviewRepository.findByStatus(ReviewStatus.REJECTED).stream()
                 .map(this::mapToResponse)
                 .toList();
@@ -125,6 +151,7 @@ public class ReviewService implements IReviewService {
 
     @Override
     public List<ReviewResponse> getApprovedReviews() {
+        log.info("Getting all approved reviews");
         return reviewRepository.findByStatus(ReviewStatus.APPROVED).stream()
                 .map(this::mapToResponse)
                 .toList();
@@ -132,6 +159,7 @@ public class ReviewService implements IReviewService {
 
     @Override
     public List<ReviewResponse> getAllReviews() {
+        log.info("Getting all reviews");
         return reviewRepository.findAll().stream()
                 .map(this::mapToResponse)
                 .toList();
