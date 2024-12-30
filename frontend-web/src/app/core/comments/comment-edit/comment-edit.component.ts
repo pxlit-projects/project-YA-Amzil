@@ -8,12 +8,11 @@ import {
   Validators,
 } from '@angular/forms';
 import { Comment } from '../../../shared/models/comment.model';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-comment-edit',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './comment-edit.component.html',
   styleUrl: './comment-edit.component.css',
 })
@@ -40,12 +39,12 @@ export class CommentEditComponent implements OnInit {
         ...this.updateForm.value,
       };
       this.commentService.updateComment(updatedComment).subscribe(() => {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/read-post', this.comment.postId]);
       });
     }
   }
 
-  OnCancel() {
-    this.router.navigate(['/home']);
+  onCancel() {
+    this.router.navigate(['/read-post', this.comment.postId]);
   }
 }

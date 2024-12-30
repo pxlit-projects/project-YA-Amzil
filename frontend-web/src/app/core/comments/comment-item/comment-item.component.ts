@@ -27,7 +27,7 @@ export class CommentItemComponent {
   onDelete(comment: Comment) {
     if (comment.id !== undefined) {
       this.commentService.deleteComment(comment.id).subscribe(() => {
-        this.router.navigate(['/home']);
+        window.location.reload();
       });
     } else {
       console.error('Comment ID is undefined');

@@ -3,13 +3,12 @@ import { PostService } from '../../../shared/services/post.service';
 import { CommentService } from '../../../shared/services/comment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Comment } from '../../../shared/models/comment.model';
 
 @Component({
   selector: 'app-comment-post',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule],
   templateUrl: './comment-post.component.html',
   styleUrl: './comment-post.component.css',
 })
@@ -19,9 +18,10 @@ export class CommentPostComponent {
   router: Router = inject(Router);
   route: ActivatedRoute = inject(ActivatedRoute);
   fb: FormBuilder = inject(FormBuilder);
+  postId: number = this.route.snapshot.params['id'];
 
   commentForm: FormGroup = this.fb.group({
-    postId: [this.route.snapshot.params['id']],
+    postId: [this.postId],
     author: ['', [Validators.required]],
     content: ['', [Validators.required]],
     createAt: [new Date().toISOString()],
@@ -33,12 +33,12 @@ export class CommentPostComponent {
       const comment: Comment = this.commentForm.value as Comment;
       this.commentService.createComment(comment).subscribe(() => {
         this.commentForm.reset();
-        this.router.navigate(['/home']);
+        this.router.navigate(['read-post', this.postId]);
       });
     }
   }
 
-  OnCancel() {
-    this.router.navigate(['/home']);
+  onCancel() {
+    this.router.navigate(['read-post', this.postId]);
   }
 }

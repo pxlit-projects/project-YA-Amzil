@@ -6,9 +6,10 @@ import be.pxl.services.domain.dto.CommentResponse;
 import be.pxl.services.exceptions.CommentNotFoundException;
 import be.pxl.services.repository.CommentRepository;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -16,12 +17,12 @@ import java.util.List;
 public class CommentService implements ICommentService {
 
     private final CommentRepository commentRepository;
+    private static final Logger log = LoggerFactory.getLogger(CommentService.class);
 
-    /**
-     * US10: Adds a new comment to a post, allowing users to share their opinions or ask questions.
-     */
+    // US10
     @Override
-    public CommentResponse createComment(CommentRequest commentRequest) {
+    public void createComment(CommentRequest commentRequest) {
+        log.info("Creating new comment");
         Comment comment = Comment.builder()
                 .postId(commentRequest.getPostId())
                 .author(commentRequest.getAuthor())
@@ -29,34 +30,31 @@ public class CommentService implements ICommentService {
                 .createAt(commentRequest.getCreateAt())
                 .updateAt(commentRequest.getUpdateAt())
                 .build();
-
         commentRepository.save(comment);
-
-        return mapToResponse(comment);
+        log.info("Comment created successfully: {}", comment.getContent());
     }
 
     @Override
     public List<CommentResponse> getAllComments() {
+        log.info("Getting all comments");
         return commentRepository.findAll().stream()
                 .map(this::mapToResponse)
                 .toList();
     }
 
-    /**
-     * US11: Retrieves all comments for a specific post, so users can gain insight into the opinions or questions of others.
-     */
+    // US11
     @Override
     public List<CommentResponse> getCommentsForPost(Long postId) {
+        log.info("Getting comments for post with id: {}", postId);
         return commentRepository.findByPostId(postId).stream()
                 .map(this::mapToResponse)
                 .toList();
     }
 
-    /**
-     * US12: Edits a user's own comment, allowing them to correct or modify their contributions.
-     */
+    // US12
     @Override
-    public CommentResponse updateComment(Long commentId,  CommentRequest commentRequest) {
+    public CommentResponse updateComment(Long commentId, CommentRequest commentRequest) {
+        log.info("Updating comment with id: {}", commentId);
         Comment comment = commentRepository.findById(commentId)
                 .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
 
@@ -64,16 +62,15 @@ public class CommentService implements ICommentService {
         comment.setContent(commentRequest.getContent());
         comment.setUpdateAt(commentRequest.getUpdateAt());
         commentRepository.save(comment);
-
+        log.info("Comment updated successfully: {}", comment.getContent());
         return mapToResponse(comment);
     }
 
-    /**
-     * US12: Marks a user's own comment as deleted, so they can remove their contributions when needed.
-     */
+    // US12
     @Override
     public boolean deleteComment(Long commentId) {
-       return commentRepository.findById(commentId)
+        log.info("Deleting comment with id: {}", commentId);
+        return commentRepository.findById(commentId)
                 .map(comment -> {
                     commentRepository.delete(comment);
                     return true;
