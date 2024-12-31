@@ -1,12 +1,10 @@
 package be.pxl.services.services;
 
 import be.pxl.services.client.NotificationClient;
-import be.pxl.services.client.PostClient;
 import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.Review;
 import be.pxl.services.domain.ReviewStatus;
 import be.pxl.services.domain.dto.*;
-import be.pxl.services.exceptions.PostNotFoundException;
 import be.pxl.services.exceptions.ReviewNotFoundException;
 import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
@@ -23,7 +21,6 @@ import java.util.List;
 public class ReviewService implements IReviewService {
 
     private final ReviewRepository reviewRepository;
-    private final PostClient postClient;
     private final NotificationClient notificationClient;
     private final ReviewMessageProducer reviewMessageProducer;
     private static final Logger log = LoggerFactory.getLogger(ReviewService.class);
@@ -33,19 +30,16 @@ public class ReviewService implements IReviewService {
     public ReviewResponse approveReview(Long postId) {
         log.info("Approving review for post with id: {}", postId);
 
-        PostRequest post = postClient.getPost(postId);
-        if (post == null) {
-            log.error("Post not found with id: {}", postId);
-            throw new PostNotFoundException("Post not found with id [" + postId + "]");
+        Review review = reviewRepository.findByPostId(postId).orElse(new Review());
+        if (review.getId() == null) {
+            log.info("Review not found for post with id: {}, creating a new review", postId);
+            review.setPostId(postId);
         }
+        review.setReviewer("Editor");
+        review.setComment("Approved");
+        review.setStatus(ReviewStatus.APPROVED);
+        review.setReviewedAt(LocalDateTime.now());
 
-        Review review = Review.builder()
-                .postId(postId)
-                .reviewer("Editor")
-                .comment("Approved")
-                .status(ReviewStatus.APPROVED)
-                .reviewedAt(LocalDateTime.now())
-                .build();
         reviewRepository.save(review);
         log.info("Review approved successfully for post with id: {}", postId);
 
@@ -65,19 +59,16 @@ public class ReviewService implements IReviewService {
     public ReviewResponse rejectReview(Long postId, ReviewRequest reviewRequest) {
         log.info("Rejecting review for post with id: {}", postId);
 
-        PostRequest post = postClient.getPost(postId);
-        if (post == null) {
-            log.error("Post not found with id: {}", postId);
-            throw new PostNotFoundException("Post not found with id [" + postId + "]");
+        Review review = reviewRepository.findByPostId(postId).orElse(new Review());
+        if (review.getId() == null) {
+            log.info("Review not found for post with id: {}, creating a new review", postId);
+            review.setPostId(postId);
         }
 
-        Review review = Review.builder()
-                .postId(postId)
-                .status(ReviewStatus.REJECTED)
-                .reviewer(reviewRequest.getReviewer())
-                .comment(reviewRequest.getComment())
-                .reviewedAt(reviewRequest.getReviewedAt())
-                .build();
+        review.setReviewer(reviewRequest.getReviewer());
+        review.setComment(reviewRequest.getComment());
+        review.setStatus(ReviewStatus.REJECTED);
+        review.setReviewedAt(reviewRequest.getReviewedAt());
 
         reviewRepository.save(review);
         log.info("Review rejected successfully for post with id: {}", postId);

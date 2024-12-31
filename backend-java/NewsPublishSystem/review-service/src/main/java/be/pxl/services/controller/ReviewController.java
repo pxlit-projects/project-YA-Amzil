@@ -20,14 +20,14 @@ public class ReviewController {
     private final IReviewService reviewService;
     private static final Logger log = LoggerFactory.getLogger(ReviewController.class);
 
-    @PostMapping("/approve/{postId}")
+    @PutMapping("/approve/{postId}")
     public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long postId) {
         ReviewResponse approvedReview = reviewService.approveReview(postId);
         log.info("Approving review for post with id: {}", postId);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(approvedReview);
     }
 
-    @PostMapping("/reject/{postId}")
+    @PutMapping("/reject/{postId}")
     public ResponseEntity<ReviewResponse> rejectReview(@PathVariable Long postId, @RequestBody ReviewRequest reviewRequest) {
         ReviewResponse rejectedReview = reviewService.rejectReview(postId, reviewRequest);
         log.info("Rejecting review for post with id: {}", postId);
