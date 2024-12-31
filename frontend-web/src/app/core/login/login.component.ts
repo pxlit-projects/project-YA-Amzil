@@ -12,14 +12,15 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
+  role: string | null = null;
   selectedRole: string | null = null;
+  isLoggedIn: boolean = false;
   fb: FormBuilder = inject(FormBuilder);
 
-
   roleForm: FormGroup = this.fb.group({
-      role: ['', [Validators.required]],
+    name: ['', [Validators.required]],
+    role: ['', [Validators.required]],
   });
-
 
   constructor(private roleService: RoleService, private router: Router) {}
 
@@ -31,12 +32,29 @@ export class LoginComponent {
 
   onSubmit(event: Event): void {
     event.preventDefault();
-    if (this.selectedRole && this.selectedRole !== '') {
-      this.roleService.setRole(this.selectedRole);
-      console.log('Role submitted:', this.selectedRole);
+    if (this.roleForm.valid) {
+      const name = this.roleForm.get('name')?.value;
+      const role = this.roleForm.get('role')?.value;
+      this.roleService.setRole(role);
+      this.isLoggedIn = true;
+      this.role = role;
+      console.log('Name submitted:', name);
+      console.log('Role submitted:', role);
       this.router.navigate(['/home']);
     } else {
-      console.error('No role selected');
+      console.error('Form is not valid');
     }
   }
+  
+  // onSubmit(event: Event): void {
+  //   event.preventDefault();
+  //   if (this.selectedRole && this.selectedRole !== '') {
+  //     this.roleService.setRole(this.selectedRole);
+  //     console.log('Role submitted:', this.selectedRole);
+  //     this.router.navigate(['/home']);
+  //   } else {
+  //     console.error('No role selected');
+  //   }
+  // }
 }
+
