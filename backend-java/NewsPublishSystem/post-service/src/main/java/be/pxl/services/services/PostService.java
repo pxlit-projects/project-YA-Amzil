@@ -65,6 +65,15 @@ public class PostService implements IPostService {
         return mapToResponse(post);
     }
 
+//    @Override
+//    public boolean deletePost(Long postId) {
+//        log.info("Deleting post with id: {}", postId);
+//        return postRepository.findById(postId).map(post -> {
+//            postRepository.delete(post);
+//            return true;
+//        }).orElseThrow(() -> new PostNotFoundException("Post not found with id [" + postId + "]"));
+//    }
+
     @Override
     public PostResponse getPost(Long postId) {
         log.info("Getting post with id: {}", postId);
@@ -101,8 +110,8 @@ public class PostService implements IPostService {
     public List<PostResponse> getAllPublishedPosts() {
         log.info("Getting all published posts");
         return postRepository.findByStatus(PostStatus.PUBLISHED).stream()
-        .map(this::mapToResponse)
-        .toList();
+                .map(this::mapToResponse)
+                .toList();
     }
 
     @Override
