@@ -12,6 +12,7 @@ import { RoleService } from '../../shared/services/role.service';
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
   role: string | null = null;
+  currentUser: string | null = null;
 
   constructor(private roleService: RoleService, private router: Router) {}
 
@@ -19,6 +20,7 @@ export class NavbarComponent implements OnInit {
     this.roleService.role$.subscribe((role) => {
       this.role = role;
       this.isLoggedIn = !!role;
+      // this.currentUser = this.roleService.getCurrentUser();
     });
   }
 
@@ -26,6 +28,7 @@ export class NavbarComponent implements OnInit {
     this.roleService.setRole(null);
     this.isLoggedIn = false;
     this.role = null;
+    this.currentUser = null;
     this.router.navigate(['/login']);
   }
 }

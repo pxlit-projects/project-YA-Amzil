@@ -5,8 +5,14 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class RoleService {
-  private roleSubject = new BehaviorSubject<string | null>(localStorage.getItem('role'));
+  private roleSubject = new BehaviorSubject<string | null>(
+    localStorage.getItem('role')
+  );
   role$ = this.roleSubject.asObservable();
+  private currentUserSubject = new BehaviorSubject<string | null>(
+    localStorage.getItem('currentUser')
+  );
+  currentUser$ = this.currentUserSubject.asObservable();
 
   constructor() {}
 
@@ -23,4 +29,19 @@ export class RoleService {
   getRole(): string | null {
     return localStorage.getItem('role');
   }
+
+  setCurrentUser(user: string | null): void {
+    if (user) {
+      localStorage.setItem('currentUser', user);
+    } else {
+      localStorage.removeItem('currentUser');
+    }
+    this.currentUserSubject.next(user);
+    console.log('Current user is set to', user);
+  }
+
+  getCurrentUser(): string | null {
+    return localStorage.getItem('currentUser');
+  }
 }
+

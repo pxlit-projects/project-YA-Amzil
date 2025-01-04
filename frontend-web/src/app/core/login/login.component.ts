@@ -15,6 +15,7 @@ export class LoginComponent {
   role: string | null = null;
   selectedRole: string | null = null;
   isLoggedIn: boolean = false;
+  currentUser: string | null = null;
   fb: FormBuilder = inject(FormBuilder);
 
   roleForm: FormGroup = this.fb.group({
@@ -36,8 +37,10 @@ export class LoginComponent {
       const name = this.roleForm.get('name')?.value;
       const role = this.roleForm.get('role')?.value;
       this.roleService.setRole(role);
+      this.roleService.setCurrentUser(name);
       this.isLoggedIn = true;
       this.role = role;
+      this.currentUser = name;
       console.log('Name submitted:', name);
       console.log('Role submitted:', role);
       this.router.navigate(['/home']);
@@ -45,7 +48,7 @@ export class LoginComponent {
       console.error('Form is not valid');
     }
   }
-  
+
   // onSubmit(event: Event): void {
   //   event.preventDefault();
   //   if (this.selectedRole && this.selectedRole !== '') {

@@ -19,6 +19,7 @@ export class CommentItemComponent {
   roleService: RoleService = inject(RoleService);
   route: ActivatedRoute = inject(ActivatedRoute);
   role = this.roleService.getRole();
+  currentUser = this.roleService.getCurrentUser();
 
   onEdit(comment: Comment) {
       this.router.navigate(['/comment-edit', comment.id], { state: { comment } });
