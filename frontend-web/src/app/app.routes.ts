@@ -15,18 +15,13 @@ export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'create', component: CreatePostComponent, canActivate: [authGuard] },
+  { path: 'create-post', component: CreatePostComponent, canActivate: [authGuard] },
   { path: 'dashboard', component: PostDashboardComponent, canActivate: [authGuard] },
-  { path: 'edit/:id', component: EditPostComponent },
-  { path: 'review-post/:id', component: ReviewPostComponent },
-  { path: 'review', component: ReviewListComponent},
+  { path: 'post-edit/:id', component: EditPostComponent, canActivate: [authGuard] },
+  { path: 'review-post/:id', component: ReviewPostComponent, canActivate: [authGuard] },
+  { path: 'review', component: ReviewListComponent, canActivate: [authGuard] },
   { path: 'comment-post/:id', component: CommentPostComponent},
   { path: 'read-post/:id', component: PostDetailComponent},
   { path: 'comment-edit/:id', component: CommentEditComponent}
 ];
 
-// export const routes: Routes = [
-//   { path: 'home', component: HomeComponent},
-//   { path: '', redirectTo: 'home', pathMatch: 'full' },
-//   { path: 'create', component: CreatePostComponent },
-// ];

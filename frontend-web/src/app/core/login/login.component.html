@@ -4,7 +4,19 @@
   class="bg-gray-800 p-6 rounded-lg shadow-md max-w-md mx-auto text-gray-200 mt-8 relative z-20"
 >
   <form [formGroup]="roleForm" (submit)="onSubmit($event)">
-    <label for="role" class="block text-white text-lg mb-2"
+    <label for="name" class="block text-center text-white text-lg mb-2"
+      >Enter your name:</label
+    >
+    <input
+      id="name"
+      type="text"
+      formControlName="name"
+      class="shadow appearance-none border text-center border-gray-600 bg-gray-900 rounded w-full py-2 px-3 text-gray-200 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-gray-500"
+    />
+    @if (roleForm.get('name')?.touched && roleForm.get('name')?.hasError('required')) {
+        <div class="text-red-500 text-sm mt-1">Name is required</div>
+    }
+    <label for="role" class="block text-center text-white text-lg mb-2 mt-4"
       >Choose a role</label
     >
     <select
@@ -18,7 +30,7 @@
       <option value="editor" class="text-center">Editor</option>
     </select>
     @if (roleForm.get('role')?.touched && roleForm.get('role')?.hasError('required')) {
-          <div class="text-red-500 text-sm mt-1">Content is required</div>
+        <div class="text-red-500 text-sm mt-1">Content is required</div>
     }
     <button
       type="submit"

@@ -12,11 +12,11 @@ export class ReviewService {
   private http: HttpClient = inject(HttpClient);
 
   approveReview(postId: number): Observable<Review> {
-    return this.http.post<Review>(`${this.api}/approve/${postId}`, {});
+    return this.http.put<Review>(`${this.api}/approve/${postId}`, {});
   }
 
   rejectReview(review: Review): Observable<Review> {
-    return this.http.post<Review>(`${this.api}/reject/${review.postId}`, review);
+    return this.http.put<Review>(`${this.api}/reject/${review.postId}`, review);
   }
 
   getAllApprovedPosts(): Observable<Review[]> {

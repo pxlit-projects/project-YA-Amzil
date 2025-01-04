@@ -48,14 +48,14 @@ export class ReviewPostComponent implements OnInit {
     });
   }
 
-  OnApprovePost(): void {
+  onApprovePost(): void {
     const postId = this.route.snapshot.params['id'];
     this.reviewService.approveReview(postId).subscribe(() => {
       this.router.navigate(['/review']);
     });
   }
 
-  OnRejectPost(): void {
+  onRejectPost(): void {
     if (this.reviewForm.valid) {
       const postId = this.route.snapshot.params['id'];
       const review: Review = this.reviewForm.value as Review;
@@ -66,16 +66,16 @@ export class ReviewPostComponent implements OnInit {
     }
   }
 
-  OnSubmit(): void {
+  onSubmit(): void {
     const action = this.reviewForm.get('action')?.value;
     if (action === 'approve') {
-      this.OnApprovePost();
+      this.onApprovePost();
     } else if (action === 'reject') {
-      this.OnRejectPost();
+      this.onRejectPost();
     }
   }
 
-  OnCancel(): void {
+  onCancel(): void {
     this.router.navigate(['/dashboard']);
   }
 }

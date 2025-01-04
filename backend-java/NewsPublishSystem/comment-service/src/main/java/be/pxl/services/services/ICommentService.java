@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface ICommentService {
     // Method to create a comment
-    CommentResponse createComment(CommentRequest commentRequest);
+    void createComment(CommentRequest commentRequest);
 
     // Method get all comments
     List<CommentResponse> getAllComments();

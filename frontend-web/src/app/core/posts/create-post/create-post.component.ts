@@ -42,7 +42,7 @@ export class CreatePostComponent {
     }
   }
 
-  OnCancel() {
+  onCancel() {
     this.router.navigate(['/home']);
   }
 }

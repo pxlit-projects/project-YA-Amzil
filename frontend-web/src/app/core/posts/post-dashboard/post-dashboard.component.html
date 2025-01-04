@@ -8,7 +8,7 @@
         <div class="flex flex-wrap justify-center gap-6">
           @for (post of filteredDraftData; track post.id) {
             <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-              <app-post-item [post]="post" class="shadow-md rounded-lg"></app-post-item>
+              <app-post-item-dashboard [post]="post" class="shadow-md rounded-lg"></app-post-item-dashboard>
             </div>
           }
           @empty {
@@ -26,7 +26,7 @@
         <div class="flex flex-wrap justify-center gap-6">
           @for (post of filteredPendingData; track post.id) {
             <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-              <app-post-item [post]="post" class="shadow-md rounded-lg"></app-post-item>
+              <app-post-item-dashboard [post]="post" class="shadow-md rounded-lg"></app-post-item-dashboard>
             </div>
           }
           @empty {
