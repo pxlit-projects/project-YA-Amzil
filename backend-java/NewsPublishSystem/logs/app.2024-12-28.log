@@ -1,0 +1,354 @@
+2024-12-28T11:00:40.104+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 23564 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T11:00:40.116+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T11:00:40.118+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T11:00:52.774+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 14.507 seconds (process running for 15.824)
+2024-12-28T11:01:34.225+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 26772 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T11:01:34.228+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T11:01:34.229+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T11:01:43.283+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 10.916 seconds (process running for 12.158)
+2024-12-28T11:03:11.072+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:03:11.261+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:03:27.854+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T11:03:27.948+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post created successfully: Test
+2024-12-28T11:03:27.949+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T11:03:27.990+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:03:27.997+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:03:28.006+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:03:28.006+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:03:33.409+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T11:03:33.439+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T11:03:39.819+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T11:03:39.833+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T11:05:06.972+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 1
+2024-12-28T11:05:06.974+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:05:06.984+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:05:07.059+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test
+2024-12-28T11:05:43.146+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:05:43.167+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:08:50.404+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:08:50.417+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:09:08.800+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T11:09:08.837+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Post created successfully: Tesy
+2024-12-28T11:09:08.837+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T11:09:08.897+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:09:08.899+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:09:08.905+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:09:08.906+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:09:10.383+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T11:09:10.402+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T11:09:32.099+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T11:09:32.120+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T11:09:59.399+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2024-12-28T11:09:59.415+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:09:59.415+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:09:59.421+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:09:59.422+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:09:59.453+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2024-12-28T11:09:59.503+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Tesy
+2024-12-28T11:12:30.949+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:12:30.950+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:12:30.958+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:12:30.959+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:12:37.850+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T11:12:37.870+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T11:12:39.491+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T11:12:39.517+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T11:12:41.001+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2024-12-28T11:12:41.028+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2024-12-28T11:12:41.039+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:12:41.046+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:12:41.082+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Tesy
+2024-12-28T11:13:54.428+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:13:54.441+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:14:07.482+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T11:14:07.513+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Post created successfully: tets
+2024-12-28T11:14:07.514+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T11:14:07.560+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:14:07.562+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:14:07.567+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:14:07.569+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:14:08.976+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 3
+2024-12-28T11:14:08.994+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 3
+2024-12-28T11:14:11.197+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 3
+2024-12-28T11:14:11.220+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 3
+2024-12-28T11:14:21.097+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2024-12-28T11:14:21.121+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2024-12-28T11:14:21.132+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:14:21.142+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:14:21.164+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: tets
+2024-12-28T11:14:23.309+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T11:14:23.322+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T11:14:36.561+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T11:14:36.599+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Post created successfully: fdsf
+2024-12-28T11:14:36.600+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T11:14:36.650+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:14:36.650+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:14:36.658+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:14:36.659+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:14:37.986+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T11:14:38.005+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T11:14:43.545+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T11:14:43.567+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T11:15:02.968+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2024-12-28T11:15:02.992+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2024-12-28T11:15:03.009+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T11:15:03.014+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T11:15:03.016+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T11:15:03.023+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T11:15:03.037+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: fdsf
+2024-12-28T12:32:06.669+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 27652 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T12:32:06.671+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T12:32:06.673+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T12:32:13.692+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 8.859 seconds (process running for 10.086)
+2024-12-28T12:32:56.372+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 18024 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T12:32:56.373+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T12:32:56.374+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T12:33:01.986+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 7.274 seconds (process running for 8.47)
+2024-12-28T12:33:13.277+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 22172 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T12:33:13.279+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T12:33:13.280+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T12:33:19.802+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 8.148 seconds (process running for 9.375)
+2024-12-28T12:41:43.332+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:41:43.459+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:42:05.247+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:42:05.258+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:42:44.897+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T12:42:44.972+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Post created successfully: Test
+2024-12-28T12:42:44.972+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T12:42:45.053+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T12:42:45.061+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T12:42:45.077+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T12:42:45.079+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T12:42:48.586+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T12:42:48.623+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T12:42:51.543+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T12:42:51.553+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T12:42:53.860+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 1
+2024-12-28T12:42:53.870+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:42:53.881+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:42:53.943+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test
+2024-12-28T12:42:57.324+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:42:57.332+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:43:05.419+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:43:05.435+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:43:35.308+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:43:35.317+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:43:45.227+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:43:45.244+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:44:25.104+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:44:25.115+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:45:53.991+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:45:54.003+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:46:21.225+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T12:46:21.253+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Post created successfully: Het belang van limburg
+2024-12-28T12:46:21.253+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T12:46:21.288+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T12:46:21.301+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T12:46:21.305+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T12:46:21.313+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T12:46:23.263+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T12:46:23.289+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T12:46:27.553+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T12:46:27.568+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T12:46:29.107+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2024-12-28T12:46:29.119+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:46:29.132+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:46:29.154+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2024-12-28T12:46:29.210+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Het belang van limburg
+2024-12-28T12:46:33.352+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:46:33.365+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:47:09.817+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:47:09.831+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:47:39.999+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:47:40.011+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:01.307+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:01.324+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:09.514+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:09.525+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:15.649+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:15.660+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:15.668+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:15.671+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:18.553+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:18.563+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:21.502+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:21.514+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:21.519+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:21.526+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T12:48:27.437+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T12:48:27.449+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T13:16:03.734+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T13:16:03.842+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T13:33:30.936+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T13:33:30.958+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T13:34:53.407+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T13:34:53.418+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T13:34:56.618+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T13:34:56.638+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T14:57:39.466+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T14:57:39.540+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T14:57:41.279+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T14:57:41.305+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:01:28.885+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:01:28.941+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:01:31.364+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:01:31.407+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:02:19.179+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:02:19.303+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:28:22.002+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:28:22.022+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:28:23.386+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:28:23.403+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:28:40.414+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:28:40.430+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:28:48.971+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:28:48.991+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:28:50.267+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:28:50.467+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:29:38.269+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:29:38.422+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:29:39.656+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T15:29:39.678+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T15:31:17.073+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:31:17.115+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:31:22.780+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:31:22.799+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:31:24.368+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:31:24.432+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:31:46.243+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:31:46.382+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:32:13.812+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:32:13.834+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:43:34.248+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:43:34.267+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:43:36.244+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:43:36.262+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:44:22.170+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:44:22.188+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:45:32.059+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:45:32.079+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:45:35.904+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:45:35.936+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:45:38.806+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:45:38.824+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:45:43.246+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:45:43.290+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:45:46.975+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:45:46.995+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:46:10.930+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T15:46:11.001+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T15:46:17.010+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:17.022+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:18.970+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T15:46:18.985+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T15:46:20.702+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:20.711+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:25.322+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:25.332+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:26.567+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T15:46:26.588+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T15:46:29.156+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:29.167+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:37.468+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:37.477+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:41.107+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:41.117+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:42.493+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting post with id: 2
+2024-12-28T15:46:42.513+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting post with id: 2
+2024-12-28T15:46:48.923+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T15:46:48.950+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Post created successfully: fdgf
+2024-12-28T15:46:48.950+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T15:46:49.011+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T15:46:49.019+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T15:46:49.019+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T15:46:49.025+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T15:46:55.549+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting post with id: 3
+2024-12-28T15:46:55.565+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting post with id: 3
+2024-12-28T15:46:57.234+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 3
+2024-12-28T15:46:57.243+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 3
+2024-12-28T15:46:58.742+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2024-12-28T15:46:58.768+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:46:58.778+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2024-12-28T15:46:58.780+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:46:58.824+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: fdgf
+2024-12-28T15:47:01.522+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:47:01.565+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:47:05.972+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 3
+2024-12-28T15:47:05.990+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 3
+2024-12-28T15:47:07.386+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T15:47:07.387+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T15:47:07.394+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T15:47:07.394+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T15:47:09.149+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:47:09.159+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T15:47:12.821+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 3
+2024-12-28T15:47:12.842+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 3
+2024-12-28T15:47:15.295+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T15:47:15.305+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:24:54.969+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 3760 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T16:24:54.971+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T16:24:54.972+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T16:25:03.239+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 9.772 seconds (process running for 10.928)
+2024-12-28T16:25:11.340+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 26844 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T16:25:11.342+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T16:25:11.343+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T16:25:20.042+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 10.475 seconds (process running for 11.912)
+2024-12-28T16:27:09.207+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T16:27:09.407+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:27:23.134+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Creating new post
+2024-12-28T16:27:23.221+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Post created successfully: test
+2024-12-28T16:27:23.222+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Creating new post
+2024-12-28T16:27:23.291+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T16:27:23.301+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T16:27:23.307+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T16:27:23.315+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T16:27:27.832+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T16:27:27.867+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T16:27:33.695+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T16:27:33.708+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T16:27:37.445+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2024-12-28T16:27:37.480+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: test
+2024-12-28T16:27:37.489+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T16:27:37.496+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T16:27:37.501+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T16:27:37.509+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T16:27:40.424+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T16:27:40.432+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T16:27:40.449+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T16:27:40.469+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T16:27:52.747+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Updating post with id: 4
+2024-12-28T16:27:52.808+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Post updated successfully: test
+2024-12-28T16:27:52.808+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Updating post with id: 4
+2024-12-28T16:27:52.866+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all draft posts
+2024-12-28T16:27:52.873+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
+2024-12-28T16:27:52.873+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all draft posts
+2024-12-28T16:27:52.883+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
+2024-12-28T16:27:56.287+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T16:27:56.306+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T16:27:57.586+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T16:27:57.602+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T16:28:01.484+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2024-12-28T16:28:01.509+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T16:28:01.524+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:28:01.527+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2024-12-28T16:28:01.571+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: test
+2024-12-28T16:28:04.630+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T16:28:04.680+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:28:21.017+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T16:28:21.029+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:28:28.563+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 4
+2024-12-28T16:28:28.581+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 4
+2024-12-28T16:28:40.037+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T16:28:40.049+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:28:47.298+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 1
+2024-12-28T16:28:47.318+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 1
+2024-12-28T16:28:50.070+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2024-12-28T16:28:50.079+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2024-12-28T16:47:49.378+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 26092 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T16:47:49.380+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T16:47:49.381+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T16:47:58.469+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 10.922 seconds (process running for 12.125)
+2024-12-28T16:48:07.948+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 28484 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2024-12-28T16:48:07.949+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2024-12-28T16:48:07.950+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2024-12-28T16:48:17.023+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 10.661 seconds (process running for 11.87)
