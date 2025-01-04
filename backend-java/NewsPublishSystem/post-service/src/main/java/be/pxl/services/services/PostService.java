@@ -65,14 +65,14 @@ public class PostService implements IPostService {
         return mapToResponse(post);
     }
 
-//    @Override
-//    public boolean deletePost(Long postId) {
-//        log.info("Deleting post with id: {}", postId);
-//        return postRepository.findById(postId).map(post -> {
-//            postRepository.delete(post);
-//            return true;
-//        }).orElseThrow(() -> new PostNotFoundException("Post not found with id [" + postId + "]"));
-//    }
+    @Override
+    public boolean deletePost(Long postId) {
+        log.info("Deleting post with id: {}", postId);
+        return postRepository.findById(postId).map(post -> {
+            postRepository.delete(post);
+            return true;
+        }).orElseThrow(() -> new PostNotFoundException("Post not found with id [" + postId + "]"));
+    }
 
     @Override
     public PostResponse getPost(Long postId) {
