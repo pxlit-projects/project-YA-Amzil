@@ -44,6 +44,21 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedPost);
     }
 
+    // Update an existing post status
+    @PatchMapping("/{postId}/status")
+    public ResponseEntity<PostResponse> updatePostStatus(@PathVariable Long postId, @RequestBody PostRequest postRequest) {
+        PostResponse updatedPost = postService.updatePostStatus(postId, postRequest.getStatus());
+        log.info("Updating post status with id: {}", postId);
+        return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedPost);
+    }
+
+    @DeleteMapping("/{postId}")
+    public ResponseEntity<Void> deletePost(@PathVariable Long postId) {
+       boolean isDeleted = postService.deletePost(postId);
+       log.info("Deleting post with id: {}", postId);
+       return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
     // Get all posts
     @GetMapping
     public ResponseEntity<List<PostResponse>> getAllPosts() {

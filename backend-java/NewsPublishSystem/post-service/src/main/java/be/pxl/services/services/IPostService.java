@@ -17,7 +17,7 @@ public interface IPostService {
     PostResponse updatePostStatus(Long postId, PostStatus postStatus);
 
     // Method to delete a post
-    // boolean deletePost(Long postId);
+    boolean deletePost(Long postId);
 
     //Method to get one post
     PostResponse getPost(Long postId);
