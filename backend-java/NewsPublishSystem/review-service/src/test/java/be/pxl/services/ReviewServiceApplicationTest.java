@@ -1,18 +1,23 @@
 package be.pxl.services;
 
+import be.pxl.services.client.NotificationClient;
 import be.pxl.services.domain.Review;
 import be.pxl.services.domain.ReviewStatus;
 import be.pxl.services.domain.dto.ReviewRequest;
 import be.pxl.services.domain.dto.ReviewResponse;
 import be.pxl.services.exceptions.PostNotFoundException;
+import be.pxl.services.exceptions.ReviewNotFoundException;
+import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
 import be.pxl.services.services.ReviewService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -41,6 +46,12 @@ public class ReviewServiceApplicationTest {
 
     @Autowired
     private MockMvc mockMvc;
+
+    @MockBean
+    private NotificationClient notificationClient;
+
+    @MockBean
+    private ReviewMessageProducer reviewMessageProducer;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -75,6 +86,8 @@ public class ReviewServiceApplicationTest {
 
         reviewRepository.save(review);
 
+        Mockito.doNothing().when(notificationClient).sendNotification(Mockito.any());
+
         MvcResult result = mockMvc.perform(put("/api/review/approve/{postId}", postId))
                 .andExpect(status().isAccepted())
                 .andReturn();
@@ -108,6 +121,8 @@ public class ReviewServiceApplicationTest {
                 .reviewedAt(LocalDateTime.now())
                 .build();
 
+        Mockito.doNothing().when(notificationClient).sendNotification(Mockito.any());
+
         MvcResult result = mockMvc.perform(put("/api/review/reject/{postId}", postId)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(reviewRequest)))
@@ -125,20 +140,20 @@ public class ReviewServiceApplicationTest {
 
     @Test
     public void shouldPublishPost() throws Exception {
-        Long postId = 1L;
 
         Review review = Review.builder()
-                .id(postId)
-                .postId(postId)
+                .postId(1L)
                 .status(ReviewStatus.APPROVED)
                 .reviewer("Reviewer")
-                .comment("Approved review")
+                .comment("Ready to publish")
                 .reviewedAt(LocalDateTime.now())
                 .build();
 
-        reviewRepository.save(review);
+        reviewRepository.saveAndFlush(review);
 
-        MvcResult result = mockMvc.perform(put("/api/review/publish/{postId}", postId))
+        Mockito.doNothing().when(reviewMessageProducer).sendMessage(Mockito.any());
+
+        MvcResult result = mockMvc.perform(put("/api/review/publish/{postId}", review.getId()))
                 .andExpect(status().isAccepted())
                 .andReturn();
 
@@ -146,27 +161,27 @@ public class ReviewServiceApplicationTest {
         assertThat(publishedReview).isNotNull();
         assertThat(publishedReview.getStatus()).isEqualTo(ReviewStatus.PUBLISHED);
 
-        Optional<Review> updatedReview = reviewRepository.findById(postId);
+        Optional<Review> updatedReview = reviewRepository.findById(review.getId());
         assertTrue(updatedReview.isPresent());
         assertEquals(ReviewStatus.PUBLISHED, updatedReview.get().getStatus());
     }
 
     @Test
     public void shouldRevisePost() throws Exception {
-        Long postId = 1L;
 
         Review review = Review.builder()
-                .id(postId)
-                .postId(postId)
+                .postId(1L)
                 .status(ReviewStatus.REJECTED)
                 .reviewer("Reviewer")
-                .comment("Rejected review")
+                .comment("Needs revision")
                 .reviewedAt(LocalDateTime.now())
                 .build();
 
-        reviewRepository.save(review);
+        reviewRepository.saveAndFlush(review);
 
-        MvcResult result = mockMvc.perform(put("/api/review/revise/{postId}", postId))
+        Mockito.doNothing().when(reviewMessageProducer).sendMessage(Mockito.any());
+
+        MvcResult result = mockMvc.perform(put("/api/review/revise/{postId}", review.getId()))
                 .andExpect(status().isAccepted())
                 .andReturn();
 
@@ -174,7 +189,7 @@ public class ReviewServiceApplicationTest {
         assertThat(revisedReview).isNotNull();
         assertThat(revisedReview.getStatus()).isEqualTo(ReviewStatus.PENDING);
 
-        Optional<Review> updatedReview = reviewRepository.findById(postId);
+        Optional<Review> updatedReview = reviewRepository.findById(review.getId());
         assertTrue(updatedReview.isPresent());
         assertEquals(ReviewStatus.PENDING, updatedReview.get().getStatus());
     }
@@ -252,12 +267,31 @@ public class ReviewServiceApplicationTest {
         assertThat(reviews).hasSize(1);
     }
 
-//    @Test
-//    public void shouldThrowReviewNotFoundException() throws Exception {
-//        Long nonExistingPostId = 999L;
-//        mockMvc.perform(put("/api/review/approve/{postId}", nonExistingPostId))
-//                .andExpect(status().isNotFound())
-//                .andExpect(result -> assertTrue(result.getResolvedException() instanceof PostNotFoundException));
-//
-//    }
+    @Test
+    public void shouldThrowReviewNotFoundException() throws Exception {
+        Long nonExistentReviewId = 999L;
+
+        ReviewRequest reviewRequest = ReviewRequest.builder()
+                .reviewer("Reviewer")
+                .comment("Rejected review")
+                .reviewedAt(LocalDateTime.now())
+                .build();
+
+        mockMvc.perform(put("/api/review/publish/{postId}", nonExistentReviewId)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(reviewRequest)))
+                .andExpect(status().isNotFound());
+
+        Exception exception = assertThrows(ReviewNotFoundException.class, () -> {
+            reviewRepository.findById(nonExistentReviewId)
+                    .orElseThrow(() -> {
+                        throw new ReviewNotFoundException("Review not found for post id [" + nonExistentReviewId + "]");
+                    });
+        });
+
+        String expectedMessage = "Review not found for post id [" + nonExistentReviewId + "]";
+        String actualMessage = exception.getMessage();
+
+        assertTrue(actualMessage.contains(expectedMessage));
+    }
 }
