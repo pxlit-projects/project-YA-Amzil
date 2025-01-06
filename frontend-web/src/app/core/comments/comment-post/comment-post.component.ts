@@ -1,5 +1,4 @@
 import { Component, inject } from '@angular/core';
-import { PostService } from '../../../shared/services/post.service';
 import { CommentService } from '../../../shared/services/comment.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -13,7 +12,6 @@ import { Comment } from '../../../shared/models/comment.model';
   styleUrl: './comment-post.component.css',
 })
 export class CommentPostComponent {
-  postService: PostService = inject(PostService);
   commentService: CommentService = inject(CommentService);
   router: Router = inject(Router);
   route: ActivatedRoute = inject(ActivatedRoute);
