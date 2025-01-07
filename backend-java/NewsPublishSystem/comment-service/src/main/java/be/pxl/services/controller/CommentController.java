@@ -50,8 +50,15 @@ public class CommentController {
 
     @DeleteMapping("/{commentId}")
     public ResponseEntity<Void> deleteComment(@PathVariable Long commentId) {
-       boolean isDeleted = commentService.deleteComment(commentId);
-         log.info("Deleting comment with id: {}", commentId);
-       return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        boolean isDeleted = commentService.deleteComment(commentId);
+        log.info("Deleting comment with id: {}", commentId);
+        return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
+
+    @DeleteMapping("/post/{postId}")
+    public ResponseEntity<Void> deleteCommentsForPost(@PathVariable Long postId) {
+        boolean isDeleted = commentService.deleteCommentsForPost(postId);
+        log.info("Deleting comments for post with id: {}", postId);
+        return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }

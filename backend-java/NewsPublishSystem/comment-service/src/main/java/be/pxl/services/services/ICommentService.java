@@ -20,4 +20,6 @@ public interface ICommentService {
 
     // Method to delete a comment
     boolean deleteComment(Long commentId);
+
+    boolean deleteCommentsForPost(Long postId);
 }
