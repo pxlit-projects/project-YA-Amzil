@@ -1,5 +1,7 @@
 package be.pxl.services;
 
+import be.pxl.services.client.CommentClient;
+import be.pxl.services.client.ReviewClient;
 import be.pxl.services.domain.Post;
 import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.dto.PostRequest;
@@ -8,9 +10,11 @@ import be.pxl.services.exceptions.PostNotFoundException;
 import be.pxl.services.repository.PostRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
@@ -37,13 +41,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class PostServiceApplicationTest {
 
     @Autowired
+    private PostRepository postRepository;
+
+    @Autowired
     private MockMvc mockMvc;
+
+    @MockBean
+    private CommentClient commentClient;
+
+    @MockBean
+    private ReviewClient reviewClient;
 
     @Autowired
     private ObjectMapper objectMapper;
-
-    @Autowired
-    private PostRepository postRepository;
 
     @Container
     private static MySQLContainer<?> sqlContainer = new MySQLContainer<>("mysql:8.0");
@@ -220,6 +230,9 @@ public class PostServiceApplicationTest {
                 .updateAt(LocalDateTime.now())
                 .status(PostStatus.DRAFT)
                 .build();
+
+       Mockito.when(commentClient.deleteCommentsForPost(anyLong())).thenReturn(true);
+       Mockito.when(reviewClient.deleteReview(anyLong())).thenReturn(true);
 
         mockMvc.perform(post("/api/post")
                         .contentType(MediaType.APPLICATION_JSON)

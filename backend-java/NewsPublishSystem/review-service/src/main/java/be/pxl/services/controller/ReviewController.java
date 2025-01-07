@@ -68,6 +68,13 @@ public class ReviewController {
         log.info("Getting all rejected reviews");
         return ResponseEntity.status(HttpStatus.OK).body(reviews);
     }
+
+    @DeleteMapping("/{reviewId}")
+    public ResponseEntity<Void> deleteReview(@PathVariable Long reviewId) {
+        boolean isDeleted = reviewService.deleteReview(reviewId);
+        log.info("Deleting review with id: {}", reviewId);
+        return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+    }
 }
 
 

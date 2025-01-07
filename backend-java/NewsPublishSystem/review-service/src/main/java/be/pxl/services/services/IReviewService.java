@@ -27,4 +27,7 @@ public interface IReviewService {
 
     // Method to get all reviews
     List<ReviewResponse> getAllReviews();
+
+    // Method to delete a review
+    boolean deleteReview(Long reviewId);
 }

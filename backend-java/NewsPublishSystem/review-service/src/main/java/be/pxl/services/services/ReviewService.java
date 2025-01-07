@@ -158,6 +158,17 @@ public class ReviewService implements IReviewService {
                 .toList();
     }
 
+    @Override
+    public boolean deleteReview(Long reviewId) {
+        log.info("Deleting review with id: {}", reviewId);
+        return reviewRepository.findById(reviewId)
+                .map(review -> {
+                    reviewRepository.delete(review);
+                    return true;
+                })
+                .orElseThrow(() -> new ReviewNotFoundException("Review not found with id [" + reviewId + "]"));
+    }
+
     private ReviewResponse mapToResponse(Review review) {
         return ReviewResponse.builder()
                 .id(review.getId())
