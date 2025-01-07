@@ -44,8 +44,9 @@ public class ReviewService implements IReviewService {
         log.info("Review approved successfully for post with id: {}", postId);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
-                .sender("Review Service")
-                .message("Post with id [" + postId + "] has been approved")
+                .to("team.aon03@gmail.com")
+                .subject("Post with id [" + postId + "] has been approved")
+                .text("You have received a notification for the approval of post with id [" + postId + "] " + "by editor" )
                 .build();
 
         notificationClient.sendNotification(notificationRequest);
@@ -74,8 +75,9 @@ public class ReviewService implements IReviewService {
         log.info("Review rejected successfully for post with id: {}", postId);
 
         NotificationRequest notificationRequest = NotificationRequest.builder()
-                .sender("Review Service")
-                .message("Post with id [" + postId + "] has been rejected")
+                .to("team.aon03@gmail.com")
+                .subject("Post with id [" + postId + "] has been rejected")
+                .text("You have received a notification for the rejection of post with id [" + postId + "] " + "by reviewer [" + reviewRequest.getReviewer() + "]")
                 .build();
 
         notificationClient.sendNotification(notificationRequest);
