@@ -21,8 +21,8 @@ public class ReviewController {
     private static final Logger log = LoggerFactory.getLogger(ReviewController.class);
 
     @PutMapping("/approve/{postId}")
-    public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long postId) {
-        ReviewResponse approvedReview = reviewService.approveReview(postId);
+    public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long postId, @RequestBody ReviewRequest reviewRequest) {
+        ReviewResponse approvedReview = reviewService.approveReview(postId, reviewRequest);
         log.info("Approving review for post with id: {}", postId);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(approvedReview);
     }

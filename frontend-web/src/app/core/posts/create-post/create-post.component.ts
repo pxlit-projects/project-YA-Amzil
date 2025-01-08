@@ -20,7 +20,7 @@ import { CommonModule } from '@angular/common';
 export class CreatePostComponent {
   postService: PostService = inject(PostService);
   router: Router = inject(Router);
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   fb: FormBuilder = inject(FormBuilder);
 
   postForm: FormGroup = this.fb.group({

@@ -17,14 +17,8 @@ export class ReviewItemPublishComponent {
     reviewService: ReviewService = inject(ReviewService);
     router: Router = inject(Router);
     roleService: RoleService = inject(RoleService);
-    route: ActivatedRoute = inject(ActivatedRoute);
+    // route: ActivatedRoute = inject(ActivatedRoute);
     role = this.roleService.getRole();
-
-    // onPublish(postId: number): void {
-    //   this.reviewService.publishPost(postId).subscribe(() => {
-    //     this.router.navigate(['/home']);
-    //   });
-    // }
 
     onPublish(postId: number): void {
       this.reviewService.publishPost(postId).subscribe({

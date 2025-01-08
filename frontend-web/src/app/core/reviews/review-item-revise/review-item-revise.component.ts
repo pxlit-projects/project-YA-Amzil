@@ -17,14 +17,8 @@ export class ReviewItemReviseComponent {
   reviewService: ReviewService = inject(ReviewService);
   router: Router = inject(Router);
   roleService: RoleService = inject(RoleService);
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   role = this.roleService.getRole();
-
-  // onRevise(postId: number): void {
-  //   this.reviewService.revisePost(postId).subscribe(() => {
-  //     this.router.navigate(['/dashboard']);
-  //   });
-  // }
 
   onRevise(postId: number): void {
     this.reviewService.revisePost(postId).subscribe({

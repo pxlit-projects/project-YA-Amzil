@@ -11,8 +11,8 @@ export class ReviewService {
   private api: string = environment.apiUrl + 'review/api/review';
   private http: HttpClient = inject(HttpClient);
 
-  approveReview(postId: number): Observable<Review> {
-    return this.http.put<Review>(`${this.api}/approve/${postId}`, {});
+  approveReview(review: Review): Observable<Review> {
+    return this.http.put<Review>(`${this.api}/approve/${review.postId}`, review);
   }
 
   rejectReview(review: Review): Observable<Review> {

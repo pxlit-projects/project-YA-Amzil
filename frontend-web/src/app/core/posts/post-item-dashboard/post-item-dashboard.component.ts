@@ -15,7 +15,7 @@ export class PostItemDashboardComponent {
  @Input() post!: Post;
   router: Router = inject(Router);
   roleService: RoleService = inject(RoleService);
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   role = this.roleService.getRole();
 
   onEdit(post: Post) {

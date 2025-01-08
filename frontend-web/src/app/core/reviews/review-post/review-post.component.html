@@ -29,7 +29,7 @@
 
     <!-- Reviewer -->
   @if (reviewForm.get('action')?.value === 'reject'){
-    <div
+    <!-- <div
       class="mb-4"
     >
       <label for="reviewer" class="block text-gray-300 text-sm font-bold mb-2">
@@ -44,7 +44,7 @@
       @if (reviewForm.get('reviewer')?.touched && reviewForm.get('reviewer')?.hasError('required')) {
           <div class="text-red-500 text-sm mt-1">Reviewer is required</div>
       }
-    </div>
+    </div> -->
 
 
     <!-- Comment -->
@@ -70,7 +70,7 @@
       @if (reviewForm.get('action')?.value === 'approve'){
         <button
           type="submit"
-          class="bg-green-600 hover:bg-green-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+          class="bg-green-600 hover:bg-green-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-green-500 mr-2"
         >
           Approve
         </button>
@@ -78,7 +78,7 @@
       @if (reviewForm.get('action')?.value === 'reject'){
       <button
         type="submit"
-        class="bg-red-600 hover:bg-red-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+        class="bg-red-600 hover:bg-red-500 text-gray-200 font-bold py-2 px-4 rounded focus:outline-none focus:ring-2 focus:ring-red-500 mr-2"
         [disabled]="!reviewForm.valid"
       >
         Reject

@@ -17,7 +17,7 @@ export class CommentItemComponent {
   commentService: CommentService = inject(CommentService);
   router: Router = inject(Router);
   roleService: RoleService = inject(RoleService);
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   role = this.roleService.getRole();
   currentUser = this.roleService.getCurrentUser();
 

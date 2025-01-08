@@ -20,7 +20,7 @@ export class CommentEditComponent implements OnInit {
   commentService: CommentService = inject(CommentService);
   comment!: Comment;
   router: Router = inject(Router);
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   fb: FormBuilder = inject(FormBuilder);
   updateForm!: FormGroup;
 

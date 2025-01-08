@@ -21,7 +21,7 @@ export class EditPostComponent implements OnInit {
   postService: PostService = inject(PostService);
   post!: Post;
   router: Router = inject(Router);
-  route: ActivatedRoute = inject(ActivatedRoute);
+  // route: ActivatedRoute = inject(ActivatedRoute);
   fb: FormBuilder = inject(FormBuilder);
   updateForm!: FormGroup;
 

@@ -27,7 +27,7 @@ public class ReviewService implements IReviewService {
 
     // US6 - US7
     @Override
-    public ReviewResponse approveReview(Long postId) {
+    public ReviewResponse approveReview(Long postId, ReviewRequest reviewRequest) {
         log.info("Approving review for post with id: {}", postId);
 
         Review review = reviewRepository.findByPostId(postId).orElse(new Review());
@@ -35,10 +35,10 @@ public class ReviewService implements IReviewService {
             log.info("Review not found for post with id: {}, creating a new review", postId);
             review.setPostId(postId);
         }
-        review.setReviewer("Editor");
-        review.setComment("Approved");
+        review.setReviewer(reviewRequest.getReviewer());
+        review.setComment("This post is approved");
         review.setStatus(ReviewStatus.APPROVED);
-        review.setReviewedAt(LocalDateTime.now());
+        review.setReviewedAt(reviewRequest.getReviewedAt());
 
         reviewRepository.save(review);
         log.info("Review approved successfully for post with id: {}", postId);
@@ -97,8 +97,8 @@ public class ReviewService implements IReviewService {
                     return new ReviewNotFoundException("Review not found for post id [" + postId + "]");
                 });
 
-        review.setReviewer("Editor");
-        review.setComment("Published");
+        // review.setReviewer("Editor");
+        review.setComment("This post is published");
         review.setStatus(ReviewStatus.PUBLISHED);
         reviewRepository.save(review);
         log.info("Post published successfully with id: {}", postId);
@@ -121,8 +121,8 @@ public class ReviewService implements IReviewService {
                     return new ReviewNotFoundException("Review not found for post id [" + postId + "]");
                 });
 
-        review.setReviewer("Editor");
-        review.setComment("Revised");
+        // review.setReviewer("Editor");
+        review.setComment("This post is revised");
         review.setStatus(ReviewStatus.PENDING);
         reviewRepository.save(review);
         log.info("Post revised successfully with id: {}", postId);

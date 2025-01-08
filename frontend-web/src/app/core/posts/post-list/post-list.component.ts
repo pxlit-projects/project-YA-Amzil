@@ -27,7 +27,7 @@ export class PostListComponent implements OnInit {
       error: (err) => {
         console.error('Error filtering published posts:', err);
         this.filteredPublishedData = [];
-      }
+      },
     });
   }
 
@@ -37,7 +37,7 @@ export class PostListComponent implements OnInit {
       error: (err) => {
         console.error('Error fetching published posts:', err);
         this.filteredPublishedData = [];
-      }
+      },
     });
   }
 }
