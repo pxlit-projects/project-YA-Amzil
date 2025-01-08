@@ -84,7 +84,6 @@ public class CommentServiceApplicationTest {
 
     @Test
     public void shouldUpdateComment() throws Exception {
-        // First, create a comment
         CommentRequest commentRequest = CommentRequest.builder()
                 .postId(1L)
                 .author("Author 1")
@@ -101,7 +100,6 @@ public class CommentServiceApplicationTest {
 
         Long commentId = commentRepository.findAll().get(0).getId();
 
-        // Now, update the comment
         CommentRequest updatedRequest = CommentRequest.builder()
                 .content("Updated Content")
                 .updateAt(LocalDateTime.now())
@@ -154,7 +152,6 @@ public class CommentServiceApplicationTest {
 
     @Test
     public void shouldGetAllComments() throws Exception {
-        // Create multiple comments
         CommentRequest commentRequest1 = CommentRequest.builder()
                 .postId(1L)
                 .author("Author 1")
@@ -181,7 +178,6 @@ public class CommentServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(commentRequest2)))
                 .andExpect(status().isCreated());
 
-        // Fetch all comments
         MvcResult getResult = mockMvc.perform(get("/api/comment"))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -194,7 +190,6 @@ public class CommentServiceApplicationTest {
 
     @Test
     public void shouldGetCommentsForPost() throws Exception {
-        // Create multiple comments for different posts
         CommentRequest commentRequest1 = CommentRequest.builder()
                 .postId(1L)
                 .author("Author 1")
@@ -221,7 +216,6 @@ public class CommentServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(commentRequest2)))
                 .andExpect(status().isCreated());
 
-        // Fetch comments for a specific post
         MvcResult getResult = mockMvc.perform(get("/api/comment/post/{postId}", 1L))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -233,7 +227,6 @@ public class CommentServiceApplicationTest {
 
     @Test
     public void shouldDeleteComment() throws Exception {
-        // First, create a comment
         CommentRequest commentRequest = CommentRequest.builder()
                 .postId(1L)
                 .author("Author 1")
@@ -249,7 +242,6 @@ public class CommentServiceApplicationTest {
 
         Long commentId = commentRepository.findAll().get(0).getId();
 
-        // Now, delete the comment
         mockMvc.perform(delete("/api/comment/{commentId}", commentId))
                 .andExpect(status().isNoContent());
 
@@ -258,7 +250,6 @@ public class CommentServiceApplicationTest {
 
     @Test
     public void shouldThrowCommentNotFoundException() throws Exception {
-        // Attempt to update a comment with a non-existent ID
         Long nonExistentCommentId = 999L;
 
         CommentRequest updatedRequest = CommentRequest.builder()
@@ -271,7 +262,6 @@ public class CommentServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(updatedRequest)))
                 .andExpect(status().isNotFound());
 
-        // Verify that the exception message is as expected
         Exception exception = assertThrows(CommentNotFoundException.class, () -> {
             commentRepository.findById(nonExistentCommentId)
                     .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + nonExistentCommentId + "]"));

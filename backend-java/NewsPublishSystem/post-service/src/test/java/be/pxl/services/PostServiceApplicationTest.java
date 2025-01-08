@@ -98,7 +98,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldUpdatePost() throws Exception {
-        // First, create a post
         PostRequest postRequest = PostRequest.builder()
                 .title("Title 1")
                 .content("Content 1")
@@ -116,7 +115,6 @@ public class PostServiceApplicationTest {
 
         Long postId = postRepository.findAll().get(0).getId();
 
-        // Now, update the post
         PostRequest updatedRequest = PostRequest.builder()
                 .title("Updated Title")
                 .content("Updated Content")
@@ -141,7 +139,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldGetPost() throws Exception {
-        // First, create a post
         PostRequest postRequest = PostRequest.builder()
                 .title("Title 1")
                 .content("Content 1")
@@ -159,7 +156,6 @@ public class PostServiceApplicationTest {
 
         Long postId = postRepository.findAll().get(0).getId();
 
-        // Now, fetch the post
         MvcResult getResult = mockMvc.perform(get("/api/post/{postId}", postId))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -179,7 +175,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldGetAllPosts() throws Exception {
-        // Create multiple posts
         PostRequest postRequest1 = PostRequest.builder()
                 .title("Title 1")
                 .content("Content 1")
@@ -208,7 +203,6 @@ public class PostServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(postRequest2)))
                 .andExpect(status().isCreated());
 
-        // Fetch all posts
         MvcResult getResult = mockMvc.perform(get("/api/post"))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -221,7 +215,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldDeletePost() throws Exception {
-        // First, create a post
         PostRequest postRequest = PostRequest.builder()
                 .title("Title 1")
                 .content("Content 1")
@@ -241,7 +234,6 @@ public class PostServiceApplicationTest {
 
         Long postId = postRepository.findAll().get(0).getId();
 
-        // Now, delete the post
         mockMvc.perform(delete("/api/post/{postId}", postId))
                 .andExpect(status().isNoContent());
 
@@ -250,7 +242,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldUpdatePostStatus() throws Exception {
-        // First, create a post
         PostRequest postRequest = PostRequest.builder()
                 .title("Title 1")
                 .content("Content 1")
@@ -268,12 +259,10 @@ public class PostServiceApplicationTest {
 
         Long postId = postRepository.findAll().get(0).getId();
 
-        // Create a payload for updating the status
         PostRequest statusUpdateRequest = PostRequest.builder()
                 .status(PostStatus.PUBLISHED)
                 .build();
 
-        // Now, update the post status
         mockMvc.perform(patch("/api/post/{postId}/status", postId)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(objectMapper.writeValueAsString(statusUpdateRequest)))
@@ -286,7 +275,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldGetAllDraftPosts() throws Exception {
-        // Create multiple posts with different statuses
         PostRequest postRequest1 = PostRequest.builder()
                 .title("Draft Post 1")
                 .content("Content 1")
@@ -315,7 +303,6 @@ public class PostServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(postRequest2)))
                 .andExpect(status().isCreated());
 
-        // Fetch all draft posts
         MvcResult getResult = mockMvc.perform(get("/api/post/draft"))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -327,7 +314,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldGetAllPendingPosts() throws Exception {
-        // Create multiple posts with different statuses
         PostRequest postRequest1 = PostRequest.builder()
                 .title("Pending Post 1")
                 .content("Content 1")
@@ -356,7 +342,6 @@ public class PostServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(postRequest2)))
                 .andExpect(status().isCreated());
 
-        // Fetch all pending posts
         MvcResult getResult = mockMvc.perform(get("/api/post/pending"))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -368,7 +353,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldGetAllPublishedPosts() throws Exception {
-        // Create multiple posts with different statuses
         PostRequest postRequest1 = PostRequest.builder()
                 .title("Draft Post 1")
                 .content("Content 1")
@@ -397,7 +381,6 @@ public class PostServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(postRequest2)))
                 .andExpect(status().isCreated());
 
-        // Fetch all published posts
         MvcResult getResult = mockMvc.perform(get("/api/post/published"))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -409,7 +392,6 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldGetAllDraftAndPendingPosts() throws Exception {
-        // Create multiple posts with different statuses
         PostRequest postRequest1 = PostRequest.builder()
                 .title("Draft Post 1")
                 .content("Content 1")
@@ -452,7 +434,6 @@ public class PostServiceApplicationTest {
                         .content(objectMapper.writeValueAsString(postRequest3)))
                 .andExpect(status().isCreated());
 
-        // Fetch all draft and pending posts
         MvcResult getResult = mockMvc.perform(get("/api/post/draft-pending"))
                 .andExpect(status().isOk())
                 .andReturn();
@@ -464,12 +445,10 @@ public class PostServiceApplicationTest {
 
     @Test
     public void shouldThrowPostNotFoundException() throws Exception {
-        // Attempt to fetch a post with a non-existent ID
         Long nonExistentPostId = 999L;
         mockMvc.perform(get("/api/post/{postId}", nonExistentPostId))
                 .andExpect(status().isNotFound());
 
-        // Verify that the exception message is as expected
         Exception exception = assertThrows(PostNotFoundException.class, () -> {
             postRepository.findById(nonExistentPostId)
                     .orElseThrow(() -> new PostNotFoundException("Post not found with id [" + nonExistentPostId + "]"));

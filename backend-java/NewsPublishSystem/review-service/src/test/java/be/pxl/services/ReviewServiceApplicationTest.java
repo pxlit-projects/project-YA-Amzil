@@ -5,11 +5,9 @@ import be.pxl.services.domain.Review;
 import be.pxl.services.domain.ReviewStatus;
 import be.pxl.services.domain.dto.ReviewRequest;
 import be.pxl.services.domain.dto.ReviewResponse;
-import be.pxl.services.exceptions.PostNotFoundException;
 import be.pxl.services.exceptions.ReviewNotFoundException;
 import be.pxl.services.messaging.ReviewMessageProducer;
 import be.pxl.services.repository.ReviewRepository;
-import be.pxl.services.services.ReviewService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -86,9 +84,18 @@ public class ReviewServiceApplicationTest {
 
         reviewRepository.save(review);
 
+
+        ReviewRequest reviewRequest = ReviewRequest.builder()
+                .reviewer("Reviewer")
+                .comment("Approved review")
+                .reviewedAt(LocalDateTime.now())
+                .build();
+
         Mockito.doNothing().when(notificationClient).sendNotification(Mockito.any());
 
-        MvcResult result = mockMvc.perform(put("/api/review/approve/{postId}", postId))
+        MvcResult result = mockMvc.perform(put("/api/review/approve/{postId}", postId)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(reviewRequest)))
                 .andExpect(status().isAccepted())
                 .andReturn();
 
@@ -266,6 +273,34 @@ public class ReviewServiceApplicationTest {
         List<ReviewResponse> reviews = objectMapper.readValue(result.getResponse().getContentAsString(), objectMapper.getTypeFactory().constructCollectionType(List.class, ReviewResponse.class));
         assertThat(reviews).hasSize(1);
     }
+
+    @Test
+    public void shouldDeleteComment() throws Exception {
+
+        Review review = Review.builder()
+                .postId(1L)
+                .status(ReviewStatus.APPROVED)
+                .reviewer("Reviewer")
+                .comment("Ready to publish")
+                .reviewedAt(LocalDateTime.now())
+                .build();
+
+        reviewRepository.saveAndFlush(review);
+
+        mockMvc.perform(put("/api/review/publish/{postId}", review.getId())
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(review)))
+                .andExpect(status().isAccepted());
+
+        Long commentId = reviewRepository.findAll().get(0).getId();
+
+        mockMvc.perform(delete("/api/review/{reviewId}", commentId))
+                .andExpect(status().isNoContent());
+
+        assertTrue(reviewRepository.findById(commentId).isEmpty());
+    }
+
+
 
     @Test
     public void shouldThrowReviewNotFoundException() throws Exception {

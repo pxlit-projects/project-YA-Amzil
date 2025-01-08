@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -97,7 +96,6 @@ public class ReviewService implements IReviewService {
                     return new ReviewNotFoundException("Review not found for post id [" + postId + "]");
                 });
 
-        // review.setReviewer("Editor");
         review.setComment("This post is published");
         review.setStatus(ReviewStatus.PUBLISHED);
         reviewRepository.save(review);
@@ -121,7 +119,6 @@ public class ReviewService implements IReviewService {
                     return new ReviewNotFoundException("Review not found for post id [" + postId + "]");
                 });
 
-        // review.setReviewer("Editor");
         review.setComment("This post is revised");
         review.setStatus(ReviewStatus.PENDING);
         reviewRepository.save(review);
