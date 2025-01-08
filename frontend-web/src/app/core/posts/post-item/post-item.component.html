@@ -1,26 +1,45 @@
-<div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300">
+<div
+  class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow duration-300"
+>
   <h4 class="text-2xl font-semibold mb-3 text-white">{{ post.title }}</h4>
   <p class="text-gray-400 text-sm mb-4">
     By <span class="font-semibold text-gray-200">{{ post.author }}</span> on
-    {{ post.createAt | date: 'dd/MM/yyyy' }}
+    {{ post.createAt | date : "dd/MM/yyyy" }}
   </p>
   <div class="mb-4">
     <p class="text-gray-300">
-      <span class="font-semibold text-gray-200">Updated at:</span> {{ post.updateAt | date: 'dd/MM/yyyy' }}
+      <span class="font-semibold text-gray-200">Updated at:</span>
+      {{ post.updateAt | date : "dd/MM/yyyy" }}
     </p>
   </div>
   <p class="text-gray-300 text-base mb-6">
-    {{ post.content | slice: 0 : 150 }}
+    {{ post.content | slice : 0 : 150 }}
   </p>
   <p class="text-gray-300 text-sm mb-4">State: {{ post.status }}</p>
   <div class="mt-4 flex justify-between items-center">
     <!--Readmore Button-->
-    <button (click)="onReadmore(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
+    <button
+      (click)="onReadmore(post)"
+      class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200"
+    >
       Readmore
     </button>
-  <!--Comment Button-->
-      <button (click)="onComment(post)" class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200">
-        Comment
-      </button>
+
+    @if(role === 'editor'){
+    <!--Edit Button-->
+    <button
+      (click)="onEdit(post)"
+      class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200"
+    >
+      Edit
+    </button>
+    }
+    <!--Comment Button-->
+    <button
+      (click)="onComment(post)"
+      class="bg-gray-800 hover:bg-gray-700 text-white text-sm font-semibold py-2 px-4 rounded-md transition duration-200"
+    >
+      Comment
+    </button>
   </div>
 </div>

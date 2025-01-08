@@ -32,7 +32,6 @@ export class ReviewPostComponent implements OnInit {
 
   reviewForm: FormGroup = this.fb.group({
     action: ['', [Validators.required]],
-    // reviewer: ['', [Validators.required]],
     reviewer: [this.reviewer],
     comment: ['', [Validators.required]],
     reviewedAt: [new Date().toISOString()],
@@ -46,13 +45,10 @@ export class ReviewPostComponent implements OnInit {
 
     this.reviewForm.get('action')?.valueChanges.subscribe((action) => {
       if (action === 'reject') {
-        // this.reviewForm.get('reviewer')?.setValidators([Validators.required]);
         this.reviewForm.get('comment')?.setValidators([Validators.required]);
       } else {
-        // this.reviewForm.get('reviewer')?.clearValidators();
         this.reviewForm.get('comment')?.clearValidators();
       }
-      // this.reviewForm.get('reviewer')?.updateValueAndValidity();
       this.reviewForm.get('comment')?.updateValueAndValidity();
     });
   }

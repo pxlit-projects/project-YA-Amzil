@@ -1,9 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReviewItemPublishComponent } from './review-item-publish.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { CommonModule } from '@angular/common';
 import { ReviewService } from '../../../shared/services/review.service';
-import { RoleService } from '../../../shared/services/role.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 import { Review } from '../../../shared/models/review.model';
@@ -19,11 +17,10 @@ describe('ReviewItemPublishComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        RouterTestingModule,
         HttpClientTestingModule,
         ReviewItemPublishComponent,
       ],
-      providers: [ReviewService, RoleService],
+      providers: [ReviewService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ReviewItemPublishComponent);

@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PostItemComponent } from './post-item.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { CommonModule } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { Post } from '../../../shared/models/post.model';
@@ -15,7 +14,7 @@ describe('PostItemComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, RouterTestingModule, PostItemComponent],
+      imports: [CommonModule, PostItemComponent],
       providers: [RoleService],
     }).compileComponents();
 

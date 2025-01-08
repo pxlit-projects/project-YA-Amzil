@@ -1,8 +1,7 @@
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { PostService } from '../../../shared/services/post.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Post } from '../../../shared/models/post.model';
-import { FormBuilder } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CommentListComponent } from "../../comments/comment-list/comment-list.component";
 
@@ -18,7 +17,6 @@ export class PostDetailComponent implements OnInit {
   route: ActivatedRoute = inject(ActivatedRoute);
   router: Router = inject(Router);
   post!: Post;
-  fb: FormBuilder = inject(FormBuilder);
 
   ngOnInit(): void {
     const postId = this.route.snapshot.params['id'];

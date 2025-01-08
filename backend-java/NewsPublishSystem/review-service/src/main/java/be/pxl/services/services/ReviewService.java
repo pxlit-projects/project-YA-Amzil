@@ -46,7 +46,7 @@ public class ReviewService implements IReviewService {
         NotificationRequest notificationRequest = NotificationRequest.builder()
                 .to("team.aon03@gmail.com")
                 .subject("Post with id [" + postId + "] has been approved")
-                .text("You have received a notification for the approval of post with id [" + postId + "] " + "by editor" )
+                .text("You have received a notification for the approval of post with id [" + postId + "] " + "by reviewer [" + reviewRequest.getReviewer() + "]")
                 .build();
 
         notificationClient.sendNotification(notificationRequest);

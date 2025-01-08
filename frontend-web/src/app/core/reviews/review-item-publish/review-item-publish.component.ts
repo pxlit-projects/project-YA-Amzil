@@ -1,8 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { Review } from '../../../shared/models/review.model';
 import { ReviewService } from '../../../shared/services/review.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { RoleService } from '../../../shared/services/role.service';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -16,9 +15,6 @@ export class ReviewItemPublishComponent {
   @Input() review!: Review;
     reviewService: ReviewService = inject(ReviewService);
     router: Router = inject(Router);
-    roleService: RoleService = inject(RoleService);
-    // route: ActivatedRoute = inject(ActivatedRoute);
-    role = this.roleService.getRole();
 
     onPublish(postId: number): void {
       this.reviewService.publishPost(postId).subscribe({

@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { Post } from '../../../shared/models/post.model';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { RoleService } from '../../../shared/services/role.service';
 
 @Component({
@@ -13,13 +13,16 @@ import { RoleService } from '../../../shared/services/role.service';
 })
 export class PostItemComponent {
   @Input() post!: Post;
-  router: Router = inject(Router);
   roleService: RoleService = inject(RoleService);
-  // route: ActivatedRoute = inject(ActivatedRoute);
   role = this.roleService.getRole();
+  router: Router = inject(Router);
 
   onComment(post: Post) {
     this.router.navigate(['/comment-post', post.id]);
+  }
+
+  onEdit(post: Post) {
+    this.router.navigate(['/post-edit', post.id], { state: { post } });
   }
 
   onReadmore(post: Post) {
