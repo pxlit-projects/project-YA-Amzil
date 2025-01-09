@@ -1,0 +1,630 @@
+2025-01-05T13:17:42.311+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 17528 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:17:42.312+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:17:42.313+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:17:49.679+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 8.739 seconds (process running for 41.192)
+2025-01-05T13:17:50.842+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:50.921+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:50.922+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:50.962+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T13:17:51.018+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T13:17:51.020+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T13:17:51.088+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T13:17:51.156+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.176+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:51.176+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.190+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T13:17:51.224+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T13:17:51.261+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.285+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:51.285+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.302+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 3
+2025-01-05T13:17:51.339+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 3
+2025-01-05T13:17:51.374+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.396+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:51.397+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.510+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.538+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:51.539+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.544+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.570+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:17:51.570+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.575+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T13:17:51.621+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T13:17:51.885+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.906+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:51.907+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.967+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:51.988+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:17:51.988+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:51.991+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:17:52.012+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:17:52.012+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:17:52.014+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T13:17:52.025+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T13:25:48.136+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 8312 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:25:48.137+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:25:48.138+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:25:55.715+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 8.762 seconds (process running for 40.64)
+2025-01-05T13:25:56.850+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:56.936+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:56.937+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:56.982+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T13:25:57.035+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T13:25:57.037+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T13:25:57.152+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.173+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:57.174+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.199+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T13:25:57.246+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T13:25:57.306+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.327+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:57.327+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.343+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 3
+2025-01-05T13:25:57.372+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 3
+2025-01-05T13:25:57.406+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.434+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:57.434+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.500+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.520+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:57.520+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.523+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.549+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:25:57.550+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.553+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T13:25:57.601+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T13:25:57.785+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.807+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:57.807+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.868+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.893+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:25:57.894+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.898+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:25:57.926+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:25:57.927+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:25:57.929+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T13:25:57.944+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T13:29:59.517+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 16888 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:29:59.518+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:29:59.519+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:30:07.757+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 9.496 seconds (process running for 41.027)
+2025-01-05T13:30:08.854+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:08.953+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:08.953+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:08.994+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T13:30:09.049+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T13:30:09.051+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T13:30:09.169+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.196+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:09.196+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.218+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T13:30:09.260+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T13:30:09.303+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.325+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:09.325+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.339+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 3
+2025-01-05T13:30:09.369+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 3
+2025-01-05T13:30:09.400+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.421+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:09.421+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.475+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.494+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:09.494+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.498+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.526+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:30:09.526+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.530+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T13:30:09.565+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T13:30:09.694+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.717+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:09.717+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.788+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.811+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:30:09.812+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.816+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:30:09.837+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:30:09.837+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:30:09.840+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T13:30:09.852+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T13:32:18.729+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 6624 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:32:18.731+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:32:18.733+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:32:25.926+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 8.378 seconds (process running for 39.841)
+2025-01-05T13:36:13.645+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 10544 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:36:13.647+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:36:13.648+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:36:21.468+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 9.162 seconds (process running for 43.386)
+2025-01-05T13:36:22.580+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T13:37:47.811+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 20872 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:37:47.814+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:37:47.815+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:37:58.685+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 12.492 seconds (process running for 44.991)
+2025-01-05T13:38:00.375+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:00.491+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:00.492+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:00.554+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T13:38:00.632+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T13:38:00.634+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T13:38:00.735+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T13:38:00.813+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:00.846+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:00.847+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:00.864+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T13:38:00.901+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T13:38:00.969+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:00.996+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:00.996+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.019+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 3
+2025-01-05T13:38:01.064+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 3
+2025-01-05T13:38:01.116+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:01.146+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:01.146+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.245+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:01.280+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:01.280+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.285+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:01.315+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:38:01.316+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.320+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T13:38:01.369+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T13:38:01.646+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:01.672+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:01.672+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.754+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:01.781+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:38:01.781+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.786+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:38:01.813+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:38:01.814+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:38:01.818+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T13:38:01.841+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T13:47:55.086+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 2308 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:47:55.088+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:47:55.091+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:48:02.257+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 8.433 seconds (process running for 41.325)
+2025-01-05T13:48:03.714+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:03.931+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:03.931+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:04.029+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T13:48:04.186+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:04.187+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:04.236+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:04.263+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:04.263+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:04.289+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:04.315+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:04.315+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:04.347+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:04.380+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:04.381+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:04.389+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:04.415+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:48:04.415+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:04.421+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T13:48:04.684+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T13:48:05.003+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:05.044+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:05.045+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:05.079+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:05.119+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:48:05.120+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:05.128+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:48:05.168+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:48:05.168+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:48:05.173+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T13:48:05.210+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T13:49:41.424+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 8408 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T13:49:41.426+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T13:49:41.427+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T13:49:48.982+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 9.065 seconds (process running for 46.774)
+2025-01-05T13:49:50.032+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:50.121+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:50.122+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:50.169+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T13:49:50.234+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T13:49:50.236+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T13:49:50.317+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T13:49:50.382+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:50.406+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:50.406+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:50.420+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T13:49:50.453+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T13:49:50.516+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:50.544+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:50.545+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:50.571+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 3
+2025-01-05T13:49:50.612+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 3
+2025-01-05T13:49:50.657+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:50.684+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:50.684+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:50.775+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:50.803+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:50.803+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:50.807+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:50.834+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:49:50.834+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:50.838+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T13:49:50.888+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T13:49:51.137+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:51.160+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:51.160+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:51.245+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:51.274+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T13:49:51.275+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:51.279+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T13:49:51.304+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T13:49:51.305+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T13:49:51.309+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T13:49:51.330+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:02:39.283+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 2956 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:02:39.285+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:02:39.287+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:02:50.082+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 12.462 seconds (process running for 45.753)
+2025-01-05T14:02:51.818+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:51.954+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:02:51.954+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.033+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:02:52.134+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T14:02:52.136+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T14:02:52.241+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:02:52.319+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:52.348+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:02:52.349+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.375+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T14:02:52.420+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T14:02:52.464+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:52.491+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:02:52.491+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.497+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:52.528+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:02:52.529+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.533+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:02:52.584+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:02:52.767+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:52.793+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:02:52.794+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.886+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:52.918+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:02:52.918+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.924+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:02:52.956+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:02:52.956+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:02:52.960+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:02:52.979+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:04:25.966+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 13844 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:04:25.968+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:04:25.970+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:04:35.971+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 11.595 seconds (process running for 43.316)
+2025-01-05T14:04:38.920+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:39.145+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:04:39.146+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:39.255+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:04:39.413+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T14:04:39.419+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T14:04:39.607+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:04:39.725+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:39.777+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:04:39.778+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:39.816+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T14:04:39.880+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T14:04:39.965+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:40.010+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:04:40.011+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:40.019+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:40.069+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:04:40.070+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:40.079+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:04:40.175+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:04:40.560+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:40.595+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:04:40.596+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:40.719+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:40.766+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:04:40.767+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:40.775+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:04:40.824+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:04:40.825+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:04:40.831+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:04:40.863+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:06:35.108+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 4060 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:06:35.111+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:06:35.113+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:06:46.547+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 13.519 seconds (process running for 43.843)
+2025-01-05T14:06:47.787+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:47.886+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:06:47.887+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:47.939+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:06:48.036+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T14:06:48.039+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T14:06:48.172+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:06:48.250+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:48.276+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:06:48.276+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:48.303+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T14:06:48.344+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T14:06:48.397+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:48.432+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:06:48.433+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:48.440+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:48.470+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:06:48.471+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:48.478+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:06:48.546+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:06:48.866+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:48.898+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:06:48.899+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:49.007+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:49.038+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:06:49.038+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:49.045+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:06:49.077+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:06:49.077+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:06:49.080+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:06:49.103+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:16:09.463+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 4056 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:16:09.465+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:16:09.466+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:16:17.285+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 9.4 seconds (process running for 45.834)
+2025-01-05T14:16:19.068+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:19.072+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:16:19.342+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:16:19.711+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:16:19.785+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:19.786+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:16:19.792+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 1
+2025-01-05T14:16:19.919+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:19.922+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:16:19.926+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 1
+2025-01-05T14:16:20.031+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:20.031+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:16:20.038+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:20.049+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:16:20.055+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:16:20.347+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:16:20.918+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:21.197+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:16:21.199+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:16:21.247+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:21.248+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:16:21.250+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:16:21.251+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:16:21.257+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:16:21.320+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:24:00.734+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 7352 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:24:00.737+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:24:00.738+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:24:14.825+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 16.788 seconds (process running for 50.154)
+2025-01-05T14:24:17.228+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:17.233+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:24:17.527+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:24:18.035+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:24:18.204+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:18.206+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:24:18.222+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 1
+2025-01-05T14:24:18.345+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:18.346+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:24:18.357+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 1
+2025-01-05T14:24:18.424+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:18.425+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:24:18.431+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:18.432+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:24:18.440+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:24:18.888+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:24:19.389+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:19.616+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:24:19.616+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:24:19.663+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:19.664+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:24:19.668+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:24:19.669+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:24:19.674+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:24:19.739+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:26:16.631+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 9516 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:26:16.631+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:26:16.631+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:26:30.038+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 14.711 seconds (process running for 48.951)
+2025-01-05T14:26:31.747+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:31.908+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:26:31.908+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:31.998+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:26:32.109+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T14:26:32.112+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T14:26:32.251+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:26:32.335+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:32.363+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:26:32.364+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:32.389+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T14:26:32.429+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T14:26:32.481+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:32.509+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:26:32.509+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:32.515+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:32.539+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:26:32.540+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:32.546+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:26:32.616+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:26:32.866+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:32.903+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:26:32.903+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:32.983+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:33.008+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:26:33.009+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:33.014+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:26:33.036+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:26:33.037+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:26:33.041+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:26:33.058+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:28:07.656+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 2880 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:28:07.656+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:28:07.656+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:28:20.824+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 14.832 seconds (process running for 52.231)
+2025-01-05T14:28:22.751+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:22.906+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:28:22.907+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:22.968+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:28:23.059+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T14:28:23.060+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T14:28:23.179+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:28:23.263+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:23.325+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:28:23.325+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:23.369+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T14:28:23.441+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T14:28:23.504+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:23.544+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:28:23.546+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:23.557+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:23.591+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:28:23.592+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:23.598+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:28:23.667+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:28:23.946+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:23.977+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:28:23.978+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:24.066+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:24.098+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:28:24.098+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:24.103+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:28:24.134+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:28:24.134+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:28:24.139+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:28:24.162+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T14:32:29.222+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 17044 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T14:32:29.222+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T14:32:29.222+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T14:32:36.912+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 9.149 seconds (process running for 40.976)
+2025-01-05T14:32:38.000+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.102+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:32:38.102+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.146+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T14:32:38.203+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T14:32:38.206+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T14:32:38.287+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T14:32:38.351+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.376+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:32:38.377+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.400+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T14:32:38.437+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T14:32:38.477+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.510+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:32:38.512+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.518+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.540+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:32:38.541+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.544+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T14:32:38.600+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T14:32:38.732+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.754+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:32:38.755+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.816+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.839+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T14:32:38.840+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.845+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T14:32:38.876+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T14:32:38.877+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T14:32:38.880+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T14:32:38.901+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T17:42:25.341+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 17372 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T17:42:25.345+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T17:42:25.347+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T17:42:50.828+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 30.143 seconds (process running for 85.126)
+2025-01-05T17:42:54.720+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:55.014+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:42:55.015+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:55.232+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T17:42:55.373+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T17:42:55.377+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T17:42:55.569+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T17:42:55.740+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:55.864+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:42:55.864+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:55.897+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T17:42:55.990+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T17:42:56.047+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:56.078+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:42:56.079+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:56.085+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:56.129+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T17:42:56.129+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:56.136+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T17:42:56.227+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T17:42:56.605+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:56.723+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:42:56.724+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:56.854+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:56.893+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:42:56.893+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:56.899+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:42:56.929+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T17:42:56.930+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:42:56.934+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T17:42:56.960+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T17:48:13.625+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 14808 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T17:48:13.625+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T17:48:13.625+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T17:48:23.460+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 11.771 seconds (process running for 41.399)
+2025-01-05T17:48:24.905+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.009+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:48:25.009+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.047+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T17:48:25.113+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T17:48:25.114+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T17:48:25.206+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T17:48:25.268+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.296+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:48:25.297+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.311+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T17:48:25.342+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T17:48:25.368+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.390+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:48:25.390+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.393+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.417+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T17:48:25.418+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.422+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T17:48:25.465+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T17:48:25.634+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.653+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:48:25.653+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.729+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.752+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:48:25.752+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.756+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:48:25.782+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T17:48:25.783+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:48:25.786+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T17:48:25.802+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
+2025-01-05T17:53:32.152+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Starting CommentServiceApplicationTest using Java 21.0.4 with PID 3216 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service)
+2025-01-05T17:53:32.152+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-05T17:53:32.168+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-05T17:53:42.064+0100 INFO               [main]                         be.pxl.services.CommentServiceApplicationTest - Started CommentServiceApplicationTest in 11.595 seconds (process running for 40.198)
+2025-01-05T17:53:43.602+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:43.703+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:53:43.703+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:43.753+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-05T17:53:43.823+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment updated successfully: Updated Content
+2025-01-05T17:53:43.826+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-05T17:53:43.910+0100 INFO               [main]                         be.pxl.services.services.CommentService - Updating comment with id: 999
+2025-01-05T17:53:44.017+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:44.050+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:53:44.050+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:44.078+0100 INFO               [main]                         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-05T17:53:44.128+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-05T17:53:44.176+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:44.206+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:53:44.206+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:44.214+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:44.249+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T17:53:44.249+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:44.257+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-05T17:53:44.337+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-05T17:53:44.537+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:44.568+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:53:44.569+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:44.647+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:44.675+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 1
+2025-01-05T17:53:44.676+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:44.679+0100 INFO               [main]                         be.pxl.services.services.CommentService - Creating new comment
+2025-01-05T17:53:44.703+0100 INFO               [main]                         be.pxl.services.services.CommentService - Comment created successfully: Content 2
+2025-01-05T17:53:44.704+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-05T17:53:44.739+0100 INFO               [main]                         be.pxl.services.services.CommentService - Getting all comments
+2025-01-05T17:53:44.761+0100 INFO               [main]                         be.pxl.services.controller.CommentController - Getting all comments
