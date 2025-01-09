@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReviewItemReviseComponent } from './review-item-revise.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { CommonModule } from '@angular/common';
 import { Review } from '../../../shared/models/review.model';
 import { ReviewService } from '../../../shared/services/review.service';
-import { RoleService } from '../../../shared/services/role.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
 
@@ -19,11 +17,10 @@ describe('ReviewItemReviseComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        RouterTestingModule,
         HttpClientTestingModule,
         ReviewItemReviseComponent,
       ],
-      providers: [ReviewService, RoleService],
+      providers: [ReviewService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ReviewItemReviseComponent);

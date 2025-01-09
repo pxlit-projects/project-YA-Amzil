@@ -36,7 +36,7 @@ describe('ReviewService', () => {
   });
 
   it('should approve review', () => {
-    service.approveReview(1).subscribe((response) => {
+    service.approveReview(mockReview).subscribe((response) => {
       expect(response).toEqual(mockReview);
     });
 

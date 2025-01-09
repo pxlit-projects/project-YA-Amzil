@@ -32,27 +32,66 @@ De Gateway dient als het centrale toegangspunt voor alle client-aanvragen. In pl
 
 ---
 
-## 4. Messaging Service (RabbitMQ)
-De Messaging Service maakt gebruik van RabbitMQ om asynchrone berichten te verzenden tussen microservices. Dit betekent dat een service berichten kan versturen die door een andere service worden opgepakt, zonder dat beide services op hetzelfde moment actief hoeven te zijn. Dit is handig voor het afhandelen van gebeurtenissen of meldingen, zoals goedkeuringen, afwijzingen of gebruikersmeldingen.
+## 4. Messaging Service (RabbitMQ)  
+De Messaging Service maakt gebruik van RabbitMQ om asynchrone berichten te verzenden tussen microservices. Dit betekent dat een service berichten kan versturen die door een andere service worden opgepakt, zonder dat beide services op hetzelfde moment actief hoeven te zijn. Dit is handig voor het afhandelen van gebeurtenissen of meldingen, zoals goedkeuringen, afwijzingen of gebruikersmeldingen.  
 
-### Functies:
-- **Berichten verzenden**: Een service (bijvoorbeeld de Review Service) stuurt een bericht naar een wachtrij wanneer een artikel is goedgekeurd of afgewezen.
-- **Berichten ontvangen**: Een andere service (bijvoorbeeld de Post Service of Comment Service) luistert naar berichten en handelt ze af wanneer ze binnenkomen.
+### Functies:  
+- **Berichten verzenden (Producer)**:  
+  Een service, zoals de **ReviewService**, fungeert als producer door berichten naar RabbitMQ te sturen. Bijvoorbeeld:  
+  - Wanneer een artikel wordt goedgekeurd of afgewezen, stuurt de ReviewService een bericht met de status van het artikel naar een specifieke wachtrij in RabbitMQ.  
+  - Dit bericht bevat gegevens zoals de ID van de post, de status (bijv. "goedgekeurd" of "afgewezen") en eventuele opmerkingen.  
+
+- **Berichten ontvangen (Consumer)**:  
+  Een andere service, zoals de **PostService**, fungeert als consumer door te luisteren naar berichten in de wachtrij. Bijvoorbeeld:  
+  - De PostService ontvangt berichten over wijzigingen in de status van artikelen.  
+  - Bij ontvangst van een bericht werkt de PostService de status van het artikel bij in de database.  
+  - De consumer haalt het bericht uit de wachtrij, verwerkt het, en bevestigt vervolgens de succesvolle afhandeling aan RabbitMQ.  
+
+### Voordelen van deze aanpak:  
+- **Decoupling**: De producer (ReviewService) en de consumer (PostService) zijn niet direct afhankelijk van elkaar. Dit maakt het systeem robuuster en schaalbaarder.  
+- **Betrouwbaarheid**: RabbitMQ zorgt ervoor dat berichten niet verloren gaan, zelfs als een service tijdelijk niet beschikbaar is.  
+- **Asynchrone verwerking**: Services kunnen onafhankelijk en op verschillende tijdstippen werken, wat leidt tot betere prestaties en schaalbaarheid.  
 
 ---
 
-## Microservices en Communicatie met User Stories
+## 5. OpenFeign
+**OpenFeign** is een hulpmiddel dat helpt om eenvoudig te communiceren tussen verschillende microservices. Het maakt het gemakkelijker om HTTP-verzoeken te sturen zonder veel ingewikkelde code te schrijven.
 
-### PostService en ReviewService (Synchrone Communicatie via OpenFeign)
-- **US1 - US3 (PostService)**: Een redacteur kan artikelen aanmaken, opslaan als concept en bewerken. Wanneer een artikel klaar is, kan het via een directe aanroep naar de **ReviewService** ter goedkeuring worden aangeboden.
-- **US7 (ReviewService)**: De hoofdredacteur kan ingediende artikelen goedkeuren of afwijzen en stuurt via een synchrone call een statusupdate naar de **PostService**. Dit zorgt ervoor dat de status van het artikel meteen wordt bijgewerkt.
+### Functies:
+- **Eenvoudige API-aanroepen**: Je hoeft geen gedetailleerde HTTP-code te schrijven, alleen de interface.
+ - **Ondersteunt HTTP-methoden**: Werkt met GET, POST, PUT, DELETE, enz.
 
-### CommentService (Synchrone Communicatie via OpenFeign)
-- **US10 - US12**: Een medewerker kan reacties plaatsen, lezen, bewerken of verwijderen bij artikelen. Dit vereist een directe call naar de **PostService** om te controleren of het artikel bestaat en om de reacties te beheren.
+---
 
-### Messaging Service (Asynchrone Communicatie via RabbitMQ)
-- **US8 - US9 (ReviewService)**: Wanneer een artikel wordt goedgekeurd of afgewezen, stuurt de **ReviewService** een asynchrone melding via RabbitMQ naar redacteuren. Eventuele opmerkingen bij afwijzingen worden ook asynchroon verwerkt, zodat redacteuren op de hoogte worden gesteld zonder vertragingen.
-- **US10 - US12 (CommentService)**: Naast het plaatsen van reacties kan de **CommentService** meldingen asynchroon verzenden naar andere gebruikers wanneer er nieuwe reacties zijn of als reacties worden bewerkt/verwijderd. Dit zorgt ervoor dat gebruikers meldingen ontvangen zonder directe interactie.
+# Microservices en Communicatie met User Stories  
+
+## PostService  
+- **US1 - US3 (PostService)**:  
+  Als redacteur wil ik posts kunnen aanmaken, opslaan als concept en bewerken, zodat ik nieuws en updates kan delen, later kan bijwerken of fouten kan corrigeren.  
+- **US4 - US5 (PostService)**:  
+  Als gebruiker wil ik een overzicht van gepubliceerde posts kunnen zien en deze kunnen filteren op inhoud, auteur en datum, zodat ik eenvoudig op de hoogte blijf van het laatste nieuws.  
+
+## PostService, ReviewService en CommentService (Synchrone Communicatie via OpenFeign)  
+- **(PostService - ReviewService - CommentService)**:  
+  Als redacteur wil ik dat het verwijderen van een post automatisch alle gekoppelde reacties en reviews verwijdert.  
+
+## ReviewService  
+- **US6 - US8 (ReviewService - PostService - NotificationService)**:  
+  Als redacteur wil ik ingediende posts kunnen bekijken, goedkeuren of afwijzen met opmerkingen, en meldingen ontvangen, zodat alleen goedgekeurde content wordt gepubliceerd en afwijzingen duidelijk zijn.  
+
+## ReviewService en NotificationService (Synchrone Communicatie via OpenFeign)  
+- **US7 (ReviewService - NotificationService)**:  
+  Als redacteur wil ik een melding ontvangen wanneer een post goedgekeurd of afgewezen is, zodat ik weet of het gepubliceerd kan worden of moet worden herzien.  
+  - Zodra een redacteur een post goedkeurt of afwijst, stuurt de **NotificationService** een melding via een gekoppelde mailservice. Zo ontvangt de redacteur een e-mailnotificatie over de status van de post.  
+
+## ReviewService en PostService (Asynchrone Communicatie via RabbitMQ)  
+- **US7 (ReviewService - PostService)**:  
+  Als redacteur wil ik een melding ontvangen wanneer een post goedgekeurd of afgewezen is, zodat ik weet of het gepubliceerd kan worden of moet worden herzien.  
+  - Wanneer een artikel wordt gepubliceerd of herzien, stuurt de **ReviewService** een asynchrone boodschap via RabbitMQ naar de **PostService**, die de status van de post bijwerkt met behulp van een producer en een consumer.  
+
+## CommentService  
+- **US9 - US11 (CommentService)**:  
+  Als gebruiker wil ik reacties kunnen plaatsen, lezen, bewerken of verwijderen op posts, zodat ik mijn mening kan delen, vragen kan stellen, inzicht krijg in reacties van collega’s en mijn eigen bijdragen kan corrigeren of verwijderen.  
 
 <!-- :heavy_check_mark:_(COMMENT) Add a description of the architecture of your application and create a diagram like the one below. Link to the diagram in this document._
 

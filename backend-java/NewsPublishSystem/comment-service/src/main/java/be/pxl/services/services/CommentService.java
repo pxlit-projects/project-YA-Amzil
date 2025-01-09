@@ -78,6 +78,17 @@ public class CommentService implements ICommentService {
                 .orElseThrow(() -> new CommentNotFoundException("Comment not found with id [" + commentId + "]"));
     }
 
+    @Override
+    public boolean deleteCommentsForPost(Long postId) {
+        log.info("Deleting comments for post with id: {}", postId);
+        List<Comment> comments = commentRepository.findByPostId(postId);
+        if (comments.isEmpty()) {
+            throw new CommentNotFoundException("Comments not found for post with id [" + postId + "]");
+        }
+        commentRepository.deleteAll(comments);
+        return true;
+    }
+
     private CommentResponse mapToResponse(Comment comment) {
         return CommentResponse.builder()
                 .id(comment.getId())

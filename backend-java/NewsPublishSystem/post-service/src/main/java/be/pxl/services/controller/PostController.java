@@ -52,6 +52,7 @@ public class PostController {
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(updatedPost);
     }
 
+    // Delete an existing post
     @DeleteMapping("/{postId}")
     public ResponseEntity<Void> deletePost(@PathVariable Long postId) {
        boolean isDeleted = postService.deletePost(postId);

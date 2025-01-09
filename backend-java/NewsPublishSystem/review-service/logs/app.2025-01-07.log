@@ -1,0 +1,108 @@
+2025-01-07T14:46:07.598+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 21408 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T14:46:07.620+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T14:46:07.631+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T14:53:29.606+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 820 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T14:53:29.612+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T14:53:29.613+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T15:09:58.479+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 17532 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T15:09:58.483+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T15:09:58.486+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T15:18:31.556+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 19808 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T15:18:31.559+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T15:18:31.561+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T15:36:45.628+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 15868 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T15:36:45.631+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T15:36:45.633+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T15:38:35.850+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 17540 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T15:38:35.851+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T15:38:35.853+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T15:43:54.056+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 15928 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T15:43:54.058+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T15:43:54.060+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T16:03:30.803+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 11288 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T16:03:30.804+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T16:03:30.806+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T16:03:54.782+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Started ReviewServiceApplicationTest in 25.801 seconds (process running for 68.209)
+2025-01-07T16:03:55.949+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-07T16:03:56.024+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-07T16:03:56.489+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Approving review for post with id: 1
+2025-01-07T16:03:56.552+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 1
+2025-01-07T16:03:56.568+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-07T16:03:56.569+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Approving review for post with id: 1
+2025-01-07T16:03:56.827+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Publishing post with id: 3
+2025-01-07T16:03:56.931+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Post published successfully with id: 3
+2025-01-07T16:03:56.933+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 3
+2025-01-07T16:03:56.934+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Publishing post with id: 3
+2025-01-07T16:03:57.158+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Rejecting review for post with id: 1
+2025-01-07T16:03:57.212+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 1
+2025-01-07T16:03:57.215+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-07T16:03:57.215+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 1
+2025-01-07T16:03:57.456+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all reviews
+2025-01-07T16:03:57.507+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all reviews
+2025-01-07T16:03:57.734+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Revising post with id: 7
+2025-01-07T16:03:57.850+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Post revised successfully with id: 7
+2025-01-07T16:03:57.851+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 7
+2025-01-07T16:03:57.852+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Revising post with id: 7
+2025-01-07T16:03:58.091+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-07T16:03:58.105+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-07T16:03:58.254+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Publishing post with id: 999
+2025-01-07T16:03:58.280+0100 ERROR              [main]                         be.pxl.services.services.ReviewService - Review not found for post with id: 999
+2025-01-07T16:06:04.555+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 15968 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T16:06:04.557+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T16:06:04.560+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T16:07:53.066+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 14320 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T16:07:53.070+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T16:07:53.073+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T16:08:31.933+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Started ReviewServiceApplicationTest in 43.577 seconds (process running for 123.744)
+2025-01-07T16:08:33.366+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-07T16:08:33.501+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-07T16:08:34.190+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Approving review for post with id: 1
+2025-01-07T16:08:34.277+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 1
+2025-01-07T16:08:34.298+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-07T16:08:34.300+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Approving review for post with id: 1
+2025-01-07T16:08:34.668+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Publishing post with id: 3
+2025-01-07T16:08:34.763+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Post published successfully with id: 3
+2025-01-07T16:08:34.766+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 3
+2025-01-07T16:08:34.768+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Publishing post with id: 3
+2025-01-07T16:08:35.076+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Rejecting review for post with id: 1
+2025-01-07T16:08:35.186+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 1
+2025-01-07T16:08:35.188+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-07T16:08:35.189+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 1
+2025-01-07T16:08:35.853+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all reviews
+2025-01-07T16:08:36.131+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all reviews
+2025-01-07T16:08:36.602+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Revising post with id: 7
+2025-01-07T16:08:37.112+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Post revised successfully with id: 7
+2025-01-07T16:08:37.113+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 7
+2025-01-07T16:08:37.113+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Revising post with id: 7
+2025-01-07T16:08:37.840+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-07T16:08:37.889+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-07T16:08:38.020+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Publishing post with id: 999
+2025-01-07T16:08:38.049+0100 ERROR              [main]                         be.pxl.services.services.ReviewService - Review not found for post with id: 999
+2025-01-07T16:13:01.711+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Starting ReviewServiceApplicationTest using Java 21.0.4 with PID 18340 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service)
+2025-01-07T16:13:01.713+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-07T16:13:01.716+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-07T16:13:31.725+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplicationTest - Started ReviewServiceApplicationTest in 32.823 seconds (process running for 82.856)
+2025-01-07T16:13:32.928+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-07T16:13:33.013+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-07T16:13:33.504+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Approving review for post with id: 1
+2025-01-07T16:13:33.566+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 1
+2025-01-07T16:13:33.580+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-07T16:13:33.581+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Approving review for post with id: 1
+2025-01-07T16:13:33.731+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Publishing post with id: 3
+2025-01-07T16:13:33.786+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Post published successfully with id: 3
+2025-01-07T16:13:33.788+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 3
+2025-01-07T16:13:33.788+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Publishing post with id: 3
+2025-01-07T16:13:33.947+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Rejecting review for post with id: 1
+2025-01-07T16:13:33.985+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 1
+2025-01-07T16:13:33.986+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-07T16:13:33.986+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 1
+2025-01-07T16:13:34.153+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all reviews
+2025-01-07T16:13:34.178+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all reviews
+2025-01-07T16:13:34.287+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Revising post with id: 7
+2025-01-07T16:13:34.338+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Post revised successfully with id: 7
+2025-01-07T16:13:34.339+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 7
+2025-01-07T16:13:34.339+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Revising post with id: 7
+2025-01-07T16:13:34.520+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-07T16:13:34.534+0100 INFO               [main]                         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-07T16:13:34.596+0100 INFO               [main]                         be.pxl.services.services.ReviewService - Publishing post with id: 999
+2025-01-07T16:13:34.624+0100 ERROR              [main]                         be.pxl.services.services.ReviewService - Review not found for post with id: 999

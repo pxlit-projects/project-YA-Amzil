@@ -1,27 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { PostItemDashboardComponent } from './post-item-dashboard.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { CommonModule } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { Post } from '../../../shared/models/post.model';
-import { RoleService } from '../../../shared/services/role.service';
 
 describe('PostItemDashboardComponent', () => {
   let component: PostItemDashboardComponent;
   let fixture: ComponentFixture<PostItemDashboardComponent>;
-  let roleService: RoleService;
   let mockPost: Post;
   let navigateSpy: jasmine.Spy;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CommonModule, RouterTestingModule, PostItemDashboardComponent],
-      providers: [RoleService],
+      imports: [CommonModule, PostItemDashboardComponent],
+      providers: [],
     }).compileComponents();
 
     fixture = TestBed.createComponent(PostItemDashboardComponent);
     component = fixture.componentInstance;
-    roleService = TestBed.inject(RoleService);
     navigateSpy = spyOn(component.router, 'navigate');
 
     mockPost = {

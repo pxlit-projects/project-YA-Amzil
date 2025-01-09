@@ -1,282 +1,417 @@
-2025-01-04T11:34:10.417+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 16332 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T11:34:10.426+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T11:34:10.428+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T11:34:18.386+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 9.659 seconds (process running for 10.977)
-2025-01-04T11:34:29.834+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 7132 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T11:34:29.835+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T11:34:29.836+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T11:34:36.936+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 8.776 seconds (process running for 10.398)
-2025-01-04T11:34:43.656+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 23048 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T11:34:43.657+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T11:34:43.658+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T11:34:52.401+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 10.428 seconds (process running for 11.835)
-2025-01-04T11:39:34.125+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:39:34.514+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:40:03.072+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Creating new post
-2025-01-04T11:40:03.255+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post created successfully: Test
-2025-01-04T11:40:03.255+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
-2025-01-04T11:40:03.308+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all draft posts
-2025-01-04T11:40:03.321+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
-2025-01-04T11:40:03.327+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all draft posts
-2025-01-04T11:40:03.332+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
-2025-01-04T11:40:04.485+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:40:04.534+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:40:06.561+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Approving review for post with id: 1
-2025-01-04T11:40:06.929+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 1, creating a new review
-2025-01-04T11:40:07.128+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 1
-2025-01-04T11:40:07.717+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
-2025-01-04T11:40:07.720+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Approving review for post with id: 1
-2025-01-04T11:40:07.789+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Getting all approved reviews
-2025-01-04T11:40:07.794+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Getting all rejected reviews
-2025-01-04T11:40:07.806+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
-2025-01-04T11:40:07.809+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Getting all approved reviews
-2025-01-04T11:40:16.571+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Publishing post with id: 1
-2025-01-04T11:40:16.651+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Post published successfully with id: 1
-2025-01-04T11:40:16.667+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 1
-2025-01-04T11:40:16.668+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Publishing post with id: 1
-2025-01-04T11:40:16.697+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 1
-2025-01-04T11:40:16.739+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:40:16.752+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:40:16.779+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test
-2025-01-04T11:40:17.128+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:40:17.137+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:40:27.066+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:40:27.078+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:41:05.092+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Creating new comment
-2025-01-04T11:41:05.331+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Comment created successfully: Dit is een comment van kees
-2025-01-04T11:41:05.332+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Creating new comment
-2025-01-04T11:41:05.396+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:41:05.415+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:41:05.443+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:41:05.727+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:41:48.560+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:41:48.571+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:41:54.697+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:41:54.718+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:41:54.746+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:41:54.759+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:42:13.276+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:42:13.286+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:42:43.030+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Creating new comment
-2025-01-04T11:42:43.063+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Comment created successfully: Dit is een content van laura
-2025-01-04T11:42:43.064+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.controller.CommentController - Creating new comment
-2025-01-04T11:42:43.106+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:42:43.123+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:42:43.148+0100 INFO               [http-nio-8083-exec-5]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:42:43.157+0100 INFO               [http-nio-8083-exec-5]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:42:52.872+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:42:52.880+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:43:10.546+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.services.CommentService - Creating new comment
-2025-01-04T11:43:10.579+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.services.CommentService - Comment created successfully: dit is een tweede comment van laura
-2025-01-04T11:43:10.580+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.controller.CommentController - Creating new comment
-2025-01-04T11:43:10.618+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:43:10.637+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:43:10.653+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:43:10.668+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:43:19.512+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:43:19.522+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:43:20.732+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:43:20.756+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:43:20.781+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:43:20.795+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:43:29.048+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.services.CommentService - Updating comment with id: 1
-2025-01-04T11:43:29.163+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.services.CommentService - Comment updated successfully: Dit is een comment van kees!!!
-2025-01-04T11:43:29.163+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.controller.CommentController - Updating comment with id: 1
-2025-01-04T11:43:29.204+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:43:29.221+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:43:29.251+0100 INFO               [http-nio-8083-exec-10]        be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:43:29.265+0100 INFO               [http-nio-8083-exec-10]        be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:43:33.801+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Deleting comment with id: 1
-2025-01-04T11:43:33.870+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Deleting comment with id: 1
-2025-01-04T11:43:34.205+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:43:34.225+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:43:35.107+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:43:35.119+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:44:04.396+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T11:44:04.416+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T11:44:04.554+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T11:44:04.572+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T11:44:39.672+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:44:39.685+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:45:53.920+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:45:53.930+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:46:19.560+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:46:19.572+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:46:26.614+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:46:26.636+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:46:34.345+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:46:34.357+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:47:04.955+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:47:04.967+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T11:48:00.981+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T11:48:00.991+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:19:36.051+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 11476 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T12:19:36.053+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T12:19:36.054+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T12:19:44.147+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 9.891 seconds (process running for 11.246)
-2025-01-04T12:19:50.191+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 20364 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T12:19:50.193+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T12:19:50.194+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T12:19:57.988+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 9.687 seconds (process running for 10.878)
-2025-01-04T12:20:06.064+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 6936 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T12:20:06.068+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T12:20:06.069+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T12:20:15.847+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 12.847 seconds (process running for 14.138)
-2025-01-04T12:21:02.843+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:21:03.202+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:21:13.991+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 1
-2025-01-04T12:21:14.053+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 1
-2025-01-04T12:21:14.523+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
-2025-01-04T12:21:14.897+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
-2025-01-04T12:21:21.490+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:21:21.501+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:21:39.023+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Creating new post
-2025-01-04T12:21:39.182+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Post created successfully: Test 1
-2025-01-04T12:21:39.183+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Creating new post
-2025-01-04T12:21:39.241+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
-2025-01-04T12:21:39.249+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
-2025-01-04T12:21:39.250+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all pending posts
-2025-01-04T12:21:39.255+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all pending posts
-2025-01-04T12:21:40.992+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 2
-2025-01-04T12:21:41.011+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 2
-2025-01-04T12:22:01.323+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Rejecting review for post with id: 2
-2025-01-04T12:22:01.706+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 2, creating a new review
-2025-01-04T12:22:01.872+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 2
-2025-01-04T12:22:02.418+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 2
-2025-01-04T12:22:02.420+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 2
-2025-01-04T12:22:02.490+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Getting all approved reviews
-2025-01-04T12:22:02.492+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Getting all rejected reviews
-2025-01-04T12:22:02.502+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Getting all approved reviews
-2025-01-04T12:22:02.513+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
-2025-01-04T12:22:06.164+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Revising post with id: 2
-2025-01-04T12:22:06.258+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Post revised successfully with id: 2
-2025-01-04T12:22:06.288+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 2
-2025-01-04T12:22:06.289+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Revising post with id: 2
-2025-01-04T12:22:06.314+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
-2025-01-04T12:22:06.353+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all pending posts
-2025-01-04T12:22:06.353+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all draft posts
-2025-01-04T12:22:06.406+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all draft posts
-2025-01-04T12:22:06.407+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all pending posts
-2025-01-04T12:22:06.433+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test 1
-2025-01-04T12:22:06.608+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all pending posts
-2025-01-04T12:22:06.610+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all draft posts
-2025-01-04T12:22:06.617+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all draft posts
-2025-01-04T12:22:06.618+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all pending posts
-2025-01-04T12:22:09.481+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 2
-2025-01-04T12:22:09.500+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 2
-2025-01-04T12:22:11.354+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Approving review for post with id: 2
-2025-01-04T12:22:11.391+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 2
-2025-01-04T12:22:11.414+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 2
-2025-01-04T12:22:11.415+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ReviewController - Approving review for post with id: 2
-2025-01-04T12:22:11.456+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Getting all rejected reviews
-2025-01-04T12:22:11.456+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.services.ReviewService - Getting all approved reviews
-2025-01-04T12:22:11.462+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
-2025-01-04T12:22:11.465+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.controller.ReviewController - Getting all approved reviews
-2025-01-04T12:22:12.556+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Publishing post with id: 2
-2025-01-04T12:22:12.605+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Post published successfully with id: 2
-2025-01-04T12:22:12.606+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 2
-2025-01-04T12:22:12.606+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ReviewController - Publishing post with id: 2
-2025-01-04T12:22:12.633+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
-2025-01-04T12:22:12.665+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:12.684+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:22:12.734+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
-2025-01-04T12:22:12.786+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test 1
-2025-01-04T12:22:12.883+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:12.896+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:22:17.756+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ReviewService - Getting all approved reviews
-2025-01-04T12:22:17.758+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ReviewService - Getting all rejected reviews
-2025-01-04T12:22:17.767+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ReviewController - Getting all approved reviews
-2025-01-04T12:22:17.768+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ReviewController - Getting all rejected reviews
-2025-01-04T12:22:21.610+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:21.621+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:22:41.531+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:41.541+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:22:42.493+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:42.506+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:22:42.519+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:42.529+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:22:52.245+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:22:52.257+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:27:08.905+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 17756 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T12:27:08.907+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T12:27:08.908+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T12:27:17.364+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 10.5 seconds (process running for 11.647)
-2025-01-04T12:27:28.139+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 24152 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T12:27:28.140+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T12:27:28.141+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T12:27:35.559+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 9.422 seconds (process running for 10.938)
-2025-01-04T12:27:47.488+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 1212 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
-2025-01-04T12:27:47.489+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
-2025-01-04T12:27:47.490+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
-2025-01-04T12:27:56.426+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 10.801 seconds (process running for 12.047)
-2025-01-04T12:28:53.466+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:28:53.862+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:29:10.074+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:29:10.086+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:29:27.488+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Creating new post
-2025-01-04T12:29:27.639+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post created successfully: Test
-2025-01-04T12:29:27.640+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
-2025-01-04T12:29:27.684+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
-2025-01-04T12:29:27.694+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
-2025-01-04T12:29:27.696+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all pending posts
-2025-01-04T12:29:27.706+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all pending posts
-2025-01-04T12:29:29.169+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 3
-2025-01-04T12:29:29.217+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 3
-2025-01-04T12:29:36.336+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Approving review for post with id: 3
-2025-01-04T12:29:36.725+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 3, creating a new review
-2025-01-04T12:29:36.912+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 3
-2025-01-04T12:29:37.444+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 3
-2025-01-04T12:29:37.448+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Approving review for post with id: 3
-2025-01-04T12:29:37.548+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Getting all approved reviews
-2025-01-04T12:29:37.548+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Getting all rejected reviews
-2025-01-04T12:29:37.563+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
-2025-01-04T12:29:37.567+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Getting all approved reviews
-2025-01-04T12:29:40.032+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Publishing post with id: 3
-2025-01-04T12:29:40.127+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Post published successfully with id: 3
-2025-01-04T12:29:40.152+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 3
-2025-01-04T12:29:40.153+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Publishing post with id: 3
-2025-01-04T12:29:40.178+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
-2025-01-04T12:29:40.210+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:29:40.227+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:29:40.273+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test
-2025-01-04T12:29:40.403+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:29:40.418+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:29:50.900+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:29:50.911+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:30:13.284+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Creating new comment
-2025-01-04T12:30:13.507+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Comment created successfully: Dit is een comment van Kees
-2025-01-04T12:30:13.507+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.controller.CommentController - Creating new comment
-2025-01-04T12:30:13.562+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 3
-2025-01-04T12:30:13.579+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 3
-2025-01-04T12:30:13.605+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Getting comments for post with id: 3
-2025-01-04T12:30:13.875+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.controller.CommentController - Getting comments for post with id: 3
-2025-01-04T12:30:15.696+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:30:15.707+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:30:27.050+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:30:27.061+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:30:30.195+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 3
-2025-01-04T12:30:30.216+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 3
-2025-01-04T12:30:30.248+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Getting comments for post with id: 3
-2025-01-04T12:30:30.259+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Getting comments for post with id: 3
-2025-01-04T12:30:32.367+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all published posts
-2025-01-04T12:30:32.378+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all published posts
-2025-01-04T12:30:49.137+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Creating new comment
-2025-01-04T12:30:49.169+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Comment created successfully: ik wil een comment schrijven
-2025-01-04T12:30:49.170+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.controller.CommentController - Creating new comment
-2025-01-04T12:30:49.218+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 3
-2025-01-04T12:30:49.238+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 3
-2025-01-04T12:30:49.261+0100 INFO               [http-nio-8083-exec-5]         be.pxl.services.services.CommentService - Getting comments for post with id: 3
-2025-01-04T12:30:49.270+0100 INFO               [http-nio-8083-exec-5]         be.pxl.services.controller.CommentController - Getting comments for post with id: 3
-2025-01-04T12:31:11.899+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.services.CommentService - Updating comment with id: 5
-2025-01-04T12:31:12.001+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.services.CommentService - Comment updated successfully: Ik wil een comment schrijven ov er iets
-2025-01-04T12:31:12.002+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.controller.CommentController - Updating comment with id: 5
-2025-01-04T12:31:12.042+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 3
-2025-01-04T12:31:12.061+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 3
-2025-01-04T12:31:12.086+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.services.CommentService - Getting comments for post with id: 3
-2025-01-04T12:31:12.096+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.controller.CommentController - Getting comments for post with id: 3
-2025-01-04T12:31:17.669+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.services.CommentService - Deleting comment with id: 5
-2025-01-04T12:31:17.737+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.controller.CommentController - Deleting comment with id: 5
-2025-01-04T12:31:18.018+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting post with id: 3
-2025-01-04T12:31:18.034+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting post with id: 3
-2025-01-04T12:31:18.899+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.services.CommentService - Getting comments for post with id: 3
-2025-01-04T12:31:18.908+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.controller.CommentController - Getting comments for post with id: 3
+2025-01-09T10:36:59.060+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 18600 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T10:36:59.069+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T10:36:59.071+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T10:37:06.071+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 8.804 seconds (process running for 10.121)
+2025-01-09T10:37:24.835+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 1760 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T10:37:24.840+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T10:37:24.843+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T10:37:35.099+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 13.292 seconds (process running for 14.512)
+2025-01-09T10:38:13.940+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 10660 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T10:38:13.942+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T10:38:13.944+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T10:38:23.027+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 11.91 seconds (process running for 13.324)
+2025-01-09T10:40:00.106+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:40:00.247+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T10:40:14.087+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Creating new post
+2025-01-09T10:40:14.156+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Post created successfully: Test
+2025-01-09T10:40:14.156+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Creating new post
+2025-01-09T10:40:14.205+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T10:40:14.219+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T10:40:14.221+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T10:40:14.230+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T10:40:16.365+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T10:40:16.396+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T10:40:18.596+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Approving review for post with id: 1
+2025-01-09T10:40:18.718+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 1, creating a new review
+2025-01-09T10:40:18.795+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 1
+2025-01-09T10:40:19.997+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 1
+2025-01-09T10:40:19.997+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Approving review for post with id: 1
+2025-01-09T10:40:20.062+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T10:40:20.062+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T10:40:20.076+0100 INFO               [http-nio-8082-exec-9]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T10:40:20.080+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T10:40:24.806+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Publishing post with id: 1
+2025-01-09T10:40:24.871+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Post published successfully with id: 1
+2025-01-09T10:40:24.884+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 1
+2025-01-09T10:40:24.885+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Publishing post with id: 1
+2025-01-09T10:40:24.901+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 1
+2025-01-09T10:40:24.935+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:40:24.949+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T10:40:24.976+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 1
+2025-01-09T10:40:25.048+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Test
+2025-01-09T10:40:25.163+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:40:25.172+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T10:40:38.347+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:40:38.360+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T10:40:55.940+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Creating new comment
+2025-01-09T10:40:56.042+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Comment created successfully: dit is een comment van Ozkan
+2025-01-09T10:40:56.043+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-09T10:40:56.082+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T10:40:56.100+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T10:40:56.120+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T10:40:56.322+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T10:41:03.589+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Updating comment with id: 1
+2025-01-09T10:41:03.652+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Comment updated successfully: Dit is een comment van Ozkan!!!
+2025-01-09T10:41:03.652+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.controller.CommentController - Updating comment with id: 1
+2025-01-09T10:41:03.695+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T10:41:03.715+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T10:41:03.735+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T10:41:03.741+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T10:41:12.059+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:41:12.069+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T10:41:13.887+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T10:41:13.909+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T10:41:13.927+0100 INFO               [http-nio-8083-exec-5]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T10:41:13.935+0100 INFO               [http-nio-8083-exec-5]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T10:54:12.095+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:54:12.104+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T10:54:35.948+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T10:54:35.965+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T10:54:35.977+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T10:54:35.997+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T10:54:39.737+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T10:54:39.747+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:33:34.826+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:33:34.850+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:33:55.171+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Creating new post
+2025-01-09T11:33:55.219+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Post created successfully: Demo
+2025-01-09T11:33:55.219+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Creating new post
+2025-01-09T11:33:55.261+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T11:33:55.268+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T11:33:55.270+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T11:33:55.279+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T11:34:10.439+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Updating post with id: 2
+2025-01-09T11:34:10.493+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post updated successfully: Demo 1
+2025-01-09T11:34:10.493+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Updating post with id: 2
+2025-01-09T11:34:10.528+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T11:34:10.545+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T11:34:10.545+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T11:34:10.552+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T11:34:22.715+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting post with id: 2
+2025-01-09T11:34:22.734+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting post with id: 2
+2025-01-09T11:34:27.473+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Approving review for post with id: 2
+2025-01-09T11:34:27.500+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Review not found for post with id: 2, creating a new review
+2025-01-09T11:34:27.554+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 2
+2025-01-09T11:34:28.816+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 2
+2025-01-09T11:34:28.816+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ReviewController - Approving review for post with id: 2
+2025-01-09T11:34:28.857+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T11:34:28.857+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T11:34:28.864+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T11:34:28.871+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T11:34:49.331+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ReviewService - Publishing post with id: 2
+2025-01-09T11:34:49.398+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ReviewService - Post published successfully with id: 2
+2025-01-09T11:34:49.401+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 2
+2025-01-09T11:34:49.401+0100 INFO               [http-nio-8082-exec-10]        be.pxl.services.controller.ReviewController - Publishing post with id: 2
+2025-01-09T11:34:49.416+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2025-01-09T11:34:49.435+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 2
+2025-01-09T11:34:49.440+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:34:49.465+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:34:49.493+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo 1
+2025-01-09T11:34:49.819+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:34:49.830+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:35:28.151+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:35:28.163+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:35:38.257+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:35:38.268+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:35:38.290+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:35:38.299+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:35:53.923+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:35:53.935+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:36:09.614+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.services.CommentService - Creating new comment
+2025-01-09T11:36:09.675+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.services.CommentService - Comment created successfully: Dit is kees zijn comment 
+2025-01-09T11:36:09.676+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-09T11:36:09.715+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T11:36:09.733+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T11:36:09.747+0100 INFO               [http-nio-8083-exec-10]        be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T11:36:09.765+0100 INFO               [http-nio-8083-exec-10]        be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T11:36:30.956+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Updating comment with id: 2
+2025-01-09T11:36:31.014+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Comment updated successfully: Dit is kees zijn comment !!!
+2025-01-09T11:36:31.014+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Updating comment with id: 2
+2025-01-09T11:36:31.050+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T11:36:31.069+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T11:36:31.088+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T11:36:31.097+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T11:36:34.787+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Deleting comment with id: 2
+2025-01-09T11:36:34.861+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.controller.CommentController - Deleting comment with id: 2
+2025-01-09T11:36:35.108+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T11:36:35.125+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T11:36:36.061+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T11:36:36.069+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T11:36:45.355+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:36:45.368+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:53:38.661+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 25972 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T11:53:38.663+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T11:53:38.663+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T11:53:46.045+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 8.812 seconds (process running for 9.894)
+2025-01-09T11:53:55.300+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 2376 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T11:53:55.302+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T11:53:55.303+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T11:54:03.264+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 9.688 seconds (process running for 11.033)
+2025-01-09T11:54:10.666+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 24984 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T11:54:10.668+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T11:54:10.669+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T11:54:18.227+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 9.205 seconds (process running for 10.39)
+2025-01-09T11:55:22.679+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:55:22.871+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:56:08.362+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T11:56:08.378+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T11:56:34.469+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Creating new post
+2025-01-09T11:56:34.628+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post created successfully: Demo 2
+2025-01-09T11:56:34.628+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
+2025-01-09T11:56:34.677+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T11:56:34.687+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T11:56:34.690+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T11:56:34.702+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T11:56:39.502+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 3
+2025-01-09T11:56:39.548+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 3
+2025-01-09T11:57:07.323+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T11:57:07.330+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T11:57:07.334+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T11:57:07.339+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T12:15:01.182+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 3
+2025-01-09T12:15:01.204+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 3
+2025-01-09T12:15:13.092+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Rejecting review for post with id: 3
+2025-01-09T12:15:13.457+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 3, creating a new review
+2025-01-09T12:15:13.667+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 3
+2025-01-09T12:15:16.979+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 3
+2025-01-09T12:15:16.979+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 3
+2025-01-09T12:15:17.038+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T12:15:17.045+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T12:15:17.053+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T12:15:17.071+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T12:15:32.935+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Revising post with id: 3
+2025-01-09T12:15:33.040+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Post revised successfully with id: 3
+2025-01-09T12:15:33.069+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 3
+2025-01-09T12:15:33.070+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ReviewController - Revising post with id: 3
+2025-01-09T12:15:33.122+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2025-01-09T12:15:33.134+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T12:15:33.155+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T12:15:33.162+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T12:15:33.177+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T12:15:33.226+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo 2
+2025-01-09T12:15:33.459+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T12:15:33.459+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T12:15:33.465+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T12:15:33.467+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T12:15:41.818+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 3
+2025-01-09T12:15:41.837+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 3
+2025-01-09T12:15:44.375+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Approving review for post with id: 3
+2025-01-09T12:15:44.425+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 3
+2025-01-09T12:15:45.328+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 3
+2025-01-09T12:15:45.328+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Approving review for post with id: 3
+2025-01-09T12:15:45.384+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T12:15:45.384+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T12:15:45.392+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T12:15:45.395+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T12:15:46.413+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Publishing post with id: 3
+2025-01-09T12:15:46.465+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Post published successfully with id: 3
+2025-01-09T12:15:46.467+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 3
+2025-01-09T12:15:46.467+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ReviewController - Publishing post with id: 3
+2025-01-09T12:15:46.495+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2025-01-09T12:15:46.517+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T12:15:46.533+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T12:15:46.534+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 3
+2025-01-09T12:15:46.592+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo 2
+2025-01-09T12:15:46.679+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T12:15:46.691+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:21:53.209+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 16520 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T14:21:53.212+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T14:21:53.213+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T14:22:03.866+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 13.652 seconds (process running for 15.189)
+2025-01-09T14:22:13.167+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 25828 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T14:22:13.169+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T14:22:13.170+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T14:22:23.070+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 12.7 seconds (process running for 14.858)
+2025-01-09T14:22:40.194+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 12504 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T14:22:40.196+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T14:22:40.197+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T14:22:48.491+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 10.244 seconds (process running for 11.945)
+2025-01-09T14:24:14.140+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:24:14.338+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:24:49.293+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:24:49.305+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:25:09.408+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Creating new post
+2025-01-09T14:25:09.482+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post created successfully: Demo 3
+2025-01-09T14:25:09.482+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Creating new post
+2025-01-09T14:25:09.531+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:25:09.544+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:25:09.552+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:25:09.560+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:25:11.091+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 4
+2025-01-09T14:25:11.128+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 4
+2025-01-09T14:25:19.001+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Rejecting review for post with id: 4
+2025-01-09T14:25:19.159+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 4, creating a new review
+2025-01-09T14:25:19.233+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 4
+2025-01-09T14:25:21.010+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 4
+2025-01-09T14:25:21.012+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 4
+2025-01-09T14:25:21.073+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T14:25:21.084+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T14:25:21.086+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T14:25:21.102+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T14:25:22.375+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Revising post with id: 4
+2025-01-09T14:25:22.420+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Post revised successfully with id: 4
+2025-01-09T14:25:22.430+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 4
+2025-01-09T14:25:22.430+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Revising post with id: 4
+2025-01-09T14:25:22.455+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2025-01-09T14:25:22.516+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:25:22.519+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:25:22.530+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:25:22.537+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:25:22.544+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo 3
+2025-01-09T14:25:22.879+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:25:22.882+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:25:22.892+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:25:22.894+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:25:26.865+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting post with id: 4
+2025-01-09T14:25:26.890+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting post with id: 4
+2025-01-09T14:25:28.688+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Approving review for post with id: 4
+2025-01-09T14:25:28.728+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 4
+2025-01-09T14:25:29.714+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 4
+2025-01-09T14:25:29.715+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ReviewController - Approving review for post with id: 4
+2025-01-09T14:25:29.755+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T14:25:29.759+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T14:25:29.767+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T14:25:29.774+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T14:25:31.208+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Publishing post with id: 4
+2025-01-09T14:25:31.239+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Post published successfully with id: 4
+2025-01-09T14:25:31.240+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 4
+2025-01-09T14:25:31.240+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ReviewController - Publishing post with id: 4
+2025-01-09T14:25:31.259+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2025-01-09T14:25:31.300+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 4
+2025-01-09T14:25:31.326+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:25:31.343+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:25:31.378+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo 3
+2025-01-09T14:25:31.642+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:25:31.653+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:25:44.346+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:25:44.365+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:25:57.235+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Creating new comment
+2025-01-09T14:25:57.404+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.services.CommentService - Comment created successfully: Dit is een comment van Laura
+2025-01-09T14:25:57.404+0100 INFO               [http-nio-8083-exec-1]         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-09T14:25:57.456+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 4
+2025-01-09T14:25:57.485+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 4
+2025-01-09T14:25:57.510+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.services.CommentService - Getting comments for post with id: 4
+2025-01-09T14:25:57.687+0100 INFO               [http-nio-8083-exec-2]         be.pxl.services.controller.CommentController - Getting comments for post with id: 4
+2025-01-09T14:53:56.294+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:53:56.318+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:54:12.397+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:54:12.410+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:54:15.747+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:54:15.916+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:54:16.022+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:54:16.095+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:54:35.380+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:54:35.392+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:54:41.662+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:54:41.700+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:54:41.765+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:54:41.791+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:55:16.090+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Creating new post
+2025-01-09T14:55:16.127+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Post created successfully: Demo Frontend
+2025-01-09T14:55:16.127+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Creating new post
+2025-01-09T14:55:16.194+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:55:16.204+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:55:16.209+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:55:16.217+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:55:32.826+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Updating post with id: 5
+2025-01-09T14:55:32.908+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Post updated successfully: Demo Frontend
+2025-01-09T14:55:32.908+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Updating post with id: 5
+2025-01-09T14:55:32.962+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:55:32.976+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:55:32.993+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:55:33.020+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:55:39.220+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Updating post with id: 5
+2025-01-09T14:55:39.282+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Post updated successfully: Demo Frontend
+2025-01-09T14:55:39.283+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Updating post with id: 5
+2025-01-09T14:55:39.397+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:55:39.398+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:55:39.409+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:55:39.440+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:55:45.584+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Updating post with id: 5
+2025-01-09T14:55:45.634+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.services.PostService - Post updated successfully: Demo Frontend
+2025-01-09T14:55:45.635+0100 INFO               [http-nio-8081-exec-3]         be.pxl.services.controller.PostController - Updating post with id: 5
+2025-01-09T14:55:45.704+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:55:45.709+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:55:45.716+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:55:45.750+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:55:47.402+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 5
+2025-01-09T14:55:47.509+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 5
+2025-01-09T14:55:59.858+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Rejecting review for post with id: 5
+2025-01-09T14:55:59.872+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review not found for post with id: 5, creating a new review
+2025-01-09T14:55:59.936+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Review rejected successfully for post with id: 5
+2025-01-09T14:56:00.799+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 5
+2025-01-09T14:56:00.799+0100 INFO               [http-nio-8082-exec-1]         be.pxl.services.controller.ReviewController - Rejecting review for post with id: 5
+2025-01-09T14:56:00.853+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T14:56:00.888+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T14:56:00.896+0100 INFO               [http-nio-8082-exec-2]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T14:56:00.932+0100 INFO               [http-nio-8082-exec-3]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T14:56:34.654+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Revising post with id: 5
+2025-01-09T14:56:34.714+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Post revised successfully with id: 5
+2025-01-09T14:56:34.716+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 5
+2025-01-09T14:56:34.716+0100 INFO               [http-nio-8082-exec-4]         be.pxl.services.controller.ReviewController - Revising post with id: 5
+2025-01-09T14:56:34.844+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:56:34.853+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:56:34.955+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 5
+2025-01-09T14:56:35.085+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:56:35.103+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:56:35.741+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 5
+2025-01-09T14:56:36.046+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.services.PostService - Getting all pending posts
+2025-01-09T14:56:36.054+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-09T14:56:36.093+0100 INFO               [http-nio-8081-exec-10]        be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-09T14:56:36.097+0100 INFO               [http-nio-8081-exec-9]         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-09T14:56:36.202+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo Frontend
+2025-01-09T14:56:47.660+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.services.PostService - Getting post with id: 5
+2025-01-09T14:56:47.738+0100 INFO               [http-nio-8081-exec-2]         be.pxl.services.controller.PostController - Getting post with id: 5
+2025-01-09T14:56:51.417+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Approving review for post with id: 5
+2025-01-09T14:56:51.458+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Review approved successfully for post with id: 5
+2025-01-09T14:56:52.440+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.services.ReviewService - Notification sent successfully for post with id: 5
+2025-01-09T14:56:52.441+0100 INFO               [http-nio-8082-exec-5]         be.pxl.services.controller.ReviewController - Approving review for post with id: 5
+2025-01-09T14:56:52.515+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.services.ReviewService - Getting all approved reviews
+2025-01-09T14:56:52.522+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.services.ReviewService - Getting all rejected reviews
+2025-01-09T14:56:52.530+0100 INFO               [http-nio-8082-exec-6]         be.pxl.services.controller.ReviewController - Getting all approved reviews
+2025-01-09T14:56:52.538+0100 INFO               [http-nio-8082-exec-7]         be.pxl.services.controller.ReviewController - Getting all rejected reviews
+2025-01-09T14:56:55.491+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Publishing post with id: 5
+2025-01-09T14:56:55.537+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Post published successfully with id: 5
+2025-01-09T14:56:55.538+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.services.ReviewService - Review message sent successfully for post with id: 5
+2025-01-09T14:56:55.538+0100 INFO               [http-nio-8082-exec-8]         be.pxl.services.controller.ReviewController - Publishing post with id: 5
+2025-01-09T14:56:55.542+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 5
+2025-01-09T14:56:55.569+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Updating post status with id: 5
+2025-01-09T14:56:55.699+0100 INFO               [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] be.pxl.services.services.PostService - Post status updated successfully: Demo Frontend
+2025-01-09T14:56:55.888+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:56:55.910+0100 INFO               [http-nio-8081-exec-1]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:57:53.034+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:57:53.051+0100 INFO               [http-nio-8081-exec-5]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T14:58:06.065+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.services.CommentService - Creating new comment
+2025-01-09T14:58:06.108+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.services.CommentService - Comment created successfully: dit is een goede comment
+2025-01-09T14:58:06.109+0100 INFO               [http-nio-8083-exec-6]         be.pxl.services.controller.CommentController - Creating new comment
+2025-01-09T14:58:06.208+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T14:58:06.267+0100 INFO               [http-nio-8081-exec-4]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T14:58:06.305+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T14:58:06.324+0100 INFO               [http-nio-8083-exec-3]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T14:58:27.013+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.services.CommentService - Updating comment with id: 4
+2025-01-09T14:58:27.128+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.services.CommentService - Comment updated successfully: Dit is een goede comment
+2025-01-09T14:58:27.128+0100 INFO               [http-nio-8083-exec-8]         be.pxl.services.controller.CommentController - Updating comment with id: 4
+2025-01-09T14:58:27.188+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T14:58:27.221+0100 INFO               [http-nio-8081-exec-6]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T14:58:27.246+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T14:58:27.257+0100 INFO               [http-nio-8083-exec-7]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T14:58:30.261+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.services.CommentService - Deleting comment with id: 4
+2025-01-09T14:58:30.322+0100 INFO               [http-nio-8083-exec-4]         be.pxl.services.controller.CommentController - Deleting comment with id: 4
+2025-01-09T14:58:30.692+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.services.PostService - Getting post with id: 1
+2025-01-09T14:58:30.717+0100 INFO               [http-nio-8081-exec-8]         be.pxl.services.controller.PostController - Getting post with id: 1
+2025-01-09T14:58:31.005+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.services.CommentService - Getting comments for post with id: 1
+2025-01-09T14:58:31.076+0100 INFO               [http-nio-8083-exec-9]         be.pxl.services.controller.CommentController - Getting comments for post with id: 1
+2025-01-09T14:58:36.004+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.services.PostService - Getting all published posts
+2025-01-09T14:58:36.028+0100 INFO               [http-nio-8081-exec-7]         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-09T15:05:49.895+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Starting PostServiceApplication using Java 21.0.4 with PID 19424 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T15:05:49.898+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T15:05:49.901+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T15:06:00.233+0100 INFO               [main]                         be.pxl.services.PostServiceApplication - Started PostServiceApplication in 13.475 seconds (process running for 16.938)
+2025-01-09T15:06:19.203+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Starting ReviewServiceApplication using Java 21.0.4 with PID 25132 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\review-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T15:06:19.206+0100 DEBUG              [main]                         be.pxl.services.ReviewServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T15:06:19.207+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T15:06:33.394+0100 INFO               [main]                         be.pxl.services.ReviewServiceApplication - Started ReviewServiceApplication in 17.284 seconds (process running for 19.518)
+2025-01-09T15:06:42.220+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Starting CommentServiceApplication using Java 21.0.4 with PID 15844 (C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\comment-service\target\classes started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem)
+2025-01-09T15:06:42.222+0100 DEBUG              [main]                         be.pxl.services.CommentServiceApplication - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-09T15:06:42.224+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-01-09T15:06:50.695+0100 INFO               [main]                         be.pxl.services.CommentServiceApplication - Started CommentServiceApplication in 11.227 seconds (process running for 13.21)

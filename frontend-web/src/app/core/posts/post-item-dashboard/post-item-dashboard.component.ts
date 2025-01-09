@@ -1,7 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { Post } from '../../../shared/models/post.model';
-import { ActivatedRoute, Router } from '@angular/router';
-import { RoleService } from '../../../shared/services/role.service';
+import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -14,9 +13,6 @@ import { CommonModule } from '@angular/common';
 export class PostItemDashboardComponent {
  @Input() post!: Post;
   router: Router = inject(Router);
-  roleService: RoleService = inject(RoleService);
-  route: ActivatedRoute = inject(ActivatedRoute);
-  role = this.roleService.getRole();
 
   onEdit(post: Post) {
     this.router.navigate(['/post-edit', post.id], { state: { post } });

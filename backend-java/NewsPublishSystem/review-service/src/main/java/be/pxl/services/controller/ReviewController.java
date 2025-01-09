@@ -21,8 +21,8 @@ public class ReviewController {
     private static final Logger log = LoggerFactory.getLogger(ReviewController.class);
 
     @PutMapping("/approve/{postId}")
-    public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long postId) {
-        ReviewResponse approvedReview = reviewService.approveReview(postId);
+    public ResponseEntity<ReviewResponse> approveReview(@PathVariable Long postId, @RequestBody ReviewRequest reviewRequest) {
+        ReviewResponse approvedReview = reviewService.approveReview(postId, reviewRequest);
         log.info("Approving review for post with id: {}", postId);
         return ResponseEntity.status(HttpStatus.ACCEPTED).body(approvedReview);
     }
@@ -67,6 +67,13 @@ public class ReviewController {
         List<ReviewResponse> reviews = reviewService.getRejectedReviews();
         log.info("Getting all rejected reviews");
         return ResponseEntity.status(HttpStatus.OK).body(reviews);
+    }
+
+    @DeleteMapping("/{reviewId}")
+    public ResponseEntity<Void> deleteReview(@PathVariable Long reviewId) {
+        boolean isDeleted = reviewService.deleteReview(reviewId);
+        log.info("Deleting review with id: {}", reviewId);
+        return isDeleted ? ResponseEntity.status(HttpStatus.NO_CONTENT).build() : ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
 }
 

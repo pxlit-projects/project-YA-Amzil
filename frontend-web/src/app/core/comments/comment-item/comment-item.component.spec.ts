@@ -1,10 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { CommentItemComponent } from './comment-item.component';
-import { RouterTestingModule } from '@angular/router/testing';
 import { CommonModule } from '@angular/common';
 import { By } from '@angular/platform-browser';
 import { Comment } from '../../../shared/models/comment.model';
-import { RoleService } from '../../../shared/services/role.service';
 import { CommentService } from './../../../shared/services/comment.service';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { of } from 'rxjs';
@@ -12,7 +10,6 @@ import { of } from 'rxjs';
 describe('CommentItemComponent', () => {
   let component: CommentItemComponent;
   let fixture: ComponentFixture<CommentItemComponent>;
-  let roleService: RoleService;
   let commentService: CommentService;
   let mockComment: Comment;
   let navigateSpy: jasmine.Spy;
@@ -21,16 +18,14 @@ describe('CommentItemComponent', () => {
     await TestBed.configureTestingModule({
       imports: [
         CommonModule,
-        RouterTestingModule,
         HttpClientTestingModule,
         CommentItemComponent,
       ],
-      providers: [RoleService, CommentService],
+      providers: [CommentService],
     }).compileComponents();
 
     fixture = TestBed.createComponent(CommentItemComponent);
     component = fixture.componentInstance;
-    roleService = TestBed.inject(RoleService);
     commentService = TestBed.inject(CommentService);
     navigateSpy = spyOn(component.router, 'navigate');
 

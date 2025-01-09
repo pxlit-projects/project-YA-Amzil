@@ -1,6 +1,6 @@
 import { CommentService } from './../../../shared/services/comment.service';
 import { Component, inject, Input } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { RoleService } from '../../../shared/services/role.service';
 import { CommonModule } from '@angular/common';
 import { Comment } from '../../../shared/models/comment.model';
@@ -17,8 +17,6 @@ export class CommentItemComponent {
   commentService: CommentService = inject(CommentService);
   router: Router = inject(Router);
   roleService: RoleService = inject(RoleService);
-  route: ActivatedRoute = inject(ActivatedRoute);
-  role = this.roleService.getRole();
   currentUser = this.roleService.getCurrentUser();
 
   onEdit(comment: Comment) {

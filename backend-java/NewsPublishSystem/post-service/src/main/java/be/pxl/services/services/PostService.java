@@ -1,5 +1,7 @@
 package be.pxl.services.services;
 
+import be.pxl.services.client.CommentClient;
+import be.pxl.services.client.ReviewClient;
 import be.pxl.services.domain.Post;
 import be.pxl.services.domain.PostStatus;
 import be.pxl.services.domain.dto.PostRequest;
@@ -18,6 +20,8 @@ import java.util.List;
 public class PostService implements IPostService {
 
     private final PostRepository postRepository;
+    private final CommentClient commentClient;
+    private final ReviewClient reviewClient;
     private static final Logger log = LoggerFactory.getLogger(PostService.class);
 
     // US1
@@ -70,6 +74,8 @@ public class PostService implements IPostService {
         log.info("Deleting post with id: {}", postId);
         return postRepository.findById(postId).map(post -> {
             postRepository.delete(post);
+            reviewClient.deleteReview(postId);
+            commentClient.deleteCommentsForPost(postId);
             return true;
         }).orElseThrow(() -> new PostNotFoundException("Post not found with id [" + postId + "]"));
     }

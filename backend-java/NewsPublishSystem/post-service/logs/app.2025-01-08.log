@@ -1,0 +1,292 @@
+2025-01-08T09:24:51.949+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Starting PostServiceApplicationTest using Java 21.0.4 with PID 16360 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service)
+2025-01-08T09:24:51.974+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-08T09:24:51.976+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-08T09:25:04.830+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Started PostServiceApplicationTest in 14.553 seconds (process running for 45.641)
+2025-01-08T09:25:05.436+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:05.618+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T09:25:05.619+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:05.640+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:05.675+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T09:25:05.676+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:05.681+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-08T09:25:05.741+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-08T09:25:06.109+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.147+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T09:25:06.148+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.188+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post with id: 3
+2025-01-08T09:25:06.287+0100 INFO               [main]                         be.pxl.services.services.PostService - Post updated successfully: Updated Title
+2025-01-08T09:25:06.288+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post with id: 3
+2025-01-08T09:25:06.363+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.393+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T09:25:06.394+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.400+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.428+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post
+2025-01-08T09:25:06.428+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.432+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.459+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T09:25:06.459+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.463+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft and pending posts
+2025-01-08T09:25:06.477+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft and pending posts
+2025-01-08T09:25:06.538+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.564+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post 1
+2025-01-08T09:25:06.564+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.570+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.594+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T09:25:06.595+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.598+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-08T09:25:06.605+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-08T09:25:06.659+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 999
+2025-01-08T09:25:06.732+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.754+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T09:25:06.754+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.828+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.851+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T09:25:06.851+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.868+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 10
+2025-01-08T09:25:06.880+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting post with id: 10
+2025-01-08T09:25:06.940+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.964+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T09:25:06.965+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.969+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:06.997+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 2
+2025-01-08T09:25:06.997+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:06.999+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all posts
+2025-01-08T09:25:07.013+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all posts
+2025-01-08T09:25:07.107+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:07.137+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T09:25:07.137+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:07.162+0100 INFO               [main]                         be.pxl.services.services.PostService - Deleting post with id: 13
+2025-01-08T09:25:07.214+0100 INFO               [main]                         be.pxl.services.controller.PostController - Deleting post with id: 13
+2025-01-08T09:25:07.260+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:07.290+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T09:25:07.291+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:07.296+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:07.328+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T09:25:07.328+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:07.328+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all published posts
+2025-01-08T09:25:07.340+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-08T09:25:07.397+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T09:25:07.426+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T09:25:07.426+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T09:25:07.452+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post status with id: 16
+2025-01-08T09:25:07.495+0100 INFO               [main]                         be.pxl.services.services.PostService - Post status updated successfully: Title 1
+2025-01-08T09:25:07.495+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post status with id: 16
+2025-01-08T18:47:26.481+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Starting PostServiceApplicationTest using Java 21.0.4 with PID 5832 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service)
+2025-01-08T18:47:26.484+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-08T18:47:26.486+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-08T18:47:52.385+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Started PostServiceApplicationTest in 31.89 seconds (process running for 93.843)
+2025-01-08T18:47:53.080+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.181+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T18:47:53.182+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.207+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.240+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T18:47:53.240+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.246+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-08T18:47:53.315+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-08T18:47:53.584+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.648+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T18:47:53.649+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.675+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post with id: 3
+2025-01-08T18:47:53.742+0100 INFO               [main]                         be.pxl.services.services.PostService - Post updated successfully: Updated Title
+2025-01-08T18:47:53.743+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post with id: 3
+2025-01-08T18:47:53.802+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.833+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T18:47:53.834+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.838+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.863+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post
+2025-01-08T18:47:53.864+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.868+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.896+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T18:47:53.897+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.900+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft and pending posts
+2025-01-08T18:47:53.912+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft and pending posts
+2025-01-08T18:47:53.967+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:53.991+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post 1
+2025-01-08T18:47:53.992+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:53.995+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.027+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T18:47:54.028+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.032+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-08T18:47:54.045+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-08T18:47:54.114+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 999
+2025-01-08T18:47:54.193+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.225+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T18:47:54.225+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.313+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.345+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T18:47:54.345+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.368+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 10
+2025-01-08T18:47:54.386+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting post with id: 10
+2025-01-08T18:47:54.461+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.493+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T18:47:54.493+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.498+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.529+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 2
+2025-01-08T18:47:54.530+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.534+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all posts
+2025-01-08T18:47:54.553+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all posts
+2025-01-08T18:47:54.642+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.665+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T18:47:54.665+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.690+0100 INFO               [main]                         be.pxl.services.services.PostService - Deleting post with id: 13
+2025-01-08T18:47:54.746+0100 INFO               [main]                         be.pxl.services.controller.PostController - Deleting post with id: 13
+2025-01-08T18:47:54.795+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.828+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T18:47:54.829+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.834+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.863+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T18:47:54.863+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.866+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all published posts
+2025-01-08T18:47:54.874+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-08T18:47:54.918+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T18:47:54.939+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T18:47:54.940+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T18:47:54.958+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post status with id: 16
+2025-01-08T18:47:54.995+0100 INFO               [main]                         be.pxl.services.services.PostService - Post status updated successfully: Title 1
+2025-01-08T18:47:54.995+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post status with id: 16
+2025-01-08T19:21:17.854+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Starting PostServiceApplicationTest using Java 21.0.4 with PID 15824 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service)
+2025-01-08T19:21:17.857+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-08T19:21:17.861+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-08T19:21:37.730+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Started PostServiceApplicationTest in 23.582 seconds (process running for 86.167)
+2025-01-08T19:21:38.274+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:38.423+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T19:21:38.425+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:38.478+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:38.512+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:21:38.514+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:38.520+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-08T19:21:38.618+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-08T19:21:38.870+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:38.899+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:21:38.900+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:38.932+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post with id: 3
+2025-01-08T19:21:39.019+0100 INFO               [main]                         be.pxl.services.services.PostService - Post updated successfully: Updated Title
+2025-01-08T19:21:39.020+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post with id: 3
+2025-01-08T19:21:39.097+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.131+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T19:21:39.132+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.138+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.172+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post
+2025-01-08T19:21:39.172+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.184+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.222+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:21:39.223+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.227+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft and pending posts
+2025-01-08T19:21:39.242+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft and pending posts
+2025-01-08T19:21:39.309+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.338+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post 1
+2025-01-08T19:21:39.339+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.345+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.374+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:21:39.375+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.382+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-08T19:21:39.396+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-08T19:21:39.460+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 999
+2025-01-08T19:21:39.525+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.551+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:21:39.552+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.643+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.668+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:21:39.670+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.697+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 10
+2025-01-08T19:21:39.716+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting post with id: 10
+2025-01-08T19:21:39.791+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.821+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:21:39.821+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.826+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:39.856+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 2
+2025-01-08T19:21:39.856+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:39.861+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all posts
+2025-01-08T19:21:39.881+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all posts
+2025-01-08T19:21:39.971+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:40.000+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:21:40.001+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:40.025+0100 INFO               [main]                         be.pxl.services.services.PostService - Deleting post with id: 13
+2025-01-08T19:21:40.078+0100 INFO               [main]                         be.pxl.services.controller.PostController - Deleting post with id: 13
+2025-01-08T19:21:40.126+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:40.156+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T19:21:40.157+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:40.163+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:40.199+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:21:40.200+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:40.203+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all published posts
+2025-01-08T19:21:40.211+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-08T19:21:40.262+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:21:40.288+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:21:40.288+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:21:40.313+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post status with id: 16
+2025-01-08T19:21:40.358+0100 INFO               [main]                         be.pxl.services.services.PostService - Post status updated successfully: Title 1
+2025-01-08T19:21:40.358+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post status with id: 16
+2025-01-08T19:26:03.179+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Starting PostServiceApplicationTest using Java 21.0.4 with PID 20364 (started by MechaCoder in C:\Users\MechaCoder\Documents\2-3 TIN Sem 1\Fullstack Java\project-YA-Amzil\backend-java\NewsPublishSystem\post-service)
+2025-01-08T19:26:03.182+0100 DEBUG              [main]                         be.pxl.services.PostServiceApplicationTest - Running with Spring Boot v3.3.4, Spring v6.1.13
+2025-01-08T19:26:03.182+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - No active profile set, falling back to 1 default profile: "default"
+2025-01-08T19:26:13.898+0100 INFO               [main]                         be.pxl.services.PostServiceApplicationTest - Started PostServiceApplicationTest in 12.488 seconds (process running for 46.584)
+2025-01-08T19:26:14.500+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:14.644+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T19:26:14.644+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:14.673+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:14.706+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:26:14.707+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:14.711+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft posts
+2025-01-08T19:26:14.766+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft posts
+2025-01-08T19:26:15.017+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.050+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:26:15.050+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.085+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post with id: 3
+2025-01-08T19:26:15.164+0100 INFO               [main]                         be.pxl.services.services.PostService - Post updated successfully: Updated Title
+2025-01-08T19:26:15.165+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post with id: 3
+2025-01-08T19:26:15.241+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.273+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T19:26:15.273+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.278+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.307+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post
+2025-01-08T19:26:15.308+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.314+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.345+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:26:15.346+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.350+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all draft and pending posts
+2025-01-08T19:26:15.365+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all draft and pending posts
+2025-01-08T19:26:15.435+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.464+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Pending Post 1
+2025-01-08T19:26:15.465+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.470+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.499+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:26:15.500+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.503+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all pending posts
+2025-01-08T19:26:15.511+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all pending posts
+2025-01-08T19:26:15.574+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 999
+2025-01-08T19:26:15.657+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.687+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:26:15.687+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.771+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.800+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:26:15.801+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.822+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting post with id: 10
+2025-01-08T19:26:15.837+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting post with id: 10
+2025-01-08T19:26:15.918+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.954+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:26:15.955+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.962+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:15.993+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 2
+2025-01-08T19:26:15.994+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:15.999+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all posts
+2025-01-08T19:26:16.019+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all posts
+2025-01-08T19:26:16.122+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:16.167+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:26:16.168+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:16.196+0100 INFO               [main]                         be.pxl.services.services.PostService - Deleting post with id: 13
+2025-01-08T19:26:16.275+0100 INFO               [main]                         be.pxl.services.controller.PostController - Deleting post with id: 13
+2025-01-08T19:26:16.320+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:16.349+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Draft Post 1
+2025-01-08T19:26:16.350+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:16.358+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:16.389+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Published Post
+2025-01-08T19:26:16.390+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:16.394+0100 INFO               [main]                         be.pxl.services.services.PostService - Getting all published posts
+2025-01-08T19:26:16.402+0100 INFO               [main]                         be.pxl.services.controller.PostController - Getting all published posts
+2025-01-08T19:26:16.456+0100 INFO               [main]                         be.pxl.services.services.PostService - Creating new post
+2025-01-08T19:26:16.481+0100 INFO               [main]                         be.pxl.services.services.PostService - Post created successfully: Title 1
+2025-01-08T19:26:16.482+0100 INFO               [main]                         be.pxl.services.controller.PostController - Creating new post
+2025-01-08T19:26:16.507+0100 INFO               [main]                         be.pxl.services.services.PostService - Updating post status with id: 16
+2025-01-08T19:26:16.552+0100 INFO               [main]                         be.pxl.services.services.PostService - Post status updated successfully: Title 1
+2025-01-08T19:26:16.553+0100 INFO               [main]                         be.pxl.services.controller.PostController - Updating post status with id: 16

@@ -8,7 +8,7 @@ import java.util.List;
 public interface IReviewService {
 
     // Method to approve a review
-    ReviewResponse approveReview(Long postId);
+    ReviewResponse approveReview(Long postId, ReviewRequest reviewRequest);
 
     // Method to reject a review
     ReviewResponse rejectReview(Long postId, ReviewRequest reviewRequest);
@@ -27,4 +27,7 @@ public interface IReviewService {
 
     // Method to get all reviews
     List<ReviewResponse> getAllReviews();
+
+    // Method to delete a review
+    boolean deleteReview(Long reviewId);
 }

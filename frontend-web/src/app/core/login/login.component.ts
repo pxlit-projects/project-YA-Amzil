@@ -48,16 +48,5 @@ export class LoginComponent {
       console.error('Form is not valid');
     }
   }
-
-  // onSubmit(event: Event): void {
-  //   event.preventDefault();
-  //   if (this.selectedRole && this.selectedRole !== '') {
-  //     this.roleService.setRole(this.selectedRole);
-  //     console.log('Role submitted:', this.selectedRole);
-  //     this.router.navigate(['/home']);
-  //   } else {
-  //     console.error('No role selected');
-  //   }
-  // }
 }
 

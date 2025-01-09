@@ -9,7 +9,7 @@
     </p>
   </div>
   <p class="text-gray-300 text-base mb-6">
-    {{ comment.content | slice: 0 : 150 }}...
+    {{ comment.content | slice: 0 : 150 }}
   </p>
   <div class="mt-4 flex justify-between items-center">
   @if (comment.author === currentUser){
@@ -25,8 +25,8 @@
       </button>
     </div>
   }
-  <!-- @else {
-    console.log('You are not the author of this comment');
-  } -->
+  @else {
+    <p class="empty-message text-center text-red-300">You are not the author of this comment.</p>
+  }
   </div>
 </div>
