@@ -6,7 +6,7 @@
 
 - Readme.md
 - _architecture_: this folder contains documentation regarding the architecture of your system.
-- `docker-compose.yml` : to start the backend (starts all microservices)
+- `docker-compose.yml` : used to start all microservices, RabbitMQ, and the frontend.
 - _backend-java_: contains microservices written in java
 - _demo-artifacts_: contains images, files, etc that are useful for demo purposes.
 - _frontend-web_: contains the Angular webclient
@@ -25,8 +25,8 @@ Follow these steps to run the application:
      npm install
      ```
 
-2. **Start the Backend with Docker Compose**:
-   - In the project root directory, run the following command to start all microservices:
+2. **Start the Docker Compose**:
+   - In the project root directory, run the following command to start all microservices, RabbitMQ, and the frontend:
      ```bash
      docker-compose up
      ```
@@ -35,12 +35,12 @@ Follow these steps to run the application:
      docker-compose down -v
      ```
 
-3. **Start the Services in Order**:
-   - After setting up Docker Compose, manually start the following applications in this order:
+3. **Start manually the Microservices in IntelliJ**:
+   - After starting Docker Compose, manually start the microservices in the following order:
      1. **ConfigServiceApplication**
      2. **DiscoveryServiceApplication**
      3. **GatewayServiceApplication**
-     4. The remaining services:
+     4. Start the remaining services:
         - **PostServiceApplication**
         - **ReviewServiceApplication**
         - **CommentServiceApplication**
